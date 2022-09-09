@@ -16,10 +16,20 @@
           class="header__logo-img"
         />
         <nav class="header__nav">
-          <a href="#shoose" class="header__link">Categories</a>
-          <a href="#course" class="header__link">Course</a>
-          <a href="#description" class="header__link">Explore</a>
-          <a href="#prefer" class="header__link">Degrees</a>
+          <ul class="header__list item-list">
+            <li class="header__elem item-list__elem">
+              <a href="#shoose" class="header__link">Categories</a>
+            </li>
+            <li class="header__elem item-list__elem">
+              <a href="#course" class="header__link">Course</a>
+            </li>
+            <li class="header__elem item-list__elem">
+              <a href="#description" class="header__link">Explore</a>
+            </li>
+            <li class="header__elem item-list__elem">
+              <a href="#prefer" class="header__link">Degrees</a>
+            </li>
+          </ul>
           <button class="btn btn_blue">Explore</button>
         </nav>
       </div>
@@ -32,10 +42,10 @@
               <h1 class="text-block__title infrom__title">
                 Education is the most powerfull weapon
               </h1>
-              <div class="text-block__subtitle inform__subtitle">
+              <p class="text-block__subtitle inform__subtitle">
                 A bank is a financial institution accepts deposits from public
                 and creates credit. For all of your needs.
-              </div>
+              </p>
               <div class="btn__container">
                 <a href="#" class="btn inform__btn btn_blue">Read More</a>
                 <a href="#contact" class="btn inform__btn btn_green"
@@ -99,11 +109,11 @@
                 width="53"
               />
               <div class="item__title">Certificate</div>
-              <div class="item__subtitle">
+              <p class="item__subtitle">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod.A bank is a financial institution accepts deposits from
                 public and creates credit.
-              </div>
+              </p>
             </div>
             <div class="shoose__item-wrap item">
               <img
@@ -113,10 +123,10 @@
                 width="53"
               />
               <div class="item__title">Life Programs</div>
-              <div class="item__subtitle">
+              <p class="item__subtitle">
                 Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed
                 institution accepts deposits from public
-              </div>
+              </p>
             </div>
             <div class="shoose__item-wrap item">
               <img
@@ -126,11 +136,11 @@
                 width="53"
               />
               <div class="item__title">Affordability</div>
-              <div class="item__subtitle">
+              <p class="item__subtitle">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. A
                 bank is a financial institution accepts deposits from public and
                 creates credit.
-              </div>
+              </p>
             </div>
             <div class="shoose__item-wrap item">
               <img
@@ -140,10 +150,10 @@
                 width="53"
               />
               <div class="item__title">Social</div>
-              <div class="item__subtitle">
+              <p class="item__subtitle">
                 A bank is a financial institution accepts deposits from public
                 and creates credit.
-              </div>
+              </p>
             </div>
           </div>
         </div>
@@ -157,7 +167,9 @@
             <h2 class="text-top__title courses__title">2000+ Online courses</h2>
           </div>
           <div class="courses__wrapper">
-            <div class="slider-btn slider-btn_left shoose__slider-btn"></div>
+            <button
+              class="slider-btn slider-btn_left shoose__slider-btn"
+            ></button>
             <div class="courses__item price-item">
               <img
                 src="img/courses/persone/first.jpg"
@@ -310,7 +322,9 @@
                 </div>
               </div>
             </div>
-            <div class="slider-btn slider-btn_right shoose__slider-btn"></div>
+            <button
+              class="slider-btn slider-btn_right shoose__slider-btn"
+            ></button>
           </div>
         </div>
       </section>
@@ -337,12 +351,12 @@
               </div>
               <h2 class="text-top__title description__title">Take a tour</h2>
             </div>
-            <div class="description__text">
+            <p class="description__text">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque Laudantium, totam rem aperiam, eaque ipsa
               quae ab illo inventore veritatis et quasi architecto beatae vitae
               dicta sunt explicabo.
-            </div>
+            </p>
             <ul class="description__item-list item-list">
               <li class="item-list_elem description__elem">
                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
@@ -539,7 +553,9 @@
             </div>
           </div>
           <div class="prefer__container">
-            <div class="slider-btn slider-btn_left prefer__slider-btn"></div>
+            <button
+              class="slider-btn slider-btn_left prefer__slider-btn"
+            ></button>
             <div class="prefer__item">
               <div class="prefer__overlay prefer__overlay_blue"></div>
               <div class="prefer__name">Graphic Design</div>
@@ -558,7 +574,9 @@
               <div class="prefer__overlay prefer__overlay_red"></div>
               <div class="prefer__name">Education</div>
             </div>
-            <div class="slider-btn slider-btn_right prefer__slider-btn"></div>
+            <button
+              class="slider-btn slider-btn_right prefer__slider-btn"
+            ></button>
           </div>
         </div>
       </section>
@@ -585,21 +603,21 @@
                 class="customer__icon"
                 width="39"
               />
-              <div class="customers__text">
+              <p class="customers__text">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque <br />
                 <br />
                 Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
                 veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </div>
+              </p>
               <div class="customers__name">Stephanie Magion</div>
               <div class="customers__dots">
-                <span class="customers__dot"></span>
-                <span class="customers__dot"></span>
-                <span class="customers__dot customers__dot_active"></span>
-                <span class="customers__dot"></span>
-                <span class="customers__dot"></span>
-                <span class="customers__dot"></span>
+                <div class="customers__dot"></div>
+                <div class="customers__dot"></div>
+                <div class="customers__dot customers__dot_active"></div>
+                <div class="customers__dot"></div>
+                <div class="customers__dot"></div>
+                <div class="customers__dot"></div>
               </div>
             </div>
           </div>
@@ -623,7 +641,9 @@
             </div>
             <div class="btn__container">
               <a href="#contact" class="btn start__btn btn_green">Apply Now</a>
-              <a class="btn start__btn btn_transporent"> Request Service </a>
+              <a href="#" class="btn start__btn btn_transporent">
+                Request Service
+              </a>
             </div>
           </div>
           <div class="start__link-wrap">
@@ -715,7 +735,7 @@
                 <div class="blog__text">
                   International Conferenceon Bussiness
                 </div>
-                <div class="blog__more">Read Now</div>
+                <a href="" class="blog__more">Read Now</a>
               </div>
             </div>
             <div class="blog__item">
@@ -738,7 +758,7 @@
                 <div class="blog__text">
                   International Conferenceon Bussiness
                 </div>
-                <div class="blog__more">Read Now</div>
+                <a href="#" class="blog__more">Read Now</a>
               </div>
             </div>
             <ul class="blog__list item-list">
@@ -766,103 +786,101 @@
         <div class="container">
           <div class="footer__top-wrap">
             <img src="img/logo.svg" alt="logo" class="footer__img" />
-            <ul class="footer__list list-item">
-              <li class="list-item__elem footer__elem list-item_border">
-                Company
-              </li>
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">About Company</a>
-              </li>
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">Feature Course</a>
-              </li>
+            <div class="footer__list-wrap">
+              <h3 class="footer__elem footer__title">Company</h3>
+              <ul class="footer__list list-item">
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">About Company</a>
+                </li>
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">Feature Course</a>
+                </li>
 
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">Careers</a>
-              </li>
-            </ul>
-            <ul class="footer__list list-item">
-              <li class="list-item__elem footer__elem list-item_border">
-                Help Links
-              </li>
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">Student Support</a>
-              </li>
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">Student Support</a>
-              </li>
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">Careers</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__list-wrap">
+              <h3 class="footer__elem footer__title">Help Links</h3>
+              <ul class="footer__list list-item">
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">Student Support</a>
+                </li>
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">Student Support</a>
+                </li>
 
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">Register Key</a>
-              </li>
-            </ul>
-            <ul class="footer__list list-item">
-              <li class="list-item__elem footer__elem list-item_border">
-                Course
-              </li>
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">Wordpres</a>
-              </li>
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">Photography</a>
-              </li>
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">Register Key</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__list-wrap">
+              <h3 class="footer__elem footer__title">Course</h3>
+              <ul class="footer__list list-item">
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">Wordpres</a>
+                </li>
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">Photography</a>
+                </li>
 
-              <li class="list-item__elem footer__elem list-item_border">
-                <a href="">Learning English</a>
-              </li>
-            </ul>
-            <ul class="footer__list list-item">
-              <li
-                class="list-item__elem footer__elem list-item_border list-item_black"
-              >
-                Social Media
-              </li>
-              <li class="list-item__elem footer__elem">
-                <a class="footer__elem-facebook" href=""
-                  ><img
-                    src="img/footer/facebook.svg"
-                    alt="facebook"
-                    class="footer__elem-img"
-                    width="24" /></a
-                ><a class="footer__elem-instagram" href=""
-                  ><img
-                    src="img/footer/instagram.svg"
-                    alt="instagram"
-                    class="footer__elem-img"
-                    width="24" /></a
-                ><a class="footer__elem-twitter" href=""
-                  ><img
-                    src="img/footer/twitter.svg"
-                    alt="twitter"
-                    class="footer__elem-img"
-                    width="24" /></a
-                ><a class="footer__elem-youtube" href=""
-                  ><img
-                    src="img/footer/youtube.svg"
-                    alt="youtube"
-                    class="footer__elem-img"
-                    width="24"
-                /></a>
-              </li>
-            </ul>
+                <li class="list-item__elem footer__elem list-item_border">
+                  <a href="#">Learning English</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__list-wrap">
+              <h3 class="footer__elem footer__title">Social Media</h3>
+              <ul class="footer__list list-item">
+                <li class="list-item__elem footer__elem">
+                  <a class="footer__elem-facebook" href="#"
+                    ><img
+                      src="img/footer/facebook.svg"
+                      alt="facebook"
+                      class="footer__elem-img"
+                      width="24" /></a
+                  ><a class="footer__elem-instagram" href="#"
+                    ><img
+                      src="img/footer/instagram.svg"
+                      alt="instagram"
+                      class="footer__elem-img"
+                      width="24" /></a
+                  ><a class="footer__elem-twitter" href="#"
+                    ><img
+                      src="img/footer/twitter.svg"
+                      alt="twitter"
+                      class="footer__elem-img"
+                      width="24" /></a
+                  ><a class="footer__elem-youtube" href="#"
+                    ><img
+                      src="img/footer/youtube.svg"
+                      alt="youtube"
+                      class="footer__elem-img"
+                      width="24"
+                  /></a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="footer__bottom-wrap footer__bottom_text">
             <div class="footer__rights">All rights Reserved</div>
             <ul class="footer__list list-item footer__list_bottom">
               <li class="footer__list list-item">
-                <a href="" class="footer__list-link">About company</a>
+                <a href="#" class="footer__list-link">About company</a>
               </li>
               <li class="footer__list list-item">
-                <a href="" class="footer__list-link">Privacy Policy</a>
+                <a href="#" class="footer__list-link">Privacy Policy</a>
               </li>
               <li class="footer__list list-item">
-                <a href="" class="footer__list-link">Help Center</a>
+                <a href="#" class="footer__list-link">Help Center</a>
               </li>
               <li class="footer__list list-item">
-                <a href="" class="footer__list-link">Terms</a>
+                <a href="#" class="footer__list-link">Terms</a>
               </li>
               <li class="footer__list list-item">
-                <a href="" class="footer__list-link">Site map</a>
+                <a href="#" class="footer__list-link">Site map</a>
               </li>
             </ul>
           </div>
