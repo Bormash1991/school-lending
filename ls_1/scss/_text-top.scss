@@ -1,0 +1,19 @@
+@import "colors";
+.text-top {
+  &__title {
+    margin-right: 24px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.38;
+  }
+  &__wrap {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__line {
+    width: 60px;
+    height: 2px;
+    background-color: $blue;
+    margin-bottom: 9px;
+  }
+}

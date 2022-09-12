@@ -1,0 +1,57 @@
+@import "colors";
+.header {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 14px 27px;
+  }
+  &__back {
+    position: absolute;
+    height: 314px;
+    z-index: -1;
+    right: 0;
+    &-one {
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    display: none;
+  }
+  &__humburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 15px;
+
+    &-item {
+      width: 24px;
+      display: block;
+      background-color: $blue;
+      height: 3px;
+      margin-top: 4px;
+      //   border: 2px solid $blue;
+      border-radius: 20px;
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+    }
+  }
+  // &__btn {
+  //   width: 96px;
+  //   height: 40px;
+  // }
+  &__logo {
+    &-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-img {
+      height: 24px;
+      width: 53.12px;
+      fill: $blue;
+    }
+  }
+}

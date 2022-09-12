@@ -1,0 +1,30 @@
+.inform {
+  padding: 0 24px 40px 24px;
+  background: url("../img/jointBackground/union.png") center 33% no-repeat
+    no-repeat;
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    font-size: 36px;
+    margin-top: 22px;
+    line-height: 1.22;
+    font-weight: 700;
+  }
+  &__subtitle {
+    margin-top: 32px;
+    font-size: 14px;
+    line-height: 1.57;
+   
+  }
+  &__buttons {
+    margin-top: 40px;
+  }
+  &__companies {
+    margin-top: 40px;
+  }
+}

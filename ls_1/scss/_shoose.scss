@@ -1,0 +1,19 @@
+.shoose {
+  &__container {
+    padding: 40px 24px;
+  }
+  &__wrapper {
+    &-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  //   &__title {
+  //     margin-bottom: 56px;
+  //   }
+  &__text-top {
+    margin-bottom: 56px;
+  }
+}

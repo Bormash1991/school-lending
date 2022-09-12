@@ -5,16 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lutsenko Bohdan</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="import" href="/ls_1/footer.html" /> -->
   </head>
   <body>
     <header class="header">
-      <div class="container header__container">
-        <img
-          src="img/logo.svg"
-          width="53"
-          alt="logo"
-          class="header__logo-img"
-        />
+      <img
+        src="img/inform/VectorOne.png"
+        class="header__back-one header__back"
+      />
+      <img
+        src="img/inform/VectorTwo.png"
+        class="header__back-two header__back"
+      />
+      <div class="header__container">
+        <div class="header__logo-wrap">
+          <div class="header__humburger">
+            <span class="header__humburger-item"></span
+            ><span class="header__humburger-item"></span
+            ><span class="header__humburger-item"></span>
+          </div>
+          <svg class="header__logo-img">
+            <use href="img/sprite.svg#icon-logo"></use>
+          </svg>
+          <!-- <img
+            src="img/logo.svg"
+            width="53"
+            alt="logo"
+            class="header__logo-img"
+          /> -->
+        </div>
         <nav class="header__nav">
           <ul class="header__list item-list">
             <li class="header__elem item-list__elem">
@@ -30,125 +50,142 @@
               <a href="#prefer" class="header__link">Degrees</a>
             </li>
           </ul>
-          <button class="btn btn_blue">Explore</button>
         </nav>
+        <button class="btn btn_blue header__btn">Explore</button>
       </div>
     </header>
     <main class="main">
       <section class="inform">
-        <div class="container">
-          <div class="inform__container flex">
-            <div class="text-block inform__block">
-              <h1 class="text-block__title infrom__title">
-                Education is the most powerfull weapon
-              </h1>
-              <p class="text-block__subtitle inform__subtitle">
-                A bank is a financial institution accepts deposits from public
-                and creates credit. For all of your needs.
-              </p>
-              <div class="btn__container">
-                <a href="#" class="btn inform__btn btn_blue">Read More</a>
-                <a href="#contact" class="btn inform__btn btn_green"
-                  >Get started</a
-                >
-              </div>
+        <div class="inform__container flex">
+          <div class="text-block inform__block">
+            <h1 class="text-block__title inform__title">
+              Education is the most powerfull weapon
+            </h1>
+            <p class="text-block__subtitle inform__subtitle">
+              A bank is a financial institution accepts deposits from public and
+              creates credit. For all of your needs.
+            </p>
+            <div class="btn__container inform__buttons">
+              <a href="#" class="btn inform__btn btn_blue">Read More</a>
+              <a href="#contact" class="btn inform__btn btn_green"
+                >Get started</a
+              >
             </div>
-            <img
-              class="inform__img"
-              width="403"
-              src="img/inform/person.png"
-              alt="person"
-            />
           </div>
-          <div class="inform__companies companies flex">
-            <img
-              src="img/inform/companies/youfone.png"
-              alt="youfone"
-              class="companies__item"
-              width="155"
-            />
-            <img
-              src="img/inform/companies/nice.png"
-              alt="nice"
-              class="companies__item"
-              width="97"
-            />
-            <img
-              src="img/inform/companies/swishfund.png"
-              alt="swishfund"
-              class="companies__item"
-              width="135"
-            />
-            <img
-              src="img/inform/companies/brico.png"
-              alt="brico"
-              class="companies__item"
-              width="91"
-            />
-            <img
-              src="img/inform/companies/praxis.png"
-              alt="praxis"
-              class="companies__item"
-              width="102"
-            />
-          </div>
+          <img
+            class="inform__img"
+            width="403"
+            src="img/inform/person.png"
+            alt="person"
+          />
+        </div>
+        <div class="inform__companies companies flex">
+          <img
+            src="img/inform/companies/youfone.png"
+            alt="youfone"
+            class="companies__item"
+            width="155"
+          />
+          <img
+            src="img/inform/companies/nice.png"
+            alt="nice"
+            class="companies__item"
+            width="97"
+          />
+          <img
+            src="img/inform/companies/swishfund.png"
+            alt="swishfund"
+            class="companies__item"
+            width="135"
+          />
+          <img
+            src="img/inform/companies/brico.png"
+            alt="brico"
+            class="companies__item"
+            width="91"
+            height="40"
+          />
+          <img
+            src="img/inform/companies/praxis.png"
+            alt="praxis"
+            class="companies__item"
+            width="101"
+            height="40"
+          />
         </div>
       </section>
       <section id="shoose" class="shoose">
-        <div class="container">
-          <div class="text-top">
-            <h2 class="text-top__title shoose__title">Shy shoose us?</h2>
-            <!-- <div class="text-top__line "></div> -->
+        <div class="shoose__container">
+          <div class="text-top shoose__text-top">
+            <div class="text-top__wrap">
+              <h2 class="text-top__title shoose__title">Shy shoose us?</h2>
+              <div class="text-top__line"></div>
+            </div>
           </div>
-          <div class="schoose__container-item flex">
+          <div class="shoose__wrapper-item flex">
             <div class="shoose__item-wrap item">
-              <img
-                src="img/shoose/document.svg"
-                alt="document"
-                class="item__img"
-                width="53"
-              />
+              <svg width="54" height="53">
+                <use
+                  class="item__img"
+                  href="./img/sprite.svg#icon-document"
+                ></use>
+              </svg>
+
               <div class="item__title">Certificate</div>
               <p class="item__subtitle">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod.A bank is a financial institution accepts deposits from
-                public and creates credit.
+                eiusmod.
               </p>
             </div>
             <div class="shoose__item-wrap item">
-              <img
-                src="img/shoose/compass.svg"
+              <svg width="39" height="53">
+                <use
+                  class="item__img"
+                  href="./img/sprite.svg#icon-compass"
+                ></use>
+              </svg>
+              <!-- <img
+               src="img/shoose/compass.svg"
                 alt="compass"
                 class="item__img"
                 width="53"
-              />
+              /> -->
+
               <div class="item__title">Life Programs</div>
               <p class="item__subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed
-                institution accepts deposits from public
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod.
               </p>
             </div>
             <div class="shoose__item-wrap item">
-              <img
+              <svg width="44" height="54">
+                <use
+                  class="item__img"
+                  href="./img/sprite.svg#icon-microscope"
+                ></use>
+              </svg>
+              <!-- <img
                 src="img/shoose/microscope.svg"
                 alt="microscope"
                 class="item__img"
                 width="53"
-              />
+              /> -->
               <div class="item__title">Affordability</div>
               <p class="item__subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. A
-                bank is a financial institution accepts deposits from public and
-                creates credit.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod.
               </p>
             </div>
             <div class="shoose__item-wrap item">
-              <img
+              <svg width="39" height="53">
+                <use class="item__img" href="./img/sprite.svg#icon-book"></use>
+              </svg>
+              <!-- <img
                 src="img/shoose/book.svg"
                 alt="book"
                 class="item__img"
                 width="53"
-              />
+              /> -->
               <div class="item__title">Social</div>
               <p class="item__subtitle">
                 A bank is a financial institution accepts deposits from public
@@ -782,110 +819,115 @@
           </form>
         </div>
       </section>
-      <footer class="footer">
-        <div class="container">
-          <div class="footer__top-wrap">
-            <img src="img/logo.svg" alt="logo" class="footer__img" />
-            <div class="footer__list-wrap">
-              <h3 class="footer__elem footer__title">Company</h3>
-              <ul class="footer__list list-item">
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">About Company</a>
-                </li>
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">Feature Course</a>
-                </li>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top-wrap">
+          <img src="img/logo.svg" alt="logo" class="footer__img" />
+          <div class="footer__list-wrap">
+            <h3 class="footer__elem footer__title">Company</h3>
+            <ul class="footer__list list-item">
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">About Company</a>
+              </li>
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">Feature Course</a>
+              </li>
 
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">Careers</a>
-                </li>
-              </ul>
-            </div>
-            <div class="footer__list-wrap">
-              <h3 class="footer__elem footer__title">Help Links</h3>
-              <ul class="footer__list list-item">
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">Student Support</a>
-                </li>
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">Student Support</a>
-                </li>
-
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">Register Key</a>
-                </li>
-              </ul>
-            </div>
-            <div class="footer__list-wrap">
-              <h3 class="footer__elem footer__title">Course</h3>
-              <ul class="footer__list list-item">
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">Wordpres</a>
-                </li>
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">Photography</a>
-                </li>
-
-                <li class="list-item__elem footer__elem list-item_border">
-                  <a href="#">Learning English</a>
-                </li>
-              </ul>
-            </div>
-            <div class="footer__list-wrap">
-              <h3 class="footer__elem footer__title">Social Media</h3>
-              <ul class="footer__list list-item">
-                <li class="list-item__elem footer__elem">
-                  <a class="footer__elem-facebook" href="#"
-                    ><img
-                      src="img/footer/facebook.svg"
-                      alt="facebook"
-                      class="footer__elem-img"
-                      width="24" /></a
-                  ><a class="footer__elem-instagram" href="#"
-                    ><img
-                      src="img/footer/instagram.svg"
-                      alt="instagram"
-                      class="footer__elem-img"
-                      width="24" /></a
-                  ><a class="footer__elem-twitter" href="#"
-                    ><img
-                      src="img/footer/twitter.svg"
-                      alt="twitter"
-                      class="footer__elem-img"
-                      width="24" /></a
-                  ><a class="footer__elem-youtube" href="#"
-                    ><img
-                      src="img/footer/youtube.svg"
-                      alt="youtube"
-                      class="footer__elem-img"
-                      width="24"
-                  /></a>
-                </li>
-              </ul>
-            </div>
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">Careers</a>
+              </li>
+            </ul>
           </div>
-          <div class="footer__bottom-wrap footer__bottom_text">
-            <div class="footer__rights">All rights Reserved</div>
-            <ul class="footer__list list-item footer__list_bottom">
-              <li class="footer__list list-item">
-                <a href="#" class="footer__list-link">About company</a>
+          <div class="footer__list-wrap">
+            <h3 class="footer__elem footer__title">Help Links</h3>
+            <ul class="footer__list list-item">
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">Student Support</a>
               </li>
-              <li class="footer__list list-item">
-                <a href="#" class="footer__list-link">Privacy Policy</a>
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">Student Support</a>
               </li>
-              <li class="footer__list list-item">
-                <a href="#" class="footer__list-link">Help Center</a>
+
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">Register Key</a>
               </li>
-              <li class="footer__list list-item">
-                <a href="#" class="footer__list-link">Terms</a>
+            </ul>
+          </div>
+          <div class="footer__list-wrap">
+            <h3 class="footer__elem footer__title">Course</h3>
+            <ul class="footer__list list-item">
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">Wordpres</a>
               </li>
-              <li class="footer__list list-item">
-                <a href="#" class="footer__list-link">Site map</a>
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">Photography</a>
+              </li>
+
+              <li class="list-item__elem footer__elem list-item_border">
+                <a href="#">Learning English</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__list-wrap">
+            <h3 class="footer__elem footer__title">Social Media</h3>
+            <ul class="footer__list list-item">
+              <li class="list-item__elem footer__elem">
+                <a class="footer__elem-facebook" href="#"
+                  ><img
+                    src="img/footer/facebook.svg"
+                    alt="facebook"
+                    class="footer__elem-img"
+                    width="24" /></a
+                ><a class="footer__elem-instagram" href="#"
+                  ><img
+                    src="img/footer/instagram.svg"
+                    alt="instagram"
+                    class="footer__elem-img"
+                    width="24" /></a
+                ><a class="footer__elem-twitter" href="#"
+                  ><img
+                    src="img/footer/twitter.svg"
+                    alt="twitter"
+                    class="footer__elem-img"
+                    width="24" /></a
+                ><a class="footer__elem-youtube" href="#"
+                  ><img
+                    src="img/footer/youtube.svg"
+                    alt="youtube"
+                    class="footer__elem-img"
+                    width="24"
+                /></a>
               </li>
             </ul>
           </div>
         </div>
-      </footer>
-    </main>
+        <div class="footer__bottom-wrap footer__bottom_text">
+          <div class="footer__rights">All rights Reserved</div>
+          <ul class="footer__list list-item footer__list_bottom">
+            <li class="footer__list list-item">
+              <a href="#" class="footer__list-link">About company</a>
+            </li>
+            <li class="footer__list list-item">
+              <a href="#" class="footer__list-link">Privacy Policy</a>
+            </li>
+            <li class="footer__list list-item">
+              <a href="#" class="footer__list-link">Help Center</a>
+            </li>
+            <li class="footer__list list-item">
+              <a href="#" class="footer__list-link">Terms</a>
+            </li>
+            <li class="footer__list list-item">
+              <a href="#" class="footer__list-link">Site map</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- <script>
+      var elements = document.querySelector('link[rel="import"]');
+      var footer = elements.import.querySelector("footer");
+      document.body.appendChild(footer.cloneNode(true));
+    </script> -->
   </body>
 </html>
