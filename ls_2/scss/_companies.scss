@@ -1,0 +1,13 @@
+.companies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &__item {
+    &:nth-child(1) {
+      margin-bottom: 16px;
+    }
+    &:nth-child(2) {
+      margin-bottom: 16px;
+    }
+  }
+}

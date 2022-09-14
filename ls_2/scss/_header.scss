@@ -1,16 +1,17 @@
-@import "colors";
 .header {
+  position: relative;
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 24px 14px 27px;
+    padding: 24px 0 14px 0px;
   }
   &__back {
     position: absolute;
+    right: 0;
     height: 314px;
     z-index: -1;
-    right: 0;
+
     &-one {
       width: 100%;
     }
@@ -38,10 +39,7 @@
       }
     }
   }
-  // &__btn {
-  //   width: 96px;
-  //   height: 40px;
-  // }
+
   &__logo {
     &-wrap {
       display: flex;

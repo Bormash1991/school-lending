@@ -1,13 +1,41 @@
 @import "normalize";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 @import "container";
+@import "colors";
+@import "logo";
 @import "btn";
+@import "slider";
 @import "companies";
 @import "header";
 @import "inform";
 @import "item";
 @import "text-top";
 @import "shoose";
+@import "course";
+@import "price-item";
+@import "star";
+@import "item-list";
+@import "description";
+@import "events";
+@import "conference";
+@import "prefer";
+@import "blog";
+@import "form";
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_out-just {
+    display: flex;
+    align-items: center;
+  }
+  &_start {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+}
 * {
   font-family: "Montserrat", "Roboto", sans-serif;
 }
@@ -15,35 +43,42 @@
   font-family: "Montserrat";
   src: url("../assets/font/Montserrat-Bold.ttf");
   font-weight: 700;
+  font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/font/Montserrat-SemiBold.ttf");
   font-weight: 600;
+  font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/font/Montserrat-Medium.ttf");
   font-weight: 500;
+  font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/font/Montserrat-Regular.ttf");
   font-weight: 400;
+  font-style: normal;
 }
 @font-face {
   font-family: "Roboto";
   src: url("../assets/font/Roboto-Bold.ttf");
   font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto";
   src: url("../assets/font/Roboto-Medium.ttf");
   font-weight: 500;
+  font-style: normal;
 }
 @font-face {
   font-family: "Roboto";
   src: url("../assets/font/Roboto-Regular.ttf");
   font-weight: 400;
+  font-style: normal;
 }

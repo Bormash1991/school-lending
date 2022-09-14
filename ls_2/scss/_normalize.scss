@@ -8,6 +8,7 @@
 }
 
 /* Remove default margin */
+ul,
 svg,
 body,
 h1,
@@ -22,7 +23,11 @@ dd {
   margin: 0;
   padding: 0;
 }
-
+svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
@@ -47,7 +52,7 @@ a:not([class]) {
 }
 
 /* Make images easier to work with */
-svg,
+
 img,
 picture {
   max-width: 100%;
@@ -56,7 +61,9 @@ picture {
 svg {
   height: auto;
 }
-
+a {
+  outline: none;
+}
 /* Inherit fonts for inputs and buttons */
 input,
 button,

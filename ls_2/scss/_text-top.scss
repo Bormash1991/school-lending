@@ -1,0 +1,34 @@
+.text-top {
+  &__title {
+    margin-right: 24px;
+    max-width: 243px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.38;
+  }
+  &__wrap {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__line {
+    width: 60px;
+    height: 2px;
+    background-color: $blue;
+    margin-bottom: 11px;
+  }
+  &__subtitle {
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $blue;
+    margin-bottom: 6px;
+  }
+  &__text {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.57;
+    color: $gray;
+    text-align: center;
+  }
+}

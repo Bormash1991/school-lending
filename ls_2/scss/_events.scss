@@ -1,0 +1,24 @@
+.events {
+  padding-bottom: 50px;
+
+  &__container {
+    padding-top: 40px;
+    background-color: $gray-back;
+  }
+  &__item-list {
+    margin-top: 32px;
+    padding-bottom: 40px;
+  }
+  &__name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  &__elem {
+    border-bottom: 1px solid $opacity-gray;
+  }
+  &__conference {
+    background-color: #fff9f1;
+    position: relative;
+  }
+}

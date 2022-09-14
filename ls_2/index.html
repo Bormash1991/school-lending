@@ -10,112 +10,116 @@
   </head>
   <body>
     <header class="header">
-      <img
-        src="img/inform/VectorOne.png"
-        class="header__back-one header__back"
-      />
-      <img
-        src="img/inform/VectorTwo.png"
-        class="header__back-two header__back"
-      />
-      <div class="header__container">
-        <div class="header__logo-wrap">
-          <div class="header__humburger">
-            <span class="header__humburger-item"></span
-            ><span class="header__humburger-item"></span
-            ><span class="header__humburger-item"></span>
-          </div>
-          <svg class="header__logo-img">
-            <use href="img/sprite.svg#icon-logo"></use>
-          </svg>
-          <!-- <img
+      <div class="container">
+        <img
+          src="img/inform/VectorOne.png"
+          class="header__back-one header__back"
+        />
+        <img
+          src="img/inform/VectorTwo.png"
+          class="header__back-two header__back"
+        />
+        <div class="header__container">
+          <div class="header__logo-wrap">
+            <div class="header__humburger">
+              <span class="header__humburger-item"></span
+              ><span class="header__humburger-item"></span
+              ><span class="header__humburger-item"></span>
+            </div>
+            <svg class="logo header__logo-img">
+              <use href="img/sprite.svg#icon-logo"></use>
+            </svg>
+            <!-- <img
             src="img/logo.svg"
             width="53"
             alt="logo"
             class="header__logo-img"
           /> -->
+          </div>
+          <nav class="header__nav">
+            <ul class="header__list item-list">
+              <li class="header__elem item-list__elem">
+                <a href="#shoose" class="header__link">Categories</a>
+              </li>
+              <li class="header__elem item-list__elem">
+                <a href="#course" class="header__link">Course</a>
+              </li>
+              <li class="header__elem item-list__elem">
+                <a href="#description" class="header__link">Explore</a>
+              </li>
+              <li class="header__elem item-list__elem">
+                <a href="#prefer" class="header__link">Degrees</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="btn btn_blue header__btn">Explore</button>
         </div>
-        <nav class="header__nav">
-          <ul class="header__list item-list">
-            <li class="header__elem item-list__elem">
-              <a href="#shoose" class="header__link">Categories</a>
-            </li>
-            <li class="header__elem item-list__elem">
-              <a href="#course" class="header__link">Course</a>
-            </li>
-            <li class="header__elem item-list__elem">
-              <a href="#description" class="header__link">Explore</a>
-            </li>
-            <li class="header__elem item-list__elem">
-              <a href="#prefer" class="header__link">Degrees</a>
-            </li>
-          </ul>
-        </nav>
-        <button class="btn btn_blue header__btn">Explore</button>
       </div>
     </header>
     <main class="main">
       <section class="inform">
-        <div class="inform__container flex">
-          <div class="text-block inform__block">
-            <h1 class="text-block__title inform__title">
-              Education is the most powerfull weapon
-            </h1>
-            <p class="text-block__subtitle inform__subtitle">
-              A bank is a financial institution accepts deposits from public and
-              creates credit. For all of your needs.
-            </p>
-            <div class="btn__container inform__buttons">
-              <a href="#" class="btn inform__btn btn_blue">Read More</a>
-              <a href="#contact" class="btn inform__btn btn_green"
-                >Get started</a
-              >
+        <div class="container">
+          <div class="inform__container flex">
+            <div class="text-block inform__block">
+              <h1 class="text-block__title inform__title">
+                Education is the most powerfull weapon
+              </h1>
+              <p class="text-block__subtitle inform__subtitle">
+                A bank is a financial institution accepts deposits from public
+                and creates credit. For all of your needs.
+              </p>
+              <div class="btn__container inform__buttons">
+                <a href="#" class="btn inform__btn btn_blue">Read More</a>
+                <a href="#contact" class="btn inform__btn btn_green"
+                  >Get started</a
+                >
+              </div>
             </div>
+            <img
+              class="inform__img"
+              width="403"
+              src="img/inform/person.png"
+              alt="person"
+            />
           </div>
-          <img
-            class="inform__img"
-            width="403"
-            src="img/inform/person.png"
-            alt="person"
-          />
-        </div>
-        <div class="inform__companies companies flex">
-          <img
-            src="img/inform/companies/youfone.png"
-            alt="youfone"
-            class="companies__item"
-            width="155"
-          />
-          <img
-            src="img/inform/companies/nice.png"
-            alt="nice"
-            class="companies__item"
-            width="97"
-          />
-          <img
-            src="img/inform/companies/swishfund.png"
-            alt="swishfund"
-            class="companies__item"
-            width="135"
-          />
-          <img
-            src="img/inform/companies/brico.png"
-            alt="brico"
-            class="companies__item"
-            width="91"
-            height="40"
-          />
-          <img
-            src="img/inform/companies/praxis.png"
-            alt="praxis"
-            class="companies__item"
-            width="101"
-            height="40"
-          />
+          <div class="inform__companies companies flex_start">
+            <img
+              src="img/inform/companies/youfone.png"
+              alt="youfone"
+              class="companies__item"
+              width="155"
+            />
+            <img
+              src="img/inform/companies/nice.png"
+              alt="nice"
+              class="companies__item"
+              width="97"
+            />
+            <img
+              src="img/inform/companies/swishfund.png"
+              alt="swishfund"
+              class="companies__item"
+              width="135"
+            />
+            <img
+              src="img/inform/companies/brico.png"
+              alt="brico"
+              class="companies__item"
+              width="91"
+              height="40"
+            />
+            <img
+              src="img/inform/companies/praxis.png"
+              alt="praxis"
+              class="companies__item"
+              width="101"
+              height="40"
+            />
+          </div>
         </div>
       </section>
       <section id="shoose" class="shoose">
-        <div class="shoose__container">
+        <div class="container">
           <div class="text-top shoose__text-top">
             <div class="text-top__wrap">
               <h2 class="text-top__title shoose__title">Shy shoose us?</h2>
@@ -195,21 +199,26 @@
           </div>
         </div>
       </section>
-      <section id="course" class="courses">
+      <section id="course" class="course">
         <div class="container">
           <div class="text-top">
-            <div class="text-top__subtitle courses__subtitle">
-              MOST POPULAR COURSES
+            <div class="text-top__subtitle course__subtitle">
+              MOST POPULAR course
             </div>
-            <h2 class="text-top__title courses__title">2000+ Online courses</h2>
+            <h2 class="text-top__title course__title">2000+ Online course</h2>
           </div>
-          <div class="courses__wrapper">
+          <div class="course__wrapper">
             <button
-              class="slider-btn slider-btn_left shoose__slider-btn"
-            ></button>
-            <div class="courses__item price-item">
+              class="slider-btn slider-btn_left course__slider-btn course__slider-btn_left"
+            >
+              <svg class="slider-btn__img slider-btn__img-left">
+                <use href="./img/sprite.svg#icon-left" width="10"></use>
+              </svg>
+            </button>
+            <div class="course__item course__item_first price-item">
+              <div class="price-item__overlay"></div>
               <img
-                src="img/courses/persone/first.jpg"
+                src="img/course/persone/first.jpg"
                 alt="person"
                 class="price-item__img"
                 width="48"
@@ -220,46 +229,47 @@
               <div class="price-item__bottom-wrap">
                 <div class="price-item__price-wrap">
                   <div class="price-item__price">$260</div>
-                  <div class="price-item__old-price">$360</div>
+                  <div class="price-item__price-old">$360</div>
                 </div>
                 <div class="price-item__star-wrap star-wrap">
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/empty-star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
+
                   <div class="star-wrap__text">(4)</div>
                 </div>
               </div>
             </div>
-            <div class="courses__item price-item">
+            <div class="course__item course__item_second price-item">
               <img
-                src="img/courses/persone/second.jpg"
+                src="img/course/persone/second.jpg"
                 alt="person"
                 class="price-item__img"
                 width="48"
@@ -272,35 +282,35 @@
               <div class="price-item__bottom-wrap">
                 <div class="price-item__price-wrap">
                   <div class="price-item__price">$260</div>
-                  <div class="price-item__old-price">$360</div>
+                  <div class="price-item__price-old">$360</div>
                 </div>
                 <div class="price-item__star-wrap star-wrap">
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
@@ -309,9 +319,9 @@
                 </div>
               </div>
             </div>
-            <div class="courses__item price-item">
+            <div class="course__item course__item_third price-item">
               <img
-                src="img/courses/persone/third.jpg"
+                src="img/course/persone/third.jpg"
                 alt="person"
                 class="price-item__img"
                 width="48"
@@ -322,35 +332,35 @@
               <div class="price-item__bottom-wrap">
                 <div class="price-item__price-wrap">
                   <div class="price-item__price">$260</div>
-                  <div class="price-item__old-price">$360</div>
+                  <div class="price-item__price-old">$360</div>
                 </div>
                 <div class="price-item__star-wrap star-wrap">
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="img/courses/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
@@ -360,8 +370,12 @@
               </div>
             </div>
             <button
-              class="slider-btn slider-btn_right shoose__slider-btn"
-            ></button>
+              class="slider-btn slider-btn_right shoose__slider-btn course__slider-btn_right"
+            >
+              <svg class="slider-btn__img slider-btn__img-right">
+                <use href="./img/sprite.svg#icon-right" width="10"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -374,37 +388,42 @@
               class="description__img"
               width="700"
             />
-            <img
-              src="img/play/play.svg"
-              alt="play"
-              class="description__play-img"
-              width="14"
-            />
+            <div class="description__play">
+              <svg class="description__play-img" width="14" height="18">
+                <use href="./img/sprite.svg#icon-vector"></use>
+              </svg>
+            </div>
           </div>
-          <div class="description__block">
+          <div class="description__block container">
             <div class="text-top">
               <div class="text-top__subtitle description__subtitle">
                 UNIVERSOTY DESCRIPTION
               </div>
-              <h2 class="text-top__title description__title">Take a tour</h2>
+              <div class="text-top__wrap">
+                <h2 class="text-top__title description__title">Take a tour</h2>
+                <div class="text-top__line"></div>
+              </div>
             </div>
-            <p class="description__text">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque Laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
-            </p>
-            <ul class="description__item-list item-list">
-              <li class="item-list_elem description__elem">
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                consectetur
-              </li>
-              <li class="item-list_elem description__elem">
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam
-                corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-                consequatur?
-              </li>
-            </ul>
+            <div class="description__text-wrap">
+              <p class="description__text">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque <br />
+                <br />
+                Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              </p>
+              <ul class="description__item-list item-list">
+                <li class="item-list_elem description__elem">
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet, consectetur
+                </li>
+                <li class="item-list_elem description__elem">
+                  Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                  corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                  consequatur?
+                </li>
+              </ul>
+            </div>
             <button class="btn description__btn btn_blue">Read More</button>
           </div>
         </div>
@@ -413,9 +432,14 @@
       </section>
       <section class="events">
         <div class="events__container">
-          <div class="events__timetable">
+          <div class="events__timetable container">
             <div class="text-top">
-              <h2 class="text-top__title events__title">Why shoose us?</h2>
+              <div class="text-top__wrap">
+                <h2 class="text-top__title description__title">
+                  Why shoose us?
+                </h2>
+                <div class="text-top__line"></div>
+              </div>
             </div>
             <ul class="events__item-list item-list">
               <li class="events__elem item-list__elem">
@@ -423,30 +447,25 @@
                   International Conference on Bussiness
                 </div>
                 <div class="item-list__container">
-                  <div class="item-list__date">
-                    <img
-                      class="item-list__img"
-                      src="img/events/calendar.svg"
-                      alt="calendar"
-                      width="20"
-                    />
+                  <div class="item-list__date item-list_flex">
+                    <svg class="item-list__img calendar">
+                      <use href="./img/sprite.svg#icon-calendar"></use>
+                    </svg>
+
                     July 8, 2018
                   </div>
-                  <div class="item-list__time">
-                    <img
-                      class="item-list__img"
-                      src="img/events/clock.svg"
-                      alt="clock"
-                      width="20"
-                    />5:00pm - 7:00pm
+                  <div class="item-list__time item-list_flex">
+                    <svg class="item-list__img clock">
+                      <use href="./img/sprite.svg#icon-clock"></use>
+                    </svg>
+
+                    5:00pm - 7:00pm
                   </div>
-                  <div class="item-list__city">
-                    <img
-                      class="item-list__img"
-                      src="img/events/map.svg"
-                      alt="map"
-                      width="20"
-                    />United States
+                  <div class="item-list__city item-list_flex">
+                    <svg class="item-list__img map">
+                      <use href="./img/sprite.svg#icon-map"></use>
+                    </svg>
+                    United States
                   </div>
                 </div>
               </li>
@@ -455,30 +474,23 @@
                   International Conference on Bussiness
                 </div>
                 <div class="item-list__container">
-                  <div class="item-list__date">
-                    <img
-                      class="item-list__img"
-                      src="img/events/calendar.svg"
-                      alt="calendar"
-                      width="20"
-                    />
+                  <div class="item-list__date item-list_flex">
+                    <svg class="item-list__img calendar">
+                      <use href="./img/sprite.svg#icon-calendar"></use>
+                    </svg>
                     July 8, 2018
                   </div>
-                  <div class="item-list__time">
-                    <img
-                      class="item-list__img"
-                      src="img/events/clock.svg"
-                      alt="clock"
-                      width="20"
-                    />5:00pm - 7:00pm
+                  <div class="item-list__time item-list_flex">
+                    <svg class="item-list__img clock">
+                      <use href="./img/sprite.svg#icon-clock"></use>
+                    </svg>
+                    5:00pm - 7:00pm
                   </div>
-                  <div class="item-list__city">
-                    <img
-                      class="item-list__img"
-                      src="img/events/map.svg"
-                      alt="map"
-                      width="20"
-                    />United States
+                  <div class="item-list__city item-list_flex">
+                    <svg class="item-list__img map">
+                      <use href="./img/sprite.svg#icon-map"></use>
+                    </svg>
+                    United States
                   </div>
                 </div>
               </li>
@@ -487,87 +499,75 @@
                   International Conference on Bussiness
                 </div>
                 <div class="item-list__container">
-                  <div class="item-list__date">
-                    <img
-                      class="item-list__img"
-                      src="img/events/calendar.svg"
-                      alt="calendar"
-                      width="20"
-                    />
+                  <div class="item-list__date item-list_flex">
+                    <svg class="item-list__img calendar">
+                      <use href="./img/sprite.svg#icon-calendar"></use>
+                    </svg>
                     July 8, 2018
                   </div>
-                  <div class="item-list__time">
-                    <img
-                      class="item-list__img"
-                      src="img/events/clock.svg"
-                      alt="clock"
-                      width="20"
-                    />5:00pm - 7:00pm
+                  <div class="item-list__time item-list_flex">
+                    <svg class="item-list__img clock">
+                      <use href="./img/sprite.svg#icon-clock"></use>
+                    </svg>
+                    5:00pm - 7:00pm
                   </div>
-                  <div class="item-list__city">
-                    <img
-                      class="item-list__img"
-                      src="img/events/map.svg"
-                      alt="map"
-                      width="20"
-                    />United States
+                  <div class="item-list__city item-list_flex">
+                    <svg class="item-list__img map">
+                      <use href="./img/sprite.svg#icon-map"></use>
+                    </svg>
+                    United States
                   </div>
                 </div>
               </li>
             </ul>
           </div>
-          <div class="events__conference conference">
+          <div class="events__conference container conference">
             <div class="conference__title">FEATURED</div>
-            <div class="conference__wrap">
-              <div class="conference__days">
+            <div class="conference__wrap flex_out-just">
+              <div class="conference__days flex">
                 <div class="conference__numbers conference__numbers_blue">
                   $213
                 </div>
-                <span class="conferense__text">Days</span>
+                <span class="conference__text">Days</span>
               </div>
-              <div class="conference_hours">
+              <div class="conference__hours flex">
                 <div class="conference__numbers conference__numbers_yellow">
                   23
                 </div>
-                <span class="conferense__text">Hours</span>
+                <span class="conference__text">Hours</span>
               </div>
-              <div class="conference_min">
+              <div class="conference__min flex">
                 <div class="conference__numbers conference__numbers_red">
                   59
                 </div>
-                <span class="conferense__text">Min</span>
+                <span class="conference__text">Min</span>
               </div>
             </div>
             <div class="conference__content">
               <div class="conference__overlay">
                 <div class="conference__name">International Conference...</div>
                 <div class="item-list">
-                  <div class="item-list__container">
-                    <div class="item-list__date">
-                      <img
-                        class="item-list__img"
-                        src="img/events/calendar.svg"
-                        alt="calendar"
-                        width="20"
-                      />
+                  <div
+                    class="item-list__container item-list__container_white item-list__container_center"
+                  >
+                    <div class="item-list__date item-list_flex">
+                      <svg class="item-list__img item-list__img_white calendar">
+                        <use href="./img/sprite.svg#icon-calendar"></use>
+                      </svg>
                       July 8, 2018
                     </div>
-                    <div class="item-list__time">
-                      <img
-                        class="item-list__img"
-                        src="img/events/clock.svg"
-                        alt="clock"
-                        width="20"
-                      />5:00pm - 7:00pm
+                    <div class="item-list__time item-list_flex">
+                      <svg class="item-list__img item-list__img_white clock">
+                        <use href="./img/sprite.svg#icon-clock"></use>
+                      </svg>
+                      5pm - 7pm
                     </div>
-                  </div>
-                  <div class="item-list__city item__list_center">
-                    <img
-                      class="item-list__img"
-                      src="img/events/map.svg"
-                      alt="map"
-                      width="20"
-                    />United States
+                    <div class="item-list__city item-list_flex">
+                      <svg class="item-list__img item-list__img_white map">
+                        <use href="./img/sprite.svg#icon-map"></use>
+                      </svg>
+                      United States
+                    </div>
                   </div>
                 </div>
               </div>
@@ -581,39 +581,48 @@
       <section id="prefer" class="prefer">
         <div class="container">
           <div class="text-top">
-            <h2 class="text-top__title prefer__title">
-              Which one do you prefer?
-            </h2>
+            <div class="text-top__wrap">
+              <h2 class="text-top__title description__title">
+                Which one do you prefer?
+              </h2>
+              <div class="text-top__line"></div>
+            </div>
             <div class="text-top__text prefer__text">
               Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
               veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </div>
           </div>
           <div class="prefer__container">
-            <button
-              class="slider-btn slider-btn_left prefer__slider-btn"
-            ></button>
-            <div class="prefer__item">
-              <div class="prefer__overlay prefer__overlay_blue"></div>
-              <div class="prefer__name">Graphic Design</div>
-            </div>
-            <div class="prefer__item">
-              <div class="prefer__overlay prefer__overlay_yellow"></div>
-              <div class="prefer__name">Web Design</div>
-            </div>
+            <button class="slider-btn slider-btn_left prefer__slider-btn">
+              <svg class="slider-btn__img slider-btn__img-left">
+                <use href="./img/sprite.svg#icon-left" width="10"></use>
+              </svg>
+            </button>
+            <div class="prefer__item-box">
+              <div class="prefer__item flex">
+                <div class="prefer__overlay prefer__overlay_blue"></div>
+                <div class="prefer__name">Graphic Design</div>
+              </div>
+              <div class="prefer__item">
+                <div class="prefer__overlay prefer__overlay_yellow"></div>
+                <div class="prefer__name">Web Design</div>
+              </div>
 
-            <div class="prefer__item">
-              <div class="prefer__overlay prefer__overlay_violet"></div>
-              <div class="prefer__name">Marketing</div>
-            </div>
+              <div class="prefer__item">
+                <div class="prefer__overlay prefer__overlay_violet"></div>
+                <div class="prefer__name">Marketing</div>
+              </div>
 
-            <div class="prefer__item">
-              <div class="prefer__overlay prefer__overlay_red"></div>
-              <div class="prefer__name">Education</div>
+              <div class="prefer__item">
+                <div class="prefer__overlay prefer__overlay_red"></div>
+                <div class="prefer__name">Education</div>
+              </div>
             </div>
-            <button
-              class="slider-btn slider-btn_right prefer__slider-btn"
-            ></button>
+            <button class="slider-btn slider-btn_right prefer__slider-btn">
+              <svg class="slider-btn__img slider-btn__img-right">
+                <use href="./img/sprite.svg#icon-right" width="10"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -798,13 +807,22 @@
                 <a href="#" class="blog__more">Read Now</a>
               </div>
             </div>
-            <ul class="blog__list item-list">
-              <li class="blog__elem item-list_elem">1</li>
-              <li class="blog__elem item-list_elem">2</li>
-              <li class="blog__elem item-list_elem">3</li>
-              <li class="blog__elem item-list_elem">4</li>
-              <li class="blog__elem item-list_elem">5</li>
-              <li class="blog__elem item-list_elem">6</li>
+            <ul class="blog__list item-list flex">
+              <li class="blog__elem">
+                <button class="blog__btn">1</button>
+              </li>
+              <li class="blog__elem">
+                <button class="blog__btn">2</button>
+              </li>
+              <li class="blog__elem">
+                <button class="blog__btn blog__btn_active">3</button>
+              </li>
+              <li class="blog__elem">
+                <button class="blog__btn">4</button>
+              </li>
+              <li class="blog__elem">
+                <button class="blog__btn">5</button>
+              </li>
             </ul>
           </div>
         </div>
@@ -812,10 +830,25 @@
       <section id="contact" class="contact">
         <div class="container">
           <form action="#" class="form">
-            <input type="text" placeholder="Name Surname" />
-            <input type="tel" placeholder="Phone" />
-            <input type="email" placeholder="Enter your email..." />
-            <button type="submit">Send</button>
+            <input
+              class="form__input"
+              required
+              type="text"
+              placeholder="Name Surname"
+            />
+            <input
+              class="form__input"
+              required
+              type="tel"
+              placeholder="Phone"
+            />
+            <input
+              class="form__input"
+              required
+              type="email"
+              placeholder="Enter your email..."
+            />
+            <button class="btn btn_green" type="submit">Send</button>
           </form>
         </div>
       </section>

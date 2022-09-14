@@ -1,0 +1,49 @@
+.btn {
+  border: none;
+  max-height: 40px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33;
+  transition: 0.5s all;
+  color: white;
+  cursor: pointer;
+  &:first-child {
+    margin-right: 24px;
+  }
+  &_blue {
+    background-color: $blue;
+
+    &:hover {
+      background-color: #3d7fff;
+    }
+    &:active {
+      background-color: #175ee9;
+    }
+  }
+  &__container {
+    display: flex;
+  }
+  &_green {
+    background-color: $green;
+    color: black;
+    &:hover {
+      background-color: #c0ffe4;
+    }
+    &:active {
+      background-color: #83ebbf;
+    }
+  }
+  &_transporent {
+    border: 1px solid #ffffff;
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    &:active {
+      background: rgba(255, 255, 255, 0.15);
+      outline: 2px solid #ffffff;
+    }
+  }
+}
