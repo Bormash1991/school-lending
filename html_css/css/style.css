@@ -14,13 +14,22 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+button {
   margin: 0;
   padding: 0;
+}
+
+p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #5c5c5c;
 }
 
 svg {
@@ -45,6 +54,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  color: #5c5c5c;
 }
 
 /* A elements that don't have a class get default styles */
@@ -269,6 +279,7 @@ select {
   margin-top: 22px;
   line-height: 1.22;
   font-weight: 700;
+  color: black;
 }
 .inform__subtitle {
   margin-top: 32px;
@@ -303,6 +314,7 @@ select {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 600;
+  color: black;
 }
 .item__subtitle {
   text-align: center;
@@ -317,16 +329,18 @@ select {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.38;
+  color: black;
 }
 .text-top__wrap {
   display: flex;
   align-items: flex-end;
 }
-.text-top__line {
+.text-top__wrap::after {
+  content: "";
   width: 60px;
   height: 2px;
   background-color: #1b63f0;
-  margin-bottom: 11px;
+  margin-bottom: 10px;
 }
 .text-top__subtitle {
   font-size: 12px;
@@ -363,6 +377,7 @@ select {
 .course__title {
   text-align: center;
   margin: 0;
+  max-width: 100%;
 }
 .course__subtitle {
   text-align: center;
@@ -425,6 +440,7 @@ select {
   font-weight: 500;
   font-size: 12px;
   line-height: 1;
+  text-overflow: ellipsis;
 }
 .price-item__subtitle {
   font-weight: 600;
@@ -502,12 +518,6 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.item-list__elem {
-  padding-top: 40px;
-}
-.item-list__elem:first-child {
-  padding: 0;
 }
 .item-list__date {
   margin-right: 26px;
@@ -622,9 +632,14 @@ select {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
+  color: black;
 }
 .events__elem {
   border-bottom: 1px solid rgba(92, 92, 92, 0.1019607843);
+  margin-top: 40px;
+}
+.events__elem:first-child {
+  margin: 0;
 }
 .events__conference {
   background-color: #fff9f1;
@@ -689,11 +704,15 @@ select {
   background-color: rgba(0, 0, 0, 0.8);
 }
 .conference__name {
+  padding: 0 12px;
+  overflow: hidden;
+  white-space: nowrap;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
   color: #ffffff;
+  text-overflow: ellipsis;
 }
 .conference__btn {
   position: absolute;
@@ -744,6 +763,60 @@ select {
   background-color: rgba(101, 131, 255, 0.8);
 }
 
+.blog {
+  padding: 80px 0 40px 0;
+}
+.blog__item {
+  padding: 18px 0 24px 12px;
+  margin-bottom: 44px;
+  background-color: #d6fae7;
+  border-radius: 16px 16px 0px 16px;
+}
+.blog__item:last-child {
+  margin-bottom: 0;
+}
+.blog__item-wrap {
+  margin-top: 72px;
+}
+.blog__name {
+  margin-bottom: 46px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #5d74e4;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+.blog__left-wrap {
+  margin-right: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blog__person-img {
+  border-radius: 100%;
+  max-width: 48px;
+  height: 48px;
+}
+.blog__img {
+  height: 160px;
+  transform: translateY(-48px);
+}
+.blog__text {
+  margin-top: -24px;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+}
+.blog__more {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33;
+  text-decoration: none;
+  color: black;
+}
 .blog__list {
   font-weight: 600;
   font-size: 16px;
@@ -776,6 +849,141 @@ select {
 .blog__btn_active {
   border: 1px solid #64be97;
   box-shadow: 0px 4px 16px #e2edfb;
+}
+
+.customer {
+  padding: 40px 0 100.34px 0;
+  position: relative;
+  overflow: hidden;
+}
+.customer__wrapper {
+  position: relative;
+}
+.customer__img, .customer__square {
+  width: 273.03px;
+  height: 273.03px;
+  border-radius: 24px;
+}
+.customer__img {
+  transform: translate(53.97px, 46.03px);
+  background: url("../img/customer/people.jpg") center center/cover no-repeat;
+  z-index: 1;
+}
+.customer__square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #637af2;
+  z-index: -1;
+}
+.customer__all-wrap {
+  margin-top: 70.03px;
+}
+.customer__icon {
+  margin-top: 48px;
+}
+.customer__text {
+  margin-top: 32px;
+}
+.customer__name {
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33;
+  color: black;
+}
+.customer__dots {
+  margin-top: 60px;
+}
+.customer__dot {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 100%;
+  background-color: #bad1ff;
+  cursor: pointer;
+}
+.customer__dot_active {
+  background-color: #1b63f0;
+}
+.customer__dot:last-child {
+  margin-right: 0;
+}
+.customer__back {
+  position: absolute;
+}
+.customer__back-one {
+  width: 353px;
+  height: 361px;
+  left: -48px;
+  bottom: -9px;
+  z-index: -1;
+}
+.customer__back-two {
+  max-width: 546px;
+  height: 409px;
+  left: -76px;
+  bottom: -40px;
+  z-index: -2;
+}
+
+.start {
+  position: relative;
+  padding: 40px 0 40px 0;
+  background: url("../img/start/background/image.jpg") center center/cover no-repeat;
+  z-index: 1;
+}
+.start__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(69, 82, 156, 0.95);
+  z-index: -1;
+}
+.start__subtitle {
+  margin-bottom: 0;
+  font-weight: 700;
+  line-height: 1.33;
+  color: #ffffff;
+}
+.start__title {
+  max-width: 100%;
+  color: #64be97;
+  margin-top: 8px;
+}
+.start__text {
+  color: #ffffff;
+  margin-top: 24px;
+  text-align: left;
+}
+.start__btn-container {
+  margin-top: 44px;
+}
+.start__link-wrap {
+  margin-top: 56px;
+  color: #ffffff;
+}
+.start__link-title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.38px;
+}
+.start__elem {
+  padding-bottom: 13px;
+  margin-top: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.start__item-list {
+  margin-top: 25px;
+}
+.start__item-img {
+  margin-right: 15px;
+}
+.start__item-img_mr {
+  margin-right: 10.06px;
 }
 
 .form__input {
@@ -811,9 +1019,13 @@ select {
   justify-content: start;
   align-items: center;
 }
+.flex_justify-c {
+  display: flex;
+  justify-content: center;
+}
 
-* {
-  font-family: "Montserrat", "Roboto", sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
 @font-face {

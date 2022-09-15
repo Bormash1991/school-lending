@@ -13,9 +13,14 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
+    color: black;
   }
   &__elem {
     border-bottom: 1px solid $opacity-gray;
+    margin-top: 40px;
+    &:first-child {
+      margin: 0;
+    }
   }
   &__conference {
     background-color: #fff9f1;

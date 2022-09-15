@@ -17,16 +17,12 @@
       color: $img-back;
     }
   }
+  &__name {
+  }
   &_flex {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  &__elem {
-    padding-top: 40px;
-    &:first-child {
-      padding: 0;
-    }
   }
   &__date {
     margin-right: 26px;

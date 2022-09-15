@@ -5,17 +5,20 @@
     font-weight: 700;
     font-size: 26px;
     line-height: 1.38;
+    color: black;
   }
   &__wrap {
     display: flex;
     align-items: flex-end;
+    &::after {
+      content: "";
+      width: 60px;
+      height: 2px;
+      background-color: $blue;
+      margin-bottom: 10px;
+    }
   }
-  &__line {
-    width: 60px;
-    height: 2px;
-    background-color: $blue;
-    margin-bottom: 11px;
-  }
+
   &__subtitle {
     font-size: 12px;
     line-height: 1;

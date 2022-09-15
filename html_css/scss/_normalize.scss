@@ -15,13 +15,21 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+button {
   margin: 0;
   padding: 0;
+}
+p {
+  font-weight: 400;
+  font-size: 14px;
+  color: $gray;
 }
 svg {
   display: flex;
@@ -44,6 +52,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  color: $gray;
 }
 
 /* A elements that don't have a class get default styles */

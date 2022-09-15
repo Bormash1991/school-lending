@@ -56,11 +56,15 @@
     background-color: rgba(0, 0, 0, 0.8);
   }
   &__name {
+    padding: 0 12px;  
+    overflow: hidden;
+    white-space: nowrap;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
     color: #ffffff;
+    text-overflow: ellipsis;
   }
   &__btn {
     position: absolute;
