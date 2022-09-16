@@ -12,13 +12,13 @@
     border: none;
     cursor: pointer;
     &:hover {
-      background-color: $second-green;
+      background-color: var(--second-green);
       .slider-btn__img {
         stroke: white;
       }
     }
     &:active {
-      background-color: $dark-green;
+      background-color: var(--dark-green);
       box-shadow: none;
       .slider-btn__img {
         stroke: white;
@@ -33,7 +33,7 @@
     &__img {
       width: 10px;
       height: 16px;
-      stroke: $slider;
+      stroke: var(--slider);
       margin: 0 auto;
       transition: 0.09s all;
     }

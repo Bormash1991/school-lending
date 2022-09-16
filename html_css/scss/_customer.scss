@@ -14,7 +14,8 @@
 
   &__img {
     transform: translate(53.97px, 46.03px);
-    background: url("../img/customer/people.jpg") center center/ cover no-repeat;
+    background: url("../../img/customer/people.jpg") center center/ cover
+      no-repeat;
     z-index: 1;
   }
   &__square {
@@ -52,7 +53,7 @@
     background-color: #bad1ff;
     cursor: pointer;
     &_active {
-      background-color: $blue;
+      background-color: var(--blue);
     }
     &:last-child {
       margin-right: 0;

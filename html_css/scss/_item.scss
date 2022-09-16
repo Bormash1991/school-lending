@@ -10,7 +10,7 @@
   &__img {
     display: block;
     margin: 0 auto;
-    fill: $blue;
+    fill: var(--blue);
   }
   &__title {
     text-align: center;

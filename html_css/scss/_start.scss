@@ -1,7 +1,7 @@
 .start {
   position: relative;
   padding: 40px 0 40px 0;
-  background: url("../img/start/background/image.jpg") center center/ cover
+  background: url("../../img/start/background/image.jpg") center center/ cover
     no-repeat;
   z-index: 1;
   &__overlay {
@@ -21,7 +21,7 @@
   }
   &__title {
     max-width: 100%;
-    color: $second-green;
+    color: var(--second-green);
     margin-top: 8px;
   }
   &__text {

@@ -29,7 +29,7 @@
     &-item {
       width: 24px;
       display: block;
-      background-color: $blue;
+      background-color: var(--blue);
       height: 3px;
       margin-top: 4px;
       border-radius: 20px;
@@ -48,7 +48,7 @@
     &-img {
       height: 24px;
       width: 53.12px;
-      fill: $blue;
+      fill: var(--blue);
     }
   }
 }

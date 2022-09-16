@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     margin-top: 18.67px;
     padding-bottom: 24px;
-    color: $text-gray;
+    color: var(--text-gray);
     font-weight: 400;
     font-size: 14px;
     line-height: 1.57;
@@ -14,10 +14,8 @@
       justify-content: center;
     }
     &_white {
-      color: $img-back;
+      color: var(--img-back);
     }
-  }
-  &__name {
   }
   &_flex {
     display: flex;
@@ -31,12 +29,13 @@
     margin-top: 8px;
   }
   &__img {
-    stroke: $text-gray;
+    stroke: var(--text-gray);
     margin-right: 8px;
     &_white {
-      stroke: $img-back;
+      stroke: var(--img-back);
     }
   }
+  
   .calendar {
     height: 18px;
     width: 19px;

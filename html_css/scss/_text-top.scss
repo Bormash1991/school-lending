@@ -14,7 +14,7 @@
       content: "";
       width: 60px;
       height: 2px;
-      background-color: $blue;
+      background-color: var(--blue);
       margin-bottom: 10px;
     }
   }
@@ -23,7 +23,7 @@
     font-size: 12px;
     line-height: 1;
     text-transform: uppercase;
-    color: $blue;
+    color: var(--blue);
     margin-bottom: 6px;
   }
   &__text {
@@ -31,7 +31,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.57;
-    color: $gray;
+    color: var(--gray);
     text-align: center;
   }
 }

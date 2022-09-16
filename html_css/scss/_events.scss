@@ -3,7 +3,7 @@
 
   &__container {
     padding-top: 40px;
-    background-color: $gray-back;
+    background-color: var(--gray-back);
   }
   &__item-list {
     margin-top: 32px;
@@ -16,7 +16,7 @@
     color: black;
   }
   &__elem {
-    border-bottom: 1px solid $opacity-gray;
+    border-bottom: 1px solid var(--opacity-gray);
     margin-top: 40px;
     &:first-child {
       margin: 0;

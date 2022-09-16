@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 @import "normalize";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 @import "container";
@@ -23,6 +23,7 @@
 @import "customer";
 @import "start";
 @import "form";
+@import "footer";
 
 .flex {
   display: flex;
@@ -44,6 +45,7 @@
 }
 body {
   font-family: "Montserrat", sans-serif;
+  color: var(--gray);
 }
 @font-face {
   font-family: "Montserrat";

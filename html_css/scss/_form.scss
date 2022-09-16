@@ -1,8 +1,11 @@
 .form {
+  padding: 40px 0 40px 0;
+  flex-direction: column;
   &__input {
     display: block;
-    margin-top: 10px;
+    margin-top: 16px;
     padding: 14px 12px;
+    width: 100%;
     background: #f3f6fc;
     border-radius: 22px;
     border: none;
@@ -11,7 +14,7 @@
     &::placeholder {
       font-weight: 500;
       font-size: 14px;
-      color: $gray;
+      color: var(--gray);
     }
     &:focus {
       outline: 2px solid #1b63f0;
