@@ -1,10 +1,12 @@
 .price-item {
+  display: block;
   position: relative;
   border-radius: 8px;
   min-height: 364px;
   min-width: 264px;
   padding: 243px 16px 20px 16px;
   color: #ffffff;
+  text-decoration: none;
   z-index: 1;
   &__overlay {
     position: absolute;

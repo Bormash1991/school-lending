@@ -4,23 +4,30 @@
   padding-left: 24px;
   margin: 0 auto;
 }
-// @media (min-width: 576px) {
-//   .container {
-//     width: 540px;
-//   }
-// }
-// @media (min-width: 768px) {
-//   .container {
-//     width: 720px;
-//   }
-// }
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
 // @media (min-width: 992px) {
 //   .container {
 //     width: 960px;
 //   }
 // }
-// @media (min-width: 1200px) {
-//   .container {
-//     width: 1140px;
-//   }
-// }
+@media (min-width: 1440px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 1024px;
+    &_small {
+      padding: 0;
+      width: 850px;
+    }
+  }
+}
+// 1200

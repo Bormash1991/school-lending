@@ -6,6 +6,7 @@
     margin-top: 40px;
   }
   &__item {
+    display: block;
     margin: 0 auto;
     position: relative;
     width: 207px;
@@ -14,6 +15,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
+    text-decoration: none;
     color: white;
     &:nth-child(1) {
       background: url("../../img/prefer/itemBack/first.jpg") center center/cover

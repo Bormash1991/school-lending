@@ -10,8 +10,8 @@
   }
 
   &__title {
-    font-size: 36px;
     margin-top: 22px;
+    font-size: 36px;
     line-height: 1.22;
     font-weight: 700;
     color: black;
@@ -26,5 +26,22 @@
   }
   &__companies {
     margin-top: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  .inform {
+    &__container {
+      flex-direction: row;
+    }
+    &__title {
+      width: 400px;
+      margin-top: 0;
+    }
+    &__block {
+      margin-right: 74px;
+    }
+    &__subtitle {
+      width: 370px;
+    }
   }
 }
