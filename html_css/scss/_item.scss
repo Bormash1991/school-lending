@@ -27,6 +27,15 @@
     line-height: 1.57;
   }
 }
+@media (min-width: 320px) {
+  .item {
+    &__subtitle {
+      &_pc {
+        display: none;
+      }
+    }
+  }
+}
 @media (min-width: 375px) {
   .item {
     &__subtitle {
