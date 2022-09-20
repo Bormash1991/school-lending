@@ -364,7 +364,7 @@ select {
 }
 .inform {
   padding: 0 0 40px 0;
-  background: url("../../img/jointBackground/union.png") center 33% no-repeat no-repeat;
+  background: url("../img/jointBackground/union.png") center 33% no-repeat no-repeat;
 }
 .inform__container {
   display: flex;
@@ -634,14 +634,14 @@ select {
   margin: 0 auto;
 }
 .course__item_first {
-  background: url("../../img/course/itemBack/first.jpg") center center/cover no-repeat;
+  background: url("../img/course/itemBack/first.jpg") center center/cover no-repeat;
 }
 .course__item_second {
-  background: url("../../img/course/itemBack/second.jpg") center center/cover no-repeat;
+  background: url("../img/course/itemBack/second.jpg") center center/cover no-repeat;
   display: none;
 }
 .course__item_third {
-  background: url("../../img/course/itemBack/third.jpg") center center/cover no-repeat;
+  background: url("../img/course/itemBack/third.jpg") center center/cover no-repeat;
   display: none;
 }
 
@@ -761,7 +761,7 @@ select {
   margin-top: 12px;
 }
 .description__elem::before {
-  content: url("../../img/description/Ellipse.png");
+  content: url("../img/description/Ellipse.png");
   position: absolute;
   left: -20px;
   transform: translateX(-50%);
@@ -936,7 +936,7 @@ select {
   margin-top: 25px;
   max-width: 328px;
   height: 380px;
-  background: url("../../img/course/itemBack/first.jpg") center center/cover no-repeat;
+  background: url("../img/course/itemBack/first.jpg") center center/cover no-repeat;
   border-radius: 8px;
 }
 .conference__overlay {
@@ -1000,7 +1000,7 @@ select {
   color: white;
 }
 .prefer__item:nth-child(1) {
-  background: url("../../img/prefer/itemBack/first.jpg") center center/cover no-repeat;
+  background: url("../img/prefer/itemBack/first.jpg") center center/cover no-repeat;
 }
 .prefer__item:nth-child(2) {
   display: none;
@@ -1134,7 +1134,7 @@ select {
 }
 .customer__img {
   transform: translate(53.97px, 46.03px);
-  background: url("../../img/customer/people.jpg") center center/cover no-repeat;
+  background: url("../img/customer/people.jpg") center center/cover no-repeat;
   z-index: 1;
 }
 .customer__square {
@@ -1199,7 +1199,7 @@ select {
 .start {
   position: relative;
   padding: 40px 0 40px 0;
-  background: url("../../img/start/background/image.jpg") center center/cover no-repeat;
+  background: url("../img/start/background/image.jpg") center center/cover no-repeat;
   z-index: 1;
 }
 .start__overlay {
@@ -1383,43 +1383,43 @@ p {
 
 @font-face {
   font-family: "Montserrat";
-  src: url("/assets/font/Montserrat-Bold.ttf");
+  src: url("../assets/font/Montserrat-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("/assets/font/Montserrat-SemiBold.ttf");
+  src: url("../assets/font/Montserrat-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("/assets/font/Montserrat-Medium.ttf");
+  src: url("../assets/font/Montserrat-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("/assets/font/Montserrat-Regular.ttf");
+  src: url("../assets/font/Montserrat-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/font/Roboto-Bold.ttf");
+  src: url("../assets/font/Roboto-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/font/Roboto-Medium.ttf");
+  src: url("../assets/font/Roboto-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/font/Roboto-Regular.ttf");
+  src: url("../assets/font/Roboto-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }/*# sourceMappingURL=style.css.map */
