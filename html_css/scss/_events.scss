@@ -3,7 +3,11 @@
 
   &__container {
     padding-top: 40px;
+
     background-color: var(--gray-back);
+  }
+  &__timetable {
+    padding: 0 24px;
   }
   &__item-list {
     margin-top: 32px;
@@ -23,7 +27,31 @@
     }
   }
   &__conference {
+    padding: 0 24px;
     background-color: #fff9f1;
     position: relative;
+  }
+}
+
+@media (min-width: 1440px) {
+  .events {
+    padding-bottom: 40px;
+    &__container {
+      display: flex;
+      justify-content: end;
+      padding-top: 0;
+    }
+    &__conference {
+      padding: 60px 98px 76px 16px;
+    }
+    &__timetable {
+      padding: 68px 107px 76px 208px;
+    }
+    &__elem {
+      padding-right: 75px;
+    }
+    &__name {
+      width: 427px;
+    }
   }
 }

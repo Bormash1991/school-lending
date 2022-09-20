@@ -3,14 +3,24 @@
 
   &__wrapper {
     &-item {
-      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
     }
   }
 
   &__text-top {
     margin-bottom: 56px;
+  }
+}
+@media (min-width: 1440px) {
+  .shoose {
+    padding-bottom: 70px;
+    &__wrapper {
+      &-item {
+        gap: 42px 20px;
+      }
+    }
+    &__text-top {
+      margin-bottom: 57.5px;
+    }
   }
 }

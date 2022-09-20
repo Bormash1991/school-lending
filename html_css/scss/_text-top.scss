@@ -10,6 +10,9 @@
   &__wrap {
     display: flex;
     align-items: flex-end;
+    &_c {
+      justify-content: center;
+    }
     &::after {
       content: "";
       width: 60px;
@@ -33,5 +36,13 @@
     line-height: 1.57;
     color: var(--gray);
     text-align: center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-top {
+    &__title {
+      max-width: 354px;
+    }
   }
 }

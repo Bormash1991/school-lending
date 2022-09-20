@@ -27,18 +27,35 @@
     margin: 0 auto;
 
     &_first {
-      background: url("../../img/course/itemBack/first.jpg") center center / cover
-        no-repeat;
+      background: url("../../img/course/itemBack/first.jpg") center center /
+        cover no-repeat;
     }
     &_second {
-      background: url("../../img/course/itemBack/second.jpg") center center / cover
-        no-repeat;
+      background: url("../../img/course/itemBack/second.jpg") center center /
+        cover no-repeat;
       display: none;
     }
     &_third {
-      background: url("../../img/course/itemBack/third.jpg") center center / cover
-        no-repeat;
+      background: url("../../img/course/itemBack/third.jpg") center center /
+        cover no-repeat;
       display: none;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .course {
+    padding-top: 70px;
+    &__wrapper {
+      gap: 20px;
+      margin-top: 78px;
+    }
+    &__item {
+      margin: 0;
+
+      &_second,
+      &_third {
+        display: block;
+      }
     }
   }
 }

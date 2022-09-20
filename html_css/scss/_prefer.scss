@@ -43,3 +43,13 @@
     }
   }
 }
+@media (min-width: 1440px) {
+  .prefer {
+    &__text {
+      width: 660px;
+      margin: 0 auto;
+      margin-top: 16px;
+      text-align: center;
+    }
+  }
+}

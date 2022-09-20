@@ -1,6 +1,6 @@
 .header {
-  position: relative;
   &__container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,9 +78,7 @@
 @media (min-width: 1440px) {
   .header {
     &__container {
-      padding-bottom: 29px;
-      // padding-left: 72px;
-      // padding-right: 72px;
+      padding-bottom: 0;
     }
     &__humburger {
       display: none;
@@ -93,6 +91,7 @@
     }
     &__back {
       height: 652px;
+      right: -295px;
       &-one {
         width: 778px;
       }

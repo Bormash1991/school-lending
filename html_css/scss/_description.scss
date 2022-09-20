@@ -1,5 +1,6 @@
 .description {
   padding: 40px 0 44px 0;
+
   &__video {
     overflow: hidden;
     position: relative;
@@ -13,15 +14,16 @@
     padding-bottom: 36px;
     background-color: var(--gray-back);
   }
-  &__text {
-    &-wrap {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 1.57;
-      color: var(--gray);
-      margin-top: 24px;
+  &__wrap {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.57;
+    color: var(--gray);
+    margin-top: 24px;
+    &-text {
     }
   }
+
   &__elem {
     position: relative;
     margin-top: 12px;
@@ -68,6 +70,36 @@
       top: 50%;
       left: 50%;
       transform: translateX(-36%) translateY(-50%);
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .description {
+    padding-bottom: 50px;
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+      width: auto;
+    }
+    &__wrapper {
+      display: flex;
+    }
+    &__video {
+      margin-right: 87px;
+    }
+    &__block {
+      padding-top: 56px;
+      padding-bottom: 66px;
+      background-color: transparent;
+    }
+    &__wrap {
+      &-text {
+        width: 415px;
+      }
+    }
+    &__item-list {
+      width: 415px;
     }
   }
 }

@@ -35,7 +35,7 @@
       stroke: var(--img-back);
     }
   }
-  
+
   .calendar {
     height: 18px;
     width: 19px;
@@ -47,5 +47,25 @@
   .map {
     width: 19px;
     height: 19px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .item-list {
+    &__city {
+      margin-top: 0;
+    }
+    &__date {
+      margin-right: 25.6px;
+    }
+    &__time {
+      margin-right: 26.5px;
+    }
+    // &__flex {
+    //   flex-wrap: nowrap;
+    // }
+    // &__container {
+    //   flex-wrap: nowrap;
+    // }
   }
 }
