@@ -10,8 +10,9 @@
     width: 540px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .container {
+    position: unset;
     width: 720px;
   }
 }
@@ -38,4 +39,3 @@
     }
   }
 }
-// 1200

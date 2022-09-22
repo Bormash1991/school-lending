@@ -21,7 +21,7 @@
   }
   &__title {
     max-width: 100%;
-    color: var(--second-green);
+    color: var(--green);
     margin-top: 8px;
   }
   &__text {
@@ -59,6 +59,41 @@
       &_mr {
         margin-right: 10.06px;
       }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .start {
+    padding: 64px 0;
+    &__link {
+      &-wrap {
+        margin-top: 0;
+      }
+    }
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__text {
+      width: 345px;
+    }
+    &__elem {
+      padding-right: 50px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .start {
+    &__container {
+      align-items: unset;
+    }
+    &__text {
+      width: 415px;
+    }
+    &__elem {
+      padding-right: 207.39px;
     }
   }
 }

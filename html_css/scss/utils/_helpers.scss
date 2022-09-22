@@ -1,0 +1,35 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_out-just {
+    display: flex;
+    align-items: center;
+  }
+  &_start-j {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  &_justify-c {
+    display: flex;
+    justify-content: center;
+  }
+  &_center-a {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  &_start {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--gray);
+}
+p {
+  color: var(--gray);
+}

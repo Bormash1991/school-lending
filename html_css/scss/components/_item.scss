@@ -45,21 +45,36 @@
     }
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .item {
     margin: 0;
     &__title,
     &__subtitle {
-      text-align: left;
+      text-align: center;
     }
     &__subtitle {
-      width: 415px;
+      width: 325px;
       &_mob {
         display: none;
       }
       &_pc {
         display: block;
       }
+    }
+    svg {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .item {
+    &__title,
+    &__subtitle {
+      text-align: left;
+    }
+    &__subtitle {
+      width: 415px;
     }
     svg {
       margin: 0;

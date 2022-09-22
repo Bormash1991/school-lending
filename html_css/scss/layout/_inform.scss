@@ -1,7 +1,7 @@
 .inform {
   padding: 0 0 40px 0;
-  background: url("../img/jointBackground/union.png") center 33% no-repeat
-    no-repeat;
+  // background: url("../img/jointBackground/union.png") center 33% no-repeat
+  //   no-repeat;
   &__container {
     display: flex;
     flex-direction: column-reverse;
@@ -28,11 +28,34 @@
     margin-top: 40px;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 375px) {
+}
+
+@media (min-width: 768px) {
   .inform {
     &__container {
       flex-direction: row;
     }
+    &__title {
+      width: 320px;
+      margin-top: 81px;
+    }
+    &__block {
+      margin-right: 35px;
+    }
+    &__subtitle {
+      width: 300px;
+    }
+    &__companies {
+      margin-top: 40px;
+    }
+    &__img {
+      width: 350px;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .inform {
     &__title {
       width: 400px;
       margin-top: 136px;
@@ -44,7 +67,7 @@
       width: 370px;
     }
     &__companies {
-      margin-top: 45.6px;
+      margin-top: 24px;
     }
     &__img {
       width: 500px;

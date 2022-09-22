@@ -1,106 +1,27 @@
-@import "variables";
-@import "normalize";
+@import "base/variables";
+@import "base/normalize";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 @import "container";
-@import "logo";
-@import "btn";
-@import "slider";
-@import "companies";
-@import "header";
-@import "inform";
-@import "item";
-@import "text-top";
-@import "shoose";
-@import "price-item";
-@import "course";
-
-@import "star";
-@import "item-list";
-@import "description";
-@import "events";
-@import "conference";
-@import "prefer";
-@import "blog";
-@import "customer";
+@import "components/logo";
+@import "components/btn";
+@import "components/slider";
+@import "components/companies";
+@import "layout/header";
+@import "layout/inform";
+@import "components/item";
+@import "components/text-top";
+@import "layout/shoose";
+@import "components/price-item";
+@import "layout/course";
+@import "components/star";
+@import "components/item-list";
+@import "layout/description";
+@import "layout/events";
+@import "components/conference";
+@import "layout/prefer";
+@import "layout/blog";
+@import "layout/customer";
 @import "start";
-@import "form";
-@import "footer";
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &_out-just {
-    display: flex;
-    align-items: center;
-  }
-  &_start-j {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-  }
-  &_justify-c {
-    display: flex;
-    justify-content: center;
-  }
-  &_center-a {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-  }
-  &_start {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-  }
-}
-body {
-  font-family: "Montserrat", sans-serif;
-  color: var(--gray);
-}
-p {
-  color: var(--gray);
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/font/Montserrat-Bold.ttf");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/font/Montserrat-SemiBold.ttf");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/font/Montserrat-Medium.ttf");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/font/Montserrat-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/font/Roboto-Bold.ttf");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/font/Roboto-Medium.ttf");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/font/Roboto-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
-}
+@import "components/form";
+@import "layout/footer";
+@import "utils/helpers";

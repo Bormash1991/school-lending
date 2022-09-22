@@ -32,7 +32,31 @@
     position: relative;
   }
 }
-
+@media (min-width: 768px) {
+  .events {
+    padding-bottom: 40px;
+    &__container {
+      display: flex;
+      justify-content: end;
+      padding-top: 0;
+    }
+    &__conference {
+      padding: 24px 24px;
+    }
+    &__timetable {
+      padding: 45px 40px 40px 24px;
+    }
+    &__elem {
+      padding-right: 10px;
+    }
+    &__item-list {
+      padding-bottom: 0;
+    }
+    &__name {
+      width: 321px;
+    }
+  }
+}
 @media (min-width: 1440px) {
   .events {
     padding-bottom: 40px;
@@ -42,7 +66,7 @@
       padding-top: 0;
     }
     &__conference {
-      padding: 60px 98px 76px 16px;
+      padding: 60px 98px 76px 20px;
     }
     &__timetable {
       padding: 68px 107px 76px 208px;

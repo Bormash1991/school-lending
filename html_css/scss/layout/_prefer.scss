@@ -1,0 +1,115 @@
+.prefer {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  &__container {
+    position: relative;
+    margin-top: 40px;
+  }
+  &__item {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 207px;
+    height: 197px;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 7px 20px #e2edfb;
+    &-box {
+      display: flex;
+      justify-content: center;
+    }
+    &:nth-child(1) {
+      background: url("../img/prefer/itemBack/first.jpg") center center/cover
+        no-repeat;
+    }
+    &:nth-child(2) {
+      display: none;
+    }
+    &:nth-child(3) {
+      display: none;
+    }
+    &:nth-child(4) {
+      display: none;
+    }
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    &_blue {
+      background-color: rgba(101, 131, 255, 0.8);
+    }
+    &_yellow {
+      background-color: rgba(240, 199, 45, 0.8);
+    }
+    &_violet {
+      background-color: rgba(148, 87, 243, 0.8);
+    }
+    &_red {
+      background-color: rgba(254, 95, 96, 0.8);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .prefer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &__text {
+      width: 660px;
+      margin: 0 auto;
+      margin-top: 16px;
+      text-align: center;
+    }
+    &__item {
+      margin: 0;
+      &-box {
+        gap: 20px;
+      }
+      &:nth-child(2) {
+        display: flex;
+        background: url("../img/prefer/itemBack/second.jpg") center center/cover
+          no-repeat;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .prefer {
+    padding-bottom: 40px;
+    &__text {
+      width: 660px;
+      margin: 0 auto;
+      margin-top: 16px;
+      text-align: center;
+    }
+    &__item {
+      margin: 0;
+      &-box {
+        gap: 20px;
+      }
+      &:nth-child(2) {
+        display: flex;
+        background: url("../img/prefer/itemBack/second.jpg") center center/cover
+          no-repeat;
+      }
+      &:nth-child(3) {
+        display: flex;
+        background: url("../img/prefer/itemBack/third.jpg") center center/cover
+          no-repeat;
+      }
+      &:nth-child(4) {
+        display: flex;
+        background: url("../img/prefer/itemBack/fourth.jpg") center center/cover
+          no-repeat;
+      }
+    }
+  }
+}

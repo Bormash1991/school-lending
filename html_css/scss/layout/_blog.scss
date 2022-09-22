@@ -1,0 +1,146 @@
+.blog {
+  padding: 80px 0 40px 0;
+
+  &__wrap {
+    margin-top: 72px;
+    &-left {
+      margin-right: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-item {
+      padding: 18px 0 24px 12px;
+      margin-bottom: 44px;
+      max-width: 415px;
+      background-color: #d6fae7;
+      border-radius: 16px 16px 0px 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__name {
+    margin-bottom: 46px;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--blog-blue);
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+
+  &__person-img {
+    border-radius: 100%;
+    max-width: 48px;
+    height: 48px;
+  }
+  &__img {
+    height: 160px;
+    transform: translateY(-48px);
+    &:first-child {
+      background: url("../img/blog/item/laptop.jpg") center center/ cover
+        no-repeat;
+    }
+  }
+  &__text {
+    padding-right: 40px;
+    margin-top: -24px;
+    font-weight: 600;
+    font-size: 16px;
+    color: black;
+  }
+  &__more {
+    display: inline-block;
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.33;
+    text-decoration: none;
+    color: black;
+  }
+  &__list {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--blog-blue);
+  }
+  &__elem {
+    margin-right: 38.5px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+    color: #5d74e4;
+    transition: 0.02s all;
+    &:hover {
+      box-shadow: 0px 4px 16px #e2edfb;
+    }
+    &:active {
+      border: 1px solid #64be97;
+      box-shadow: none;
+    }
+    &_active {
+      border: 1px solid #64be97;
+      box-shadow: 0px 4px 16px #e2edfb;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .blog {
+    &__wrap {
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      margin-top: 68px;
+      &-left {
+        margin-right: 24px;
+      }
+      &-item {
+        margin-bottom: 0;
+        &:first-child {
+          margin-right: 107px;
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__elem {
+      margin-right: 0;
+      margin-top: 18px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .blog {
+    &__wrap {
+      margin-top: 48px;
+      &-item {
+        padding-left: 16px;
+        &:first-child {
+          margin-right: 20px;
+        }
+        &:nth-child(2) {
+          display: flex;
+          margin-right: 107px;
+        }
+      }
+    }
+  }
+}

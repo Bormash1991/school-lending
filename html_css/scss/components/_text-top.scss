@@ -39,10 +39,12 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .text-top {
     &__title {
       max-width: 354px;
     }
   }
+}
+@media (min-width: 1440px) {
 }

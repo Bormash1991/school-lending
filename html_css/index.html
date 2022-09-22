@@ -44,7 +44,7 @@
                 <a href="#prefer" class="header__link">Degrees</a>
               </li>
             </ul>
-            <button class="btn btn_blue header__btn">Explore</button>
+            <button class="btn btn_blue btn_big header__btn">Explore</button>
           </nav>
         </div>
       </div>
@@ -62,8 +62,10 @@
                 and creates credit. For all of your needs.
               </p>
               <div class="btn__container inform__buttons">
-                <a href="#" class="btn inform__btn btn_blue">Read More</a>
-                <a href="#contact" class="btn inform__btn btn_green"
+                <a href="#" class="btn inform__btn btn_blue btn_big"
+                  >Read More</a
+                >
+                <a href="#contact" class="btn inform__btn btn_green btn_big"
                   >Get started</a
                 >
               </div>
@@ -383,7 +385,7 @@
               </svg>
             </div>
           </div>
-          <div class="description__block container">
+          <div class="description__block">
             <div class="text-top">
               <div class="text-top__subtitle description__subtitle">
                 UNIVERSOTY DESCRIPTION
@@ -591,17 +593,17 @@
                 <div class="prefer__overlay prefer__overlay_blue"></div>
                 <div class="prefer__name">Graphic Design</div>
               </a>
-              <a href="#" class="prefer__item">
+              <a href="#" class="prefer__item flex">
                 <div class="prefer__overlay prefer__overlay_yellow"></div>
                 <div class="prefer__name">Web Design</div>
               </a>
 
-              <a href="#" class="prefer__item">
+              <a href="#" class="prefer__item flex">
                 <div class="prefer__overlay prefer__overlay_violet"></div>
                 <div class="prefer__name">Marketing</div>
               </a>
 
-              <a href="#" class="prefer__item">
+              <a href="#" class="prefer__item flex">
                 <div class="prefer__overlay prefer__overlay_red"></div>
                 <div class="prefer__name">Education</div>
               </a>
@@ -615,15 +617,15 @@
         </div>
       </section>
       <section class="customer">
-        <img
-          src="img/customer/Vector-one.png"
-          class="customer__back customer__back-one"
-        />
-        <img
-          src="img/customer/Vector-two.png"
-          class="customer__back customer__back-two"
-        />
         <div class="customer__container container">
+          <img
+            src="img/customer/Vector-one.png"
+            class="customer__back customer__back-one"
+          />
+          <img
+            src="img/customer/Vector-two.png"
+            class="customer__back customer__back-two"
+          />
           <div class="customer__wrapper">
             <div class="customer__img"></div>
             <div class="customer__square"></div>
@@ -631,7 +633,7 @@
             <div class="customer__all-wrap">
               <div class="text-top">
                 <div class="text-top__wrap">
-                  <h2 class="text-top__title description__title">
+                  <h2 class="text-top__title customer__title">
                     Our great customers
                   </h2>
                 </div>
@@ -768,9 +770,9 @@
               <h2 class="text-top__title description__title">Latest Blog</h2>
             </div>
           </div>
-          <div class="blog__item-wrap">
-            <div class="blog__item flex_justify-c">
-              <div class="blog__left-wrap">
+          <div class="blog__wrap">
+            <div class="blog__wrap-item flex_justify-c">
+              <div class="blog__wrap-left">
                 <div class="blog__name">DESIGN</div>
                 <img
                   src="img/blog/persone/first.jpg"
@@ -779,21 +781,22 @@
                   width="48"
                 />
               </div>
-              <div class="blog__right-wrap">
-                <img
+              <div class="blog__wrap-right">
+                <!-- <img
                   src="img/blog/item/laptop.jpg"
                   alt="laptop"
                   class="blog__img"
                   width="328"
-                />
+                /> -->
+                <div class="blog__img"></div>
                 <div class="blog__text">
                   International Conferenceon Bussiness
                 </div>
                 <a href="" class="blog__more">Read Now</a>
               </div>
             </div>
-            <div class="blog__item flex_justify-c">
-              <div class="blog__left-wrap">
+            <div class="blog__wrap-item flex_justify-c">
+              <div class="blog__wrap-left">
                 <div class="blog__name">DESIGN</div>
                 <img
                   src="img/blog/persone/second.jpg"
@@ -802,7 +805,7 @@
                   width="48"
                 />
               </div>
-              <div class="blog__right-wrap">
+              <div class="blog__wrap-right">
                 <img
                   src="img/blog/item/laptops.jpg"
                   alt="laptops"
@@ -863,9 +866,11 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <div class="footer__top-wrap">
-          <img src="img/logo.svg" alt="logo" class="footer__img" />
-          <div class="footer__list-wrap">
+        <div class="footer__wrap-top">
+          <svg class="footer__img logo">
+            <use href="img/sprite.svg#icon-logo"></use>
+          </svg>
+          <div class="footer__wrap-list">
             <h3 class="footer__elem footer__title">Company</h3>
             <ul class="footer__list item-list">
               <li class="item-list__elem footer__elem item-list_border">
@@ -880,7 +885,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer__list-wrap">
+          <div class="footer__wrap-list">
             <h3 class="footer__elem footer__title">Help Links</h3>
             <ul class="footer__list item-list">
               <li class="item-list__elem footer__elem item-list_border">
@@ -895,7 +900,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer__list-wrap">
+          <div class="footer__wrap-list">
             <h3 class="footer__elem footer__title">Course</h3>
             <ul class="footer__list item-list">
               <li class="item-list__elem footer__elem item-list_border">
@@ -910,7 +915,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer__list-wrap">
+          <div class="footer__wrap-list">
             <h3 class="footer__elem footer__title">Social Media</h3>
             <ul class="footer__list footer__list-soc item-list">
               <li class="item-list__elem footer__elem flex_start-j">
@@ -935,7 +940,7 @@
             </ul>
           </div>
         </div>
-        <div class="footer__bottom-wrap">
+        <div class="footer__wrap-bottom">
           <div class="footer__rights">All rights Reserved</div>
           <ul class="footer__list item-list footer__list-bottom">
             <li class="footer__elem footer__elem-b item-list">

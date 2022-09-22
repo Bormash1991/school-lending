@@ -1,0 +1,163 @@
+.customer {
+  padding: 40px 0 100.34px 0;
+
+  overflow: hidden;
+  &__container {
+    position: relative;
+  }
+  &__wrapper {
+    position: relative;
+  }
+  &__img,
+  &__square {
+    width: 273.03px;
+    height: 273.03px;
+    border-radius: 24px;
+  }
+
+  &__img {
+    transform: translate(53.97px, 46.03px);
+    background: url("../img/customer/people.jpg") center center/ cover no-repeat;
+    z-index: 1;
+  }
+  &__square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #637af2;
+    z-index: -1;
+  }
+  &__all-wrap {
+    margin-top: 70.03px;
+  }
+  &__icon {
+    margin-top: 48px;
+  }
+  &__text {
+    margin-top: 32px;
+  }
+  &__name {
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.33;
+    color: black;
+  }
+  &__dots {
+    margin-top: 60px;
+  }
+  &__dot {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 100%;
+    background-color: #bad1ff;
+    cursor: pointer;
+    &_active {
+      background-color: var(--blue);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__back {
+    position: absolute;
+
+    &-one {
+      width: 353px;
+      height: 361px;
+      left: -48px;
+      bottom: -109.34px;
+      z-index: -1;
+    }
+    &-two {
+      max-width: 546px;
+      height: 409px;
+      left: -70px;
+      bottom: -130px;
+      z-index: -2;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .customer {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    &__title {
+      max-width: 150px;
+    }
+    &__icon {
+      margin-top: 28px;
+    }
+    &__wrapper {
+      display: flex;
+    }
+    &__img {
+      margin-right: 95px;
+    }
+    &__text {
+      width: 330px;
+    }
+    &__all-wrap {
+      margin-top: 0;
+    }
+    &__back {
+      &-one {
+        width: 455.77px;
+        height: 465.46px;
+        left: -179px;
+        bottom: -60px;
+      }
+      &-two {
+        max-width: 736.04px;
+        height: 536.78px;
+        left: -207px;
+        bottom: -80px;
+      }
+    }
+    &__img,
+    &__square {
+      width: 230px;
+      height: 230px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .customer {
+    padding-top: 140px;
+    padding-bottom: 191.4px;
+    &__wrapper {
+      display: flex;
+    }
+    &__img {
+      margin-right: 178px;
+    }
+    &__text {
+      width: 415px;
+    }
+    &__all-wrap {
+      margin-top: 0;
+    }
+    &__back {
+      &-one {
+        width: 515.77px;
+        height: 525.46px;
+        left: -179px;
+        bottom: -74px;
+      }
+      &-two {
+        max-width: 796.04px;
+        height: 596.78px;
+        left: -207px;
+        bottom: -114px;
+      }
+    }
+    &__img,
+    &__square {
+      width: 344px;
+      height: 344px;
+    }
+  }
+}
