@@ -305,6 +305,9 @@ select {
 .header__back-one {
   width: 100%;
 }
+.header__back-two {
+  width: 95.11568%;
+}
 .header__list {
   display: none;
 }
@@ -1794,47 +1797,4 @@ body {
 
 p {
   color: var(--gray);
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/font/Montserrat-Bold.ttf");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/font/Montserrat-SemiBold.ttf");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/font/Montserrat-Medium.ttf");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/font/Montserrat-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/font/Roboto-Bold.ttf");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/font/Roboto-Medium.ttf");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/font/Roboto-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
 }/*# sourceMappingURL=style.css.map */
