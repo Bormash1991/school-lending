@@ -11,13 +11,13 @@
     right: 0;
     height: 314px;
     z-index: -1;
-
-    &-one {
-      width: 100%;
-    }
-    &-two {
-      width: 95.11568%;
-    }
+    width: 100%;
+    background: url("../back-green.svg") right top/contain no-repeat;
+    // use {
+    //   display: block;
+    //   width: 100vw;
+    //   height: 100%;
+    // }
   }
   &__list {
     display: none;

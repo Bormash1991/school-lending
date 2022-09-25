@@ -301,12 +301,8 @@ select {
   right: 0;
   height: 314px;
   z-index: -1;
-}
-.header__back-one {
   width: 100%;
-}
-.header__back-two {
-  width: 95.11568%;
+  background: url("../back-green.svg") right top/contain no-repeat;
 }
 .header__list {
   display: none;
