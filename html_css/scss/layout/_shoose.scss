@@ -3,6 +3,8 @@
 
   &__wrapper {
     &-item {
+      display: flex;
+      justify-content: center;
       flex-wrap: wrap;
     }
   }
@@ -29,6 +31,7 @@
     padding-bottom: 70px;
     &__wrapper {
       &-item {
+        justify-content: start;
         gap: 42px 20px;
       }
     }

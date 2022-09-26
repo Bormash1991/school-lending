@@ -16,16 +16,16 @@
     width: 720px;
   }
 }
-// @media (min-width: 992px) {
-//   .container {
-//     width: 960px;
-//   }
-// }
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
 @media (min-width: 1440px) {
   .container {
     padding-right: 15px;
     padding-left: 15px;
-    width: 1024px;
+    max-width: 1024px;
     &_small {
       padding-right: 0px;
       padding-left: 0px;

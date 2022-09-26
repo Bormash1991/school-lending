@@ -128,11 +128,16 @@ select {
     width: 720px;
   }
 }
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
 @media (min-width: 1440px) {
   .container {
     padding-right: 15px;
     padding-left: 15px;
-    width: 1024px;
+    max-width: 1024px;
   }
   .container_small {
     padding-right: 0px;
@@ -302,7 +307,7 @@ select {
   height: 314px;
   z-index: -1;
   width: 100%;
-  background: url("../back-green.svg") right top/contain no-repeat;
+  background: url("../img/header/back-green.svg") right top/contain no-repeat;
 }
 .header__list {
   display: none;
@@ -395,8 +400,9 @@ select {
 .inform__container {
   display: flex;
   flex-direction: column-reverse;
-  align-items: center;
-  justify-content: flex-start;
+}
+.inform__img {
+  transform: scale(1.15);
 }
 .inform__title {
   margin-top: 22px;
@@ -418,6 +424,9 @@ select {
 }
 
 @media (min-width: 768px) {
+  .inform__img {
+    transform: unset;
+  }
   .inform__container {
     flex-direction: row;
   }
@@ -574,6 +583,8 @@ select {
   padding: 40px 0;
 }
 .shoose__wrapper-item {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .shoose__text-top {
@@ -596,6 +607,7 @@ select {
     padding-bottom: 70px;
   }
   .shoose__wrapper-item {
+    justify-content: start;
     gap: 42px 20px;
   }
   .shoose__text-top {
