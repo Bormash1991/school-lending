@@ -401,15 +401,15 @@ select {
   display: flex;
   flex-direction: column-reverse;
 }
-.inform__img {
-  transform: scale(1.1);
-}
 .inform__title {
   margin-top: 22px;
   font-size: 36px;
   line-height: 1.22;
   font-weight: 700;
   color: black;
+}
+.inform__img {
+  transform: scale(1.1);
 }
 .inform__subtitle {
   margin-top: 32px;
