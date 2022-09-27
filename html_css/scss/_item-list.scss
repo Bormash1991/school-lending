@@ -1,0 +1,51 @@
+.item-list {
+  margin: 0;
+  list-style-type: none;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 18.67px;
+    padding-bottom: 24px;
+    color: var(--text-gray);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.57;
+    &_center {
+      justify-content: center;
+    }
+    &_white {
+      color: var(--img-back);
+    }
+  }
+  &_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__date {
+    margin-right: 26px;
+  }
+  &__city {
+    margin-top: 8px;
+  }
+  &__img {
+    stroke: var(--text-gray);
+    margin-right: 8px;
+    &_white {
+      stroke: var(--img-back);
+    }
+  }
+  
+  .calendar {
+    height: 18px;
+    width: 19px;
+  }
+  .clock {
+    width: 19px;
+    height: 19px;
+  }
+  .map {
+    width: 19px;
+    height: 19px;
+  }
+}
