@@ -402,7 +402,7 @@ select {
   flex-direction: column-reverse;
 }
 .inform__img {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 .inform__title {
   margin-top: 22px;
