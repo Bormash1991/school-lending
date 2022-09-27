@@ -1,0 +1,75 @@
+.btn {
+  display: block;
+  border: none;
+  max-height: 40px;
+  padding: 12px 20px;
+  border-radius: 22px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33;
+  transition: 0.5s all;
+  color: white;
+  cursor: pointer;
+
+  &:first-child {
+    margin-right: 24px;
+  }
+  &_blue {
+    background-color: var(--blue);
+
+    &:hover {
+      background-color: #3d7fff;
+    }
+    &:active {
+      background-color: #175ee9;
+    }
+  }
+  &__container {
+    display: flex;
+  }
+  &_form {
+    padding: 14px 141.5px;
+    margin-top: 32px;
+    color: white;
+    background-color: var(--second-green);
+    box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
+    &:hover {
+      background-color: var(--light-green);
+    }
+    &:active {
+      background: #4dda9d;
+      box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
+    }
+  }
+  &_green {
+    background-color: var(--green);
+    color: black;
+    &:hover {
+      background-color: #c0ffe4;
+    }
+    &:active {
+      background-color: #83ebbf;
+    }
+  }
+  &_transporent {
+    border: 1px solid #ffffff;
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    &:active {
+      background: rgba(255, 255, 255, 0.15);
+      outline: 2px solid #ffffff;
+    }
+  }
+  &_big {
+    padding: 12px 24px;
+  }
+}
+@media (min-width: 768px) {
+  .btn {
+    &_form {
+      padding: 14px 44px;
+    }
+  }
+}

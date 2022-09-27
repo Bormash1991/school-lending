@@ -1,0 +1,10 @@
+.logo {
+  height: 24px;
+  width: 53.12px;
+  fill: var(--blue);
+  transition: 0.5s all;
+  cursor: pointer;
+  &:hover {
+    fill: black;
+  }
+}

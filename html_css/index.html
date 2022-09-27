@@ -10,14 +10,7 @@
   <body>
     <header class="header">
       <div class="container container_small">
-        <img
-          src="/img/inform/VectorOne.png"
-          class="header__back-one header__back"
-        />
-        <img
-          src="/img/inform/VectorTwo.png"
-          class="header__back-two header__back"
-        />
+        <div class="header__back"></div>
         <div class="header__container">
           <div class="header__logo-wrap">
             <div class="header__humburger">
@@ -26,7 +19,7 @@
               ><span class="header__humburger-item"></span>
             </div>
             <svg class="logo header__logo-img">
-              <use href="/img/sprite.svg#icon-logo"></use>
+              <use href="img/sprite.svg#icon-logo"></use>
             </svg>
           </div>
           <nav class="header__nav">
@@ -44,7 +37,7 @@
                 <a href="#prefer" class="header__link">Degrees</a>
               </li>
             </ul>
-            <button class="btn btn_blue header__btn">Explore</button>
+            <button class="btn btn_blue btn_big header__btn">Explore</button>
           </nav>
         </div>
       </div>
@@ -62,8 +55,10 @@
                 and creates credit. For all of your needs.
               </p>
               <div class="btn__container inform__buttons">
-                <a href="#" class="btn inform__btn btn_blue">Read More</a>
-                <a href="#contact" class="btn inform__btn btn_green"
+                <a href="#" class="btn inform__btn btn_blue btn_big"
+                  >Read More</a
+                >
+                <a href="#contact" class="btn inform__btn btn_green btn_big"
                   >Get started</a
                 >
               </div>
@@ -71,35 +66,35 @@
             <img
               class="inform__img"
               width="403"
-              src="/img/inform/person.svg"
+              src="img/inform/person.svg"
               alt="person"
             />
           </div>
-          <div class="inform__companies companies flex_start">
+          <div class="inform__companies companies flex_start-j">
             <a href="#">
               <img
-                src="/img/inform/companies/youfone.png"
+                src="img/inform/companies/youfone.png"
                 alt="youfone"
                 class="companies__item"
                 width="155"
             /></a>
             <a href="#"
               ><img
-                src="/img/inform/companies/nice.png"
+                src="img/inform/companies/nice.png"
                 alt="nice"
                 class="companies__item"
                 width="97"
             /></a>
             <a href="#"
               ><img
-                src="/img/inform/companies/swishfund.png"
+                src="img/inform/companies/swishfund.png"
                 alt="swishfund"
                 class="companies__item"
                 width="135"
             /></a>
             <a href="#">
               <img
-                src="/img/inform/companies/brico.png"
+                src="img/inform/companies/brico.png"
                 alt="brico"
                 class="companies__item"
                 width="91"
@@ -107,7 +102,7 @@
             /></a>
             <a href="#"
               ><img
-                src="/img/inform/companies/praxis.png"
+                src="img/inform/companies/praxis.png"
                 alt="praxis"
                 class="companies__item"
                 width="101"
@@ -123,53 +118,66 @@
               <h2 class="text-top__title shoose__title">Shy shoose us?</h2>
             </div>
           </div>
-          <div class="shoose__wrapper-item flex">
+          <div class="shoose__wrapper-item">
             <div class="shoose__item-wrap item">
               <svg width="54" height="53">
                 <use
                   class="item__img"
-                  href="/img/sprite.svg#icon-document"
+                  href="img/sprite.svg#icon-document"
                 ></use>
               </svg>
 
               <div class="item__title">Certificate</div>
-              <p class="item__subtitle">
+              <p class="item__subtitle item__subtitle_mob">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod.
+              </p>
+              <p class="item__subtitle item__subtitle_pc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod.A bank is a financial institution accepts deposits from
+                public and creates credit.
               </p>
             </div>
             <div class="shoose__item-wrap item">
               <svg width="39" height="53">
-                <use
-                  class="item__img"
-                  href="/img/sprite.svg#icon-compass"
-                ></use>
+                <use class="item__img" href="img/sprite.svg#icon-compass"></use>
               </svg>
               <div class="item__title">Life Programs</div>
-              <p class="item__subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod.
+              <p class="item__subtitle item__subtitle_mob">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.
+              </p>
+              <p class="item__subtitle item__subtitle_pc">
+                Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed
+                institution accepts deposits from public
               </p>
             </div>
             <div class="shoose__item-wrap item">
               <svg width="44" height="54">
                 <use
                   class="item__img"
-                  href="/img/sprite.svg#icon-microscope"
+                  href="img/sprite.svg#icon-microscope"
                 ></use>
               </svg>
               <div class="item__title">Affordability</div>
-              <p class="item__subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod.
+              <p class="item__subtitle item__subtitle_mob">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.
+              </p>
+              <p class="item__subtitle item__subtitle_pc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. A
+                bank is a financial institution accepts deposits from public and
+                creates credit.
               </p>
             </div>
             <div class="shoose__item-wrap item">
               <svg width="39" height="53">
-                <use class="item__img" href="/img/sprite.svg#icon-book"></use>
+                <use class="item__img" href="img/sprite.svg#icon-book"></use>
               </svg>
               <div class="item__title">Social</div>
-              <p class="item__subtitle">
+              <p class="item__subtitle item__subtitle_mob">
+                A bank is a financial institution accepts deposits from public
+                and creates credit.
+              </p>
+              <p class="item__subtitle item__subtitle_pc">
                 A bank is a financial institution accepts deposits from public
                 and creates credit.
               </p>
@@ -185,23 +193,23 @@
             </div>
             <h2 class="text-top__title course__title">2000+ Online course</h2>
           </div>
-          <div class="course__wrapper">
+          <div class="course__wrapper flex">
             <button
               class="slider-btn slider-btn_left course__slider-btn course__slider-btn_left"
             >
               <svg class="slider-btn__img slider-btn__img-left">
-                <use href="/img/sprite.svg#icon-left" width="10"></use>
+                <use href="img/sprite.svg#icon-left" width="10"></use>
               </svg>
             </button>
             <a href="#" class="course__item course__item_first price-item">
               <div class="price-item__overlay"></div>
               <img
-                src="/img/course/persone/first.jpg"
+                src="img/course/persone/first.jpg"
                 alt="person"
                 class="price-item__img"
                 width="48"
               />
-              <div class="price-item__title">DESIGN</div>
+              <h4 class="price-item__title">DESIGN</h4>
               <div class="price-item__subtitle">Learn Photoshop title</div>
               <div class="price-item__line"></div>
               <div class="price-item__bottom-wrap">
@@ -211,31 +219,31 @@
                 </div>
                 <div class="price-item__star-wrap star-wrap">
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/empty-star.svg"
+                    src="img/course/empty-star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
@@ -247,12 +255,12 @@
             </a>
             <a href="#" class="course__item course__item_second price-item">
               <img
-                src="/img/course/persone/second.jpg"
+                src="img/course/persone/second.jpg"
                 alt="person"
                 class="price-item__img"
                 width="48"
               />
-              <div class="price-item__title">Marketing</div>
+              <h4 class="price-item__title">Marketing</h4>
               <div class="price-item__subtitle">Learn Photoshop title trun</div>
               <div class="price-item__line"></div>
               <div class="price-item__bottom-wrap">
@@ -262,31 +270,31 @@
                 </div>
                 <div class="price-item__star-wrap star-wrap">
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/empty-star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/empty-star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/empty-star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
@@ -297,12 +305,12 @@
             </a>
             <a href="#" class="course__item course__item_third price-item">
               <img
-                src="/img/course/persone/third.jpg"
+                src="img/course/persone/third.jpg"
                 alt="person"
                 class="price-item__img"
                 width="48"
               />
-              <div class="price-item__title">Web design</div>
+              <h4 class="price-item__title">Web design</h4>
               <div class="price-item__subtitle">Learn Photoshop</div>
               <div class="price-item__line"></div>
               <div class="price-item__bottom-wrap">
@@ -312,31 +320,31 @@
                 </div>
                 <div class="price-item__star-wrap star-wrap">
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
                   />
                   <img
-                    src="/img/course/star.svg"
+                    src="img/course/star.svg"
                     alt="star"
                     class="star-wrap__star"
                     width="10"
@@ -349,28 +357,28 @@
               class="slider-btn slider-btn_right shoose__slider-btn course__slider-btn_right"
             >
               <svg class="slider-btn__img slider-btn__img-right">
-                <use href="/img/sprite.svg#icon-right" width="10"></use>
+                <use href="img/sprite.svg#icon-right" width="10"></use>
               </svg>
             </button>
           </div>
         </div>
       </section>
       <section id="description" class="description">
-        <div class="description__wrapper">
+        <div class="description__wrapper container_big">
           <div class="description__video">
             <img
-              src="/img/description/people.png"
+              src="img/description/people.png"
               alt="people"
               class="description__img"
               width="700"
             />
             <div class="description__play">
               <svg class="description__play-img" width="14" height="18">
-                <use href="/img/sprite.svg#icon-vector"></use>
+                <use href="img/sprite.svg#icon-vector"></use>
               </svg>
             </div>
           </div>
-          <div class="description__block container">
+          <div class="description__block">
             <div class="text-top">
               <div class="text-top__subtitle description__subtitle">
                 UNIVERSOTY DESCRIPTION
@@ -379,8 +387,8 @@
                 <h2 class="text-top__title description__title">Take a tour</h2>
               </div>
             </div>
-            <div class="description__text-wrap">
-              <p class="description__text">
+            <div class="description__wrap">
+              <p class="description__wrap-text">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque <br />
                 <br />
@@ -406,8 +414,8 @@
         <div class="description-circle"></div>
       </section>
       <section class="events">
-        <div class="events__container">
-          <div class="events__timetable container">
+        <div class="events__container container_big">
+          <div class="events__timetable">
             <div class="text-top">
               <div class="text-top__wrap">
                 <h2 class="text-top__title description__title">
@@ -423,21 +431,21 @@
                 <div class="item-list__container">
                   <div class="item-list__date item-list_flex">
                     <svg class="item-list__img calendar">
-                      <use href="/img/sprite.svg#icon-calendar"></use>
+                      <use href="img/sprite.svg#icon-calendar"></use>
                     </svg>
 
                     July 8, 2018
                   </div>
                   <div class="item-list__time item-list_flex">
                     <svg class="item-list__img clock">
-                      <use href="/img/sprite.svg#icon-clock"></use>
+                      <use href="img/sprite.svg#icon-clock"></use>
                     </svg>
 
                     5:00pm - 7:00pm
                   </div>
                   <div class="item-list__city item-list_flex">
                     <svg class="item-list__img map">
-                      <use href="/img/sprite.svg#icon-map"></use>
+                      <use href="img/sprite.svg#icon-map"></use>
                     </svg>
                     United States
                   </div>
@@ -450,19 +458,19 @@
                 <div class="item-list__container">
                   <div class="item-list__date item-list_flex">
                     <svg class="item-list__img calendar">
-                      <use href="/img/sprite.svg#icon-calendar"></use>
+                      <use href="img/sprite.svg#icon-calendar"></use>
                     </svg>
                     July 8, 2018
                   </div>
                   <div class="item-list__time item-list_flex">
                     <svg class="item-list__img clock">
-                      <use href="/img/sprite.svg#icon-clock"></use>
+                      <use href="img/sprite.svg#icon-clock"></use>
                     </svg>
                     5:00pm - 7:00pm
                   </div>
                   <div class="item-list__city item-list_flex">
                     <svg class="item-list__img map">
-                      <use href="/img/sprite.svg#icon-map"></use>
+                      <use href="img/sprite.svg#icon-map"></use>
                     </svg>
                     United States
                   </div>
@@ -475,19 +483,19 @@
                 <div class="item-list__container">
                   <div class="item-list__date item-list_flex">
                     <svg class="item-list__img calendar">
-                      <use href="/img/sprite.svg#icon-calendar"></use>
+                      <use href="img/sprite.svg#icon-calendar"></use>
                     </svg>
                     July 8, 2018
                   </div>
                   <div class="item-list__time item-list_flex">
                     <svg class="item-list__img clock">
-                      <use href="/img/sprite.svg#icon-clock"></use>
+                      <use href="img/sprite.svg#icon-clock"></use>
                     </svg>
                     5:00pm - 7:00pm
                   </div>
                   <div class="item-list__city item-list_flex">
                     <svg class="item-list__img map">
-                      <use href="/img/sprite.svg#icon-map"></use>
+                      <use href="img/sprite.svg#icon-map"></use>
                     </svg>
                     United States
                   </div>
@@ -495,7 +503,7 @@
               </li>
             </ul>
           </div>
-          <div class="events__conference container conference">
+          <div class="events__conference conference">
             <div class="conference__title">FEATURED</div>
             <div class="conference__wrap flex_out-just">
               <div class="conference__days flex">
@@ -528,19 +536,19 @@
                   >
                     <div class="item-list__date item-list_flex">
                       <svg class="item-list__img item-list__img_white calendar">
-                        <use href="/img/sprite.svg#icon-calendar"></use>
+                        <use href="img/sprite.svg#icon-calendar"></use>
                       </svg>
                       July 8, 2018
                     </div>
                     <div class="item-list__time item-list_flex">
                       <svg class="item-list__img item-list__img_white clock">
-                        <use href="/img/sprite.svg#icon-clock"></use>
+                        <use href="img/sprite.svg#icon-clock"></use>
                       </svg>
                       5pm - 7pm
                     </div>
                     <div class="item-list__city item-list_flex">
                       <svg class="item-list__img item-list__img_white map">
-                        <use href="/img/sprite.svg#icon-map"></use>
+                        <use href="img/sprite.svg#icon-map"></use>
                       </svg>
                       United States
                     </div>
@@ -557,8 +565,8 @@
       <section id="prefer" class="prefer">
         <div class="container">
           <div class="text-top">
-            <div class="text-top__wrap">
-              <h2 class="text-top__title description__title">
+            <div class="text-top__wrap text-top__wrap_c">
+              <h2 class="text-top__title prefer__title">
                 Which one do you prefer?
               </h2>
             </div>
@@ -568,9 +576,9 @@
             </div>
           </div>
           <div class="prefer__container">
-            <button class="slider-btn slider-btn_left prefer__slider-btn">
+            <button class="slider-btn slider-btn_left prefer__slider-btn prefer__slider-btn-l">
               <svg class="slider-btn__img slider-btn__img-left">
-                <use href="/img/sprite.svg#icon-left" width="10"></use>
+                <use href="img/sprite.svg#icon-left" width="10"></use>
               </svg>
             </button>
             <div class="prefer__item-box">
@@ -578,39 +586,39 @@
                 <div class="prefer__overlay prefer__overlay_blue"></div>
                 <div class="prefer__name">Graphic Design</div>
               </a>
-              <a href="#" class="prefer__item">
+              <a href="#" class="prefer__item flex">
                 <div class="prefer__overlay prefer__overlay_yellow"></div>
                 <div class="prefer__name">Web Design</div>
               </a>
 
-              <a href="#" class="prefer__item">
+              <a href="#" class="prefer__item flex">
                 <div class="prefer__overlay prefer__overlay_violet"></div>
                 <div class="prefer__name">Marketing</div>
               </a>
 
-              <a href="#" class="prefer__item">
+              <a href="#" class="prefer__item flex">
                 <div class="prefer__overlay prefer__overlay_red"></div>
                 <div class="prefer__name">Education</div>
               </a>
             </div>
-            <button class="slider-btn slider-btn_right prefer__slider-btn">
+            <button class="slider-btn slider-btn_right prefer__slider-btn prefer__slider-btn-r">
               <svg class="slider-btn__img slider-btn__img-right">
-                <use href="/img/sprite.svg#icon-right" width="10"></use>
+                <use href="img/sprite.svg#icon-right" width="10"></use>
               </svg>
             </button>
           </div>
         </div>
       </section>
       <section class="customer">
-        <img
-          src="/img/customer/Vector-one.png"
-          class="customer__back customer__back-one"
-        />
-        <img
-          src="/img/customer/Vector-two.png"
-          class="customer__back customer__back-two"
-        />
         <div class="customer__container container">
+          <img
+            src="img/customer/Vector-one.png"
+            class="customer__back customer__back-one"
+          />
+          <img
+            src="img/customer/Vector-two.png"
+            class="customer__back customer__back-two"
+          />
           <div class="customer__wrapper">
             <div class="customer__img"></div>
             <div class="customer__square"></div>
@@ -618,14 +626,14 @@
             <div class="customer__all-wrap">
               <div class="text-top">
                 <div class="text-top__wrap">
-                  <h2 class="text-top__title description__title">
+                  <h2 class="text-top__title customer__title">
                     Our great customers
                   </h2>
                 </div>
               </div>
               <div class="customer__text-wrap">
                 <img
-                  src="/img/customer/icon.svg"
+                  src="img/customer/icon.svg"
                   alt="virgule"
                   class="customer__icon"
                   width="39"
@@ -639,7 +647,7 @@
                   sunt explicabo.
                 </p>
                 <div class="customer__name">Stephanie Magion</div>
-                <div class="customer__dots flex_start">
+                <div class="customer__dots flex_start-j">
                   <button class="customer__dot"></button>
                   <button class="customer__dot"></button>
                   <button class="customer__dot customer__dot_active"></button>
@@ -678,9 +686,9 @@
             </div>
           </div>
           <div class="start__link-wrap">
-            <h3 class="start__link-title flex_start">
+            <h3 class="start__link-title flex_start-j">
               <img
-                src="/img/start/icons/chain.svg"
+                src="img/start/icons/chain.svg"
                 alt="chain"
                 class="start__item-img start__item-img_mr item-list__img"
                 width="24"
@@ -693,9 +701,9 @@
             </h3>
             <ul class="start__item-list item-list">
               <li>
-                <a href="#" class="item-list__elem start__elem flex_start">
+                <a href="#" class="item-list__elem start__elem flex_start-j">
                   <img
-                    src="/img/start/icons/pen.svg"
+                    src="img/start/icons/pen.svg"
                     alt="pen"
                     class="start__item-img item-list__img"
                     width="24"
@@ -706,9 +714,9 @@
                 >
               </li>
               <li>
-                <a href="#" class="start__elem item-list__elem flex_start">
+                <a href="#" class="start__elem item-list__elem flex_start-j">
                   <img
-                    src="/img/start/icons/briefcase.svg"
+                    src="img/start/icons/briefcase.svg"
                     alt="briefcase"
                     class="start__item-img item-list__img"
                     width="24"
@@ -719,9 +727,9 @@
                 >
               </li>
               <li>
-                <a href="#" class="start__elem item-list__elem flex_start">
+                <a href="#" class="start__elem item-list__elem flex_start-j">
                   <img
-                    src="/img/start/icons/openBook.svg"
+                    src="img/start/icons/openBook.svg"
                     alt="open book"
                     class="start__item-img item-list__img"
                     width="24"
@@ -732,9 +740,9 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="start__elem item-list__elem flex_start">
+                <a href="#" class="start__elem item-list__elem flex_start-j">
                   <img
-                    src="/img/start/icons/message.svg"
+                    src="img/start/icons/message.svg"
                     alt="message"
                     class="start__item-img item-list__img"
                     width="24"
@@ -755,43 +763,44 @@
               <h2 class="text-top__title description__title">Latest Blog</h2>
             </div>
           </div>
-          <div class="blog__item-wrap">
-            <div class="blog__item flex_justify-c">
-              <div class="blog__left-wrap">
+          <div class="blog__wrap">
+            <div class="blog__wrap-item flex_justify-c">
+              <div class="blog__wrap-left">
                 <div class="blog__name">DESIGN</div>
                 <img
-                  src="/img/blog/persone/first.jpg"
+                  src="img/blog/persone/first.jpg"
                   alt="person"
                   class="blog__person-img"
                   width="48"
                 />
               </div>
-              <div class="blog__right-wrap">
-                <img
-                  src="/img/blog/item/laptop.jpg"
+              <div class="blog__wrap-right">
+                <!-- <img
+                  src="img/blog/item/laptop.jpg"
                   alt="laptop"
                   class="blog__img"
                   width="328"
-                />
+                /> -->
+                <div class="blog__img"></div>
                 <div class="blog__text">
                   International Conferenceon Bussiness
                 </div>
                 <a href="" class="blog__more">Read Now</a>
               </div>
             </div>
-            <div class="blog__item flex_justify-c">
-              <div class="blog__left-wrap">
+            <div class="blog__wrap-item flex_justify-c">
+              <div class="blog__wrap-left">
                 <div class="blog__name">DESIGN</div>
                 <img
-                  src="/img/blog/persone/second.jpg"
+                  src="img/blog/persone/second.jpg"
                   alt="person"
                   class="blog__person-img"
                   width="48"
                 />
               </div>
-              <div class="blog__right-wrap">
+              <div class="blog__wrap-right">
                 <img
-                  src="/img/blog/item/laptops.jpg"
+                  src="img/blog/item/laptops.jpg"
                   alt="laptops"
                   class="blog__img"
                   width="328"
@@ -850,9 +859,11 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <div class="footer__top-wrap">
-          <img src="/img/logo.svg" alt="logo" class="footer__img" />
-          <div class="footer__list-wrap">
+        <div class="footer__wrap-top">
+          <svg class="footer__img logo">
+            <use href="img/sprite.svg#icon-logo"></use>
+          </svg>
+          <div class="footer__wrap-list">
             <h3 class="footer__elem footer__title">Company</h3>
             <ul class="footer__list item-list">
               <li class="item-list__elem footer__elem item-list_border">
@@ -867,7 +878,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer__list-wrap">
+          <div class="footer__wrap-list">
             <h3 class="footer__elem footer__title">Help Links</h3>
             <ul class="footer__list item-list">
               <li class="item-list__elem footer__elem item-list_border">
@@ -882,7 +893,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer__list-wrap">
+          <div class="footer__wrap-list">
             <h3 class="footer__elem footer__title">Course</h3>
             <ul class="footer__list item-list">
               <li class="item-list__elem footer__elem item-list_border">
@@ -897,32 +908,32 @@
               </li>
             </ul>
           </div>
-          <div class="footer__list-wrap">
+          <div class="footer__wrap-list">
             <h3 class="footer__elem footer__title">Social Media</h3>
             <ul class="footer__list footer__list-soc item-list">
-              <li class="item-list__elem footer__elem flex_start">
+              <li class="item-list__elem footer__elem flex_start-j">
                 <a class="footer__elem-facebook footer__elem-mr" href="#">
                   <svg class="footer__elem-img" width="24">
-                    <use href="/img/sprite.svg#icon-facebook"></use>
+                    <use href="img/sprite.svg#icon-facebook"></use>
                   </svg> </a
                 ><a class="footer__elem-instagram footer__elem-mr" href="#">
                   <svg class="footer__elem-img" width="24">
-                    <use href="/img/sprite.svg#icon-instagram"></use>
+                    <use href="img/sprite.svg#icon-instagram"></use>
                   </svg> </a
                 ><a class="footer__elem-twitter footer__elem-mr" href="#">
                   <svg class="footer__elem-img" width="24">
-                    <use href="/img/sprite.svg#icon-twitter"></use>
+                    <use href="img/sprite.svg#icon-twitter"></use>
                   </svg> </a
                 ><a class="footer__elem-youtube" href="#">
                   <svg class="footer__elem-img" width="24">
-                    <use href="/img/sprite.svg#icon-youtube"></use>
+                    <use href="img/sprite.svg#icon-youtube"></use>
                   </svg>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="footer__bottom-wrap">
+        <div class="footer__wrap-bottom">
           <div class="footer__rights">All rights Reserved</div>
           <ul class="footer__list item-list footer__list-bottom">
             <li class="footer__elem footer__elem-b item-list">

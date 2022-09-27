@@ -1,0 +1,42 @@
+.shoose {
+  padding: 40px 0;
+
+  &__wrapper {
+    &-item {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__text-top {
+    margin-bottom: 56px;
+  }
+}
+@media (min-width: 768px) {
+  .shoose {
+    padding-bottom: 35px;
+    &__wrapper {
+      &-item {
+        gap: 42px 20px;
+      }
+    }
+    &__text-top {
+      margin-bottom: 57.5px;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .shoose {
+    padding-bottom: 70px;
+    &__wrapper {
+      &-item {
+        justify-content: start;
+        gap: 42px 20px;
+      }
+    }
+    &__text-top {
+      margin-bottom: 57.5px;
+    }
+  }
+}
