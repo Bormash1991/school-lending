@@ -5,6 +5,16 @@
     position: relative;
     margin-top: 40px;
   }
+  &__slider {
+    &-btn {
+      &-l {
+        left: -35px;
+      }
+      &-r {
+        right: -35px;
+      }
+    }
+  }
   &__item {
     display: block;
     margin: 0 auto;

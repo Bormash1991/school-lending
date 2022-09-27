@@ -1119,6 +1119,12 @@ select {
   position: relative;
   margin-top: 40px;
 }
+.prefer__slider-btn-l {
+  left: -35px;
+}
+.prefer__slider-btn-r {
+  right: -35px;
+}
 .prefer__item {
   display: block;
   margin: 0 auto;
