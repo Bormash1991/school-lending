@@ -8,10 +8,10 @@
   &__slider {
     &-btn {
       &-l {
-        left: -35px;
+        left: -13px;
       }
       &-r {
-        right: -35px;
+        right: -13px;
       }
     }
   }
@@ -72,6 +72,16 @@
   .prefer {
     padding-top: 40px;
     padding-bottom: 40px;
+    &__slider {
+      &-btn {
+        &-l {
+          left: 0;
+        }
+        &-r {
+          right: 0;
+        }
+      }
+    }
     &__text {
       width: 660px;
       margin: 0 auto;
@@ -94,6 +104,16 @@
 @media (min-width: 1440px) {
   .prefer {
     padding-bottom: 40px;
+    &__slider {
+      &-btn {
+        &-l {
+          left: -35px;
+        }
+        &-r {
+          right: -35px;
+        }
+      }
+    }
     &__text {
       width: 660px;
       margin: 0 auto;

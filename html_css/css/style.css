@@ -1120,10 +1120,10 @@ select {
   margin-top: 40px;
 }
 .prefer__slider-btn-l {
-  left: -35px;
+  left: -13px;
 }
 .prefer__slider-btn-r {
-  right: -35px;
+  right: -13px;
 }
 .prefer__item {
   display: block;
@@ -1181,6 +1181,12 @@ select {
     padding-top: 40px;
     padding-bottom: 40px;
   }
+  .prefer__slider-btn-l {
+    left: 0;
+  }
+  .prefer__slider-btn-r {
+    right: 0;
+  }
   .prefer__text {
     width: 660px;
     margin: 0 auto;
@@ -1201,6 +1207,12 @@ select {
 @media (min-width: 1440px) {
   .prefer {
     padding-bottom: 40px;
+  }
+  .prefer__slider-btn-l {
+    left: -35px;
+  }
+  .prefer__slider-btn-r {
+    right: -35px;
   }
   .prefer__text {
     width: 660px;
