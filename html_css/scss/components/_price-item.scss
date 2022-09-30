@@ -8,6 +8,7 @@
   color: #ffffff;
   text-decoration: none;
   z-index: 1;
+  transition: box-shadow;
   &__overlay {
     position: absolute;
     top: 0;

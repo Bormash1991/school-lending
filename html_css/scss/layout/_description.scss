@@ -55,7 +55,7 @@
     border: 2px solid white;
     border-radius: 100%;
     fill: white;
-    transition: 0.09s all;
+    transition: border, background-color, box-shadow;
     &:hover {
       border: 0 solid white;
     }

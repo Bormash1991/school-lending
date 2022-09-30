@@ -22,7 +22,31 @@
               <use href="img/sprite.svg#icon-logo"></use>
             </svg>
           </div>
+          <!-- nav have active class -->
           <nav class="header__nav">
+            <div class="header__nav-container">
+              <div class="header__nav-wrapper">
+                <div class="header__humburger">
+                  <span
+                    class="header__humburger-item header__humburger-item_black"
+                  ></span
+                  ><span
+                    class="header__humburger-item header__humburger-item_black"
+                  ></span
+                  ><span
+                    class="header__humburger-item header__humburger-item_black"
+                  ></span>
+                </div>
+                <svg class="logo header__logo-img">
+                  <use href="img/sprite.svg#icon-logo"></use>
+                </svg>
+              </div>
+              <div class="header__humburger header__cross">
+                <span class="header__humburger-item header__cross-item"></span
+                ><span class="header__humburger-item header__cross-item"></span>
+              </div>
+            </div>
+
             <ul class="header__list item-list">
               <li class="header__elem item-list__elem">
                 <a href="#shoose" class="header__link">Categories</a>
@@ -37,8 +61,13 @@
                 <a href="#prefer" class="header__link">Degrees</a>
               </li>
             </ul>
-            <button class="btn btn_blue btn_big header__btn">Explore</button>
+            <button class="btn btn_blue btn_big header__btn btn_desk">
+              Explore
+            </button>
           </nav>
+          <button class="btn btn_blue btn_big header__btn btn_mobil">
+            Explore
+          </button>
         </div>
       </div>
     </header>
@@ -576,7 +605,9 @@
             </div>
           </div>
           <div class="prefer__container">
-            <button class="slider-btn slider-btn_left prefer__slider-btn prefer__slider-btn-l">
+            <button
+              class="slider-btn slider-btn_left prefer__slider-btn prefer__slider-btn-l"
+            >
               <svg class="slider-btn__img slider-btn__img-left">
                 <use href="img/sprite.svg#icon-left" width="10"></use>
               </svg>
@@ -601,7 +632,9 @@
                 <div class="prefer__name">Education</div>
               </a>
             </div>
-            <button class="slider-btn slider-btn_right prefer__slider-btn prefer__slider-btn-r">
+            <button
+              class="slider-btn slider-btn_right prefer__slider-btn prefer__slider-btn-r"
+            >
               <svg class="slider-btn__img slider-btn__img-right">
                 <use href="img/sprite.svg#icon-right" width="10"></use>
               </svg>
@@ -965,5 +998,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/mobile-menu.js"></script>
   </body>
 </html>

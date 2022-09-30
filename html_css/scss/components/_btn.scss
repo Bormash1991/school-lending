@@ -8,7 +8,7 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 1.33;
-  transition: 0.5s all;
+  transition-property: background-color;
   color: white;
   cursor: pointer;
 
@@ -62,14 +62,29 @@
       outline: 2px solid #ffffff;
     }
   }
-  &_big {
-    padding: 12px 24px;
+  // &_big {
+  //   padding: 12px 24px;
+  // }
+  &_desk {
+    display: none;
   }
 }
+
 @media (min-width: 768px) {
   .btn {
+    padding: 12px 24px;
     &_form {
       padding: 14px 44px;
     }
+    &_mobil {
+      display: none;
+    }
+    &_desk {
+      display: block;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .btn {
   }
 }
