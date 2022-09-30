@@ -2,7 +2,6 @@ window.addEventListener("DOMContentLoaded", () => {
   let header = document.querySelector(".header"),
     headerBack = document.querySelector(".header__back");
   let inform = document.querySelector(".inform");
-  console.log(header);
   window.addEventListener("scroll", () => {
     if (window.scrollY >= inform.clientHeight) {
       header.style.position = "sticky";
