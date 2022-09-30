@@ -13,6 +13,7 @@
       max-height: 22px;
       stroke: black;
       fill: black;
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       transition: stroke, fill;
       &:hover {
         stroke: var(--green);
@@ -57,7 +58,8 @@
       line-height: 1.57;
       text-decoration: none;
       color: var(--gray);
-      transition: color;
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition-property: color;
       &:hover {
         color: var(--green);
       }

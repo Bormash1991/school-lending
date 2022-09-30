@@ -74,6 +74,7 @@
     <main class="main">
       <section class="inform">
         <div class="container container_small">
+        
           <div class="inform__container flex_start">
             <div class="text-block inform__block">
               <h1 class="text-block__title inform__title">
@@ -563,19 +564,25 @@
                   <div
                     class="item-list__container item-list__container_white item-list__container_center"
                   >
-                    <div class="item-list__date item-list_flex">
+                    <div
+                      class="item-list__date item-list_flex item-list__date-sm"
+                    >
                       <svg class="item-list__img item-list__img_white calendar">
                         <use href="img/sprite.svg#icon-calendar"></use>
                       </svg>
                       July 8, 2018
                     </div>
-                    <div class="item-list__time item-list_flex">
+                    <div
+                      class="item-list__time item-list_flex item-list__time-sm"
+                    >
                       <svg class="item-list__img item-list__img_white clock">
                         <use href="img/sprite.svg#icon-clock"></use>
                       </svg>
                       5pm - 7pm
                     </div>
-                    <div class="item-list__city item-list_flex">
+                    <div
+                      class="item-list__city item-list_flex item-list__city-sm"
+                    >
                       <svg class="item-list__img item-list__img_white map">
                         <use href="img/sprite.svg#icon-map"></use>
                       </svg>
@@ -867,19 +874,28 @@
       <section id="contact" class="contact">
         <div class="container">
           <form action="#" class="form flex">
+            <label for="fullname"></label>
             <input
+              name="fullname"
+              id="fullname"
               class="form__input"
               required
               type="text"
               placeholder="Name Surname"
             />
+            <label for="phone"></label>
             <input
+              name="phone"
+              id="phone"
               class="form__input"
               required
               type="tel"
               placeholder="Phone"
             />
+            <label for="email"></label>
             <input
+              name="email"
+              id="email"
               class="form__input"
               required
               type="email"
@@ -999,5 +1015,6 @@
       </div>
     </footer>
     <script src="js/mobile-menu.js"></script>
+    <script src="js/header-scroll.js"></script>
   </body>
 </html>

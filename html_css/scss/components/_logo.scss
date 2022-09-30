@@ -2,7 +2,8 @@
   height: 24px;
   width: 53.12px;
   fill: var(--blue);
-  transition: fill;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
   cursor: pointer;
   &:hover {
     fill: black;

@@ -1,10 +1,19 @@
 .inform {
+  position: relative;
   padding: 0 0 40px 0;
   &__container {
     display: flex;
     flex-direction: column-reverse;
   }
-
+  &__back {
+    position: absolute;
+    right: 0;
+    top: -77.95px;
+    height: 314px;
+    z-index: -1;
+    width: 100%;
+    background: url("../img/header/back-green.svg") right top/contain no-repeat;
+  }
   &__title {
     margin-top: 22px;
     font-size: 36px;

@@ -54,18 +54,22 @@
   .item-list {
     &__city {
       margin-top: 0;
+      &-sm {
+        margin: 0;
+        margin-top: 9px;
+      }
     }
     &__date {
       margin-right: 25.6px;
+      &-sm {
+        margin-right: 25.6px;
+      }
     }
     &__time {
       margin-right: 26.5px;
+      &-sm {
+        margin: 0;
+      }
     }
-    // &__flex {
-    //   flex-wrap: nowrap;
-    // }
-    // &__container {
-    //   flex-wrap: nowrap;
-    // }
   }
 }

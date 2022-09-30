@@ -79,7 +79,8 @@
     background-color: transparent;
     border: none;
     color: #5d74e4;
-    transition: box-shadow, border;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: box-shadow, border;
     &:hover {
       box-shadow: 0px 4px 16px #e2edfb;
     }
