@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+
   let humburger = document.querySelector(".header__humburger"),
     nav = document.querySelector(".header__nav"),
     cross = document.querySelector(".header__cross"),
@@ -20,4 +20,4 @@ window.addEventListener("DOMContentLoaded", () => {
       nav.classList.remove("header__nav_active");
     }
   });
-});
+
