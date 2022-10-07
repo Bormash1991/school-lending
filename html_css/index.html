@@ -22,7 +22,31 @@
               <use href="img/sprite.svg#icon-logo"></use>
             </svg>
           </div>
+          <!-- nav have active class -->
           <nav class="header__nav">
+            <div class="header__nav-container">
+              <div class="header__nav-wrapper">
+                <div class="header__humburger">
+                  <span
+                    class="header__humburger-item header__humburger-item_black"
+                  ></span
+                  ><span
+                    class="header__humburger-item header__humburger-item_black"
+                  ></span
+                  ><span
+                    class="header__humburger-item header__humburger-item_black"
+                  ></span>
+                </div>
+                <svg class="logo header__logo-img">
+                  <use href="img/sprite.svg#icon-logo"></use>
+                </svg>
+              </div>
+              <div class="header__humburger header__cross">
+                <span class="header__humburger-item header__cross-item"></span
+                ><span class="header__humburger-item header__cross-item"></span>
+              </div>
+            </div>
+
             <ul class="header__list item-list">
               <li class="header__elem item-list__elem">
                 <a href="#shoose" class="header__link">Categories</a>
@@ -37,14 +61,20 @@
                 <a href="#prefer" class="header__link">Degrees</a>
               </li>
             </ul>
-            <button class="btn btn_blue btn_big header__btn">Explore</button>
+            <button class="btn btn_blue btn_big header__btn btn_desk">
+              Explore
+            </button>
           </nav>
+          <button class="btn btn_blue btn_big header__btn btn_mobil">
+            Explore
+          </button>
         </div>
       </div>
     </header>
     <main class="main">
       <section class="inform">
         <div class="container container_small">
+        
           <div class="inform__container flex_start">
             <div class="text-block inform__block">
               <h1 class="text-block__title inform__title">
@@ -534,19 +564,25 @@
                   <div
                     class="item-list__container item-list__container_white item-list__container_center"
                   >
-                    <div class="item-list__date item-list_flex">
+                    <div
+                      class="item-list__date item-list_flex item-list__date-sm"
+                    >
                       <svg class="item-list__img item-list__img_white calendar">
                         <use href="img/sprite.svg#icon-calendar"></use>
                       </svg>
                       July 8, 2018
                     </div>
-                    <div class="item-list__time item-list_flex">
+                    <div
+                      class="item-list__time item-list_flex item-list__time-sm"
+                    >
                       <svg class="item-list__img item-list__img_white clock">
                         <use href="img/sprite.svg#icon-clock"></use>
                       </svg>
                       5pm - 7pm
                     </div>
-                    <div class="item-list__city item-list_flex">
+                    <div
+                      class="item-list__city item-list_flex item-list__city-sm"
+                    >
                       <svg class="item-list__img item-list__img_white map">
                         <use href="img/sprite.svg#icon-map"></use>
                       </svg>
@@ -576,7 +612,9 @@
             </div>
           </div>
           <div class="prefer__container">
-            <button class="slider-btn slider-btn_left prefer__slider-btn prefer__slider-btn-l">
+            <button
+              class="slider-btn slider-btn_left prefer__slider-btn prefer__slider-btn-l"
+            >
               <svg class="slider-btn__img slider-btn__img-left">
                 <use href="img/sprite.svg#icon-left" width="10"></use>
               </svg>
@@ -601,7 +639,9 @@
                 <div class="prefer__name">Education</div>
               </a>
             </div>
-            <button class="slider-btn slider-btn_right prefer__slider-btn prefer__slider-btn-r">
+            <button
+              class="slider-btn slider-btn_right prefer__slider-btn prefer__slider-btn-r"
+            >
               <svg class="slider-btn__img slider-btn__img-right">
                 <use href="img/sprite.svg#icon-right" width="10"></use>
               </svg>
@@ -834,19 +874,28 @@
       <section id="contact" class="contact">
         <div class="container">
           <form action="#" class="form flex">
+            <label for="fullname"></label>
             <input
+              name="fullname"
+              id="fullname"
               class="form__input"
               required
               type="text"
               placeholder="Name Surname"
             />
+            <label for="phone"></label>
             <input
+              name="phone"
+              id="phone"
               class="form__input"
               required
               type="tel"
               placeholder="Phone"
             />
+            <label for="email"></label>
             <input
+              name="email"
+              id="email"
               class="form__input"
               required
               type="email"
@@ -965,5 +1014,7 @@
         </div>
       </div>
     </footer>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/header-scroll.js"></script>
   </body>
 </html>
