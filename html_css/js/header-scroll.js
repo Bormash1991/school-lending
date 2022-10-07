@@ -1,7 +1,7 @@
-window.addEventListener("DOMContentLoaded", () => {
-  let header = document.querySelector(".header"),
-    headerBack = document.querySelector(".header__back");
-  let inform = document.querySelector(".inform");
+let header = document.querySelector(".header"),
+  headerBack = document.querySelector(".header__back"),
+  inform = document.querySelector(".inform");
+export function headerAppearsWithScroll() {
   window.addEventListener("scroll", () => {
     if (window.scrollY >= inform.clientHeight) {
       header.style.position = "sticky";
@@ -13,4 +13,4 @@ window.addEventListener("DOMContentLoaded", () => {
       header.classList.remove("header__fix");
     }
   });
-});
+}

@@ -120,24 +120,24 @@ select {
 
 @media (min-width: 576px) {
   .container {
-    width: 540px;
+    max-width: 540px;
   }
 }
 @media (min-width: 768px) and (max-width: 1439px) {
   .container {
     position: unset;
-    width: 720px;
+    max-width: 720px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 960px;
+    max-width: 960px;
   }
 }
 @media (min-width: 1440px) {
   .container {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 0px;
+    padding-left: 0px;
     max-width: 1024px;
   }
   .container_small {
@@ -148,7 +148,7 @@ select {
   }
   .container_big {
     padding: 0;
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
   }
 }
@@ -1349,7 +1349,7 @@ select {
   padding: 80px 0 40px 0;
 }
 .blog__wrap {
-  margin-top: 72px;
+  margin-top: 117px;
 }
 .blog__wrap-left {
   margin-right: 8px;
@@ -1359,6 +1359,7 @@ select {
 }
 .blog__wrap-item {
   padding: 18px 0 24px 12px;
+  margin-top: -48px;
   margin-bottom: 44px;
   max-width: 415px;
   background-color: #d6fae7;
@@ -1394,6 +1395,11 @@ select {
   font-weight: 600;
   font-size: 16px;
   color: black;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .blog__more {
   display: inline-block;
@@ -1410,6 +1416,7 @@ select {
   line-height: 1.5;
   text-align: center;
   color: var(--blog-blue);
+  margin-top: 24px;
 }
 .blog__elem {
   margin-right: 38.5px;
@@ -1442,6 +1449,12 @@ select {
 @media (min-width: 768px) {
   .blog__wrap {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+  }
+  .blog__wrap-elements {
+    display: flex;
     justify-content: end;
     align-items: end;
     margin-top: 68px;
@@ -1462,6 +1475,8 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 0;
+    margin-left: -10px;
   }
   .blog__elem {
     margin-right: 0;
@@ -1473,7 +1488,11 @@ select {
 }
 @media (min-width: 1440px) {
   .blog__wrap {
-    margin-top: 48px;
+    justify-content: space-between;
+    margin-top: 55px;
+  }
+  .blog__wrap-elements {
+    margin-right: 107px;
   }
   .blog__wrap-item {
     padding-left: 16px;
@@ -1483,7 +1502,6 @@ select {
   }
   .blog__wrap-item:nth-child(2) {
     display: flex;
-    margin-right: 107px;
   }
 }
 .customer {
