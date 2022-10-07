@@ -6,13 +6,20 @@ export function paginator(data) {
   createButtons(data);
   clickHandler(data);
 }
-function templateBlogElements(id, title, url, thumbnailUrl) {
+function templateBlogElements(
+  id,
+  title,
+  url,
+  userImage,
+  redirectLink,
+  category
+) {
   return `
               <div id="${id}" class="blog__wrap-item flex_justify-c">
                 <div class="blog__wrap-left">
-                  <div class="blog__name">DESIGN</div>
+                  <div class="blog__name">${category}</div>
                   <img
-                    src="img/blog/persone/second.jpg"
+                    src="${userImage}"
                     alt="person"
                     class="blog__person-img"
                     width="48"
@@ -28,7 +35,7 @@ function templateBlogElements(id, title, url, thumbnailUrl) {
                   <div class="blog__text">
                    ${title}
                   </div>
-                  <a href="${thumbnailUrl}" class="blog__more">Read Now</a>
+                  <a href="${redirectLink}" class="blog__more">Read Now</a>
                 </div>
               </div>
         `;
@@ -85,12 +92,14 @@ function createElements(data, numberOfBtn, coutOfSlides) {
     numberOfBtn * coutOfSlides
   );
   halfData.forEach((el, index) => {
-    let { id, title, url, thumbnailUrl } = el;
+    let { id, title, url, userImage, redirectLink, category } = el;
     elementsWrapper.innerHTML += templateBlogElements(
       id,
       title,
       url,
-      thumbnailUrl
+      userImage,
+      redirectLink,
+      category
     );
   });
 }
