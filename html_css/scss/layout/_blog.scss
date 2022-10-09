@@ -16,9 +16,18 @@
       max-width: 415px;
       background-color: #d6fae7;
       border-radius: 16px 16px 0px 16px;
+      animation: 1s cubic-bezier(0.4, 0, 0.2, 1) show;
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
   &__name {
@@ -66,6 +75,9 @@
     color: black;
   }
   &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
@@ -129,11 +141,11 @@
       }
     }
     &__list {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: unset;
       margin-top: 0;
       margin-left: -10px;
+      max-height: 272px;
+      overflow: hidden;
     }
     &__elem {
       margin-right: 0;

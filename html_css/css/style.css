@@ -1364,9 +1364,18 @@ select {
   max-width: 415px;
   background-color: #d6fae7;
   border-radius: 16px 16px 0px 16px;
+  animation: 1s cubic-bezier(0.4, 0, 0.2, 1) show;
 }
 .blog__wrap-item:last-child {
   margin-bottom: 0;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .blog__name {
   margin-bottom: 46px;
@@ -1411,6 +1420,9 @@ select {
   color: black;
 }
 .blog__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
@@ -1472,11 +1484,11 @@ select {
     display: none;
   }
   .blog__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: unset;
     margin-top: 0;
     margin-left: -10px;
+    max-height: 272px;
+    overflow: hidden;
   }
   .blog__elem {
     margin-right: 0;

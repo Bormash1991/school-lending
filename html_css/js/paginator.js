@@ -55,13 +55,16 @@ function checkWindowWidth() {
 checkWindowWidth();
 function checkActiveButton(count, data) {
   let btns = document.querySelectorAll(".blog__btn");
-  if (count % 2 == 0) {
+  if (count % 2 == 0 && btns.length < 5) {
     btns[0].classList.add(activeClass);
     createElements(data, 1, slides);
-  } else {
+  } else if (count % 2 != 0 && btns.length <= 5) {
     let num = Math.trunc(count / 2);
     btns[num].classList.add(activeClass);
     createElements(data, num + 1, slides);
+  } else {
+    btns[2].classList.add(activeClass);
+    createElements(data, 3, slides);
   }
 
   clickHandler(data);
@@ -72,7 +75,7 @@ function clickHandler(data) {
   buttonsParent.addEventListener("click", (e) => {
     let target = e.target;
     arrs.forEach((elem, i) => {
-      if (target == elem) {
+      if (target == elem && !target.classList.contains(activeClass)) {
         arrs.forEach((e, index) => {
           if (e.classList.contains(activeClass)) {
             e.classList.remove(activeClass);
@@ -85,7 +88,7 @@ function clickHandler(data) {
     });
   });
 }
-
+function autoScrollListOfButtons(btns) {}
 function createElements(data, numberOfBtn, coutOfSlides) {
   let halfData = data.slice(
     numberOfBtn * coutOfSlides - coutOfSlides,
