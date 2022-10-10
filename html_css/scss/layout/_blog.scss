@@ -75,9 +75,16 @@
     color: black;
   }
   &__list {
+    &-wrap {
+      overflow: hidden;
+      width: 288px;
+      margin: 0 auto;
+    }
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
+
     align-items: center;
+
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
@@ -86,7 +93,7 @@
     margin-top: 24px;
   }
   &__elem {
-    margin-right: 38.5px;
+    margin-right: 22px;
     &:last-child {
       margin-right: 0;
     }
@@ -141,11 +148,16 @@
       }
     }
     &__list {
+      &-wrap {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        max-height: 272px;
+        width: unset;
+        overflow: hidden;
+      }
       display: unset;
       margin-top: 0;
-      margin-left: -10px;
-      max-height: 272px;
-      overflow: hidden;
     }
     &__elem {
       margin-right: 0;

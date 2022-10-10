@@ -1,7 +1,8 @@
 let buttonsParent = document.querySelector(".blog__list"),
   elementsWrapper = document.querySelector(".blog__wrap-elements"),
   slides = 2,
-  activeClass = "blog__btn_active";
+  activeClass = "blog__btn_active",
+  translate = 0;
 export function paginator(data) {
   createButtons(data);
   clickHandler(data);
@@ -40,10 +41,10 @@ function templateBlogElements(
               </div>
         `;
 }
-function templateButtons(num) {
+function templateButtons(num, hidden = "") {
   return `
       <li class="blog__elem ">
-                <button class="blog__btn">${num}</button>
+                <button class="blog__btn ${hidden}">${num}</button>
               </li>
     `;
 }
@@ -84,11 +85,20 @@ function clickHandler(data) {
         elem.classList.add(activeClass);
         elementsWrapper.innerHTML = "";
         createElements(data, i + 1, slides);
+        if (btns.length > 5) {
+          autoScrollListOfButtons(btns, i);
+        }
       }
     });
   });
 }
-function autoScrollListOfButtons(btns) {}
+function autoScrollListOfButtons(btns, index) {
+  let arrBtns = [...btns];
+
+  // btns[index + 2].classList.remove("hidden");
+  // translate -= 58;
+  buttonsParent.style.cssText = `transform:translateY(${translate}px)`;
+}
 function createElements(data, numberOfBtn, coutOfSlides) {
   let halfData = data.slice(
     numberOfBtn * coutOfSlides - coutOfSlides,
@@ -111,13 +121,21 @@ function createButtons(data) {
   let counter = 0;
   if (dataLength % slides == 0) {
     for (let i = 0; i < dataLength / slides; i++) {
-      buttonsParent.innerHTML += templateButtons(i + 1);
       counter += 1;
+      if (counter > 5) {
+        buttonsParent.innerHTML += templateButtons(i + 1, "hidden");
+      } else {
+        buttonsParent.innerHTML += templateButtons(i + 1);
+      }
     }
   } else {
     for (let i = 0; i < Math.ceil(dataLength / slides); i++) {
-      buttonsParent.innerHTML += templateButtons(i + 1);
       counter += 1;
+      if (counter > 5) {
+        buttonsParent.innerHTML += templateButtons(i + 1, "hidden");
+      } else {
+        buttonsParent.innerHTML += templateButtons(i + 1);
+      }
     }
   }
   checkActiveButton(counter, data);

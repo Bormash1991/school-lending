@@ -99,6 +99,30 @@ window.addEventListener("DOMContentLoaded", () => {
       redirectLink: "https://jsonplaceholder.typicode.com",
       category: "Design",
     },
+    {
+      id: 5,
+      title: "natus nisi omnis corporis facere molestiae rerum in",
+      url: "https://via.placeholder.com/600/f66b97",
+      userImage: "https://via.placeholder.com/150/f66b97",
+      redirectLink: "https://jsonplaceholder.typicode.com",
+      category: "Design",
+    },
+    {
+      id: 5,
+      title: "natus nisi omnis corporis facere molestiae rerum in",
+      url: "https://via.placeholder.com/600/f66b97",
+      userImage: "https://via.placeholder.com/150/f66b97",
+      redirectLink: "https://jsonplaceholder.typicode.com",
+      category: "Design",
+    },
+    {
+      id: 5,
+      title: "natus nisi omnis corporis facere molestiae rerum in",
+      url: "https://via.placeholder.com/600/f66b97",
+      userImage: "https://via.placeholder.com/150/f66b97",
+      redirectLink: "https://jsonplaceholder.typicode.com",
+      category: "Design",
+    },
   ];
   humburger();
   headerAppearsWithScroll();

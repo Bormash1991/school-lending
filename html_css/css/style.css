@@ -1421,7 +1421,7 @@ select {
 }
 .blog__list {
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;
   align-items: center;
   font-weight: 600;
   font-size: 16px;
@@ -1430,8 +1430,13 @@ select {
   color: var(--blog-blue);
   margin-top: 24px;
 }
+.blog__list-wrap {
+  overflow: hidden;
+  width: 288px;
+  margin: 0 auto;
+}
 .blog__elem {
-  margin-right: 38.5px;
+  margin-right: 22px;
 }
 .blog__elem:last-child {
   margin-right: 0;
@@ -1486,8 +1491,13 @@ select {
   .blog__list {
     display: unset;
     margin-top: 0;
-    margin-left: -10px;
+  }
+  .blog__list-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 0;
     max-height: 272px;
+    width: unset;
     overflow: hidden;
   }
   .blog__elem {
