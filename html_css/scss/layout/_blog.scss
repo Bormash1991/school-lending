@@ -77,7 +77,7 @@
   &__list {
     &-wrap {
       overflow: hidden;
-      width: 288px;
+      width: 295px;
       margin: 0 auto;
     }
     display: flex;
@@ -91,6 +91,8 @@
     text-align: center;
     color: var(--blog-blue);
     margin-top: 24px;
+    transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform;
   }
   &__elem {
     margin-right: 22px;
@@ -151,13 +153,15 @@
       &-wrap {
         display: flex;
         justify-content: center;
+        padding: 5px 0;
         margin: 0;
-        max-height: 272px;
+        max-height: 282px;
         width: unset;
         overflow: hidden;
       }
       display: unset;
       margin-top: 0;
+      width: 60px;
     }
     &__elem {
       margin-right: 0;

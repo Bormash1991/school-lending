@@ -2,7 +2,7 @@ let buttonsParent = document.querySelector(".blog__list"),
   elementsWrapper = document.querySelector(".blog__wrap-elements"),
   slides = 2,
   activeClass = "blog__btn_active",
-  translate = 0;
+  horizontal = false;
 export function paginator(data) {
   createButtons(data);
   clickHandler(data);
@@ -52,6 +52,9 @@ function checkWindowWidth() {
   if (window.innerWidth < 1440) {
     slides = 1;
   }
+  if (window.innerWidth < 768) {
+    horizontal = true;
+  }
 }
 checkWindowWidth();
 function checkActiveButton(count, data) {
@@ -86,18 +89,31 @@ function clickHandler(data) {
         elementsWrapper.innerHTML = "";
         createElements(data, i + 1, slides);
         if (btns.length > 5) {
-          autoScrollListOfButtons(btns, i);
+          autoScrollListOfButtons(i, data, btns);
         }
       }
     });
   });
 }
-function autoScrollListOfButtons(btns, index) {
-  let arrBtns = [...btns];
+function setTransformValue(trigger) {
+  if (trigger) {
+    return "translateX";
+  } else {
+    return "translateY";
+  }
+}
+function autoScrollListOfButtons(index, data, btns) {
+  let translate = setTransformValue(horizontal);
+  if (index <= 3) {
+    buttonsParent.setAttribute("style", `transform: ${translate}(-0px)`);
+  }
 
-  // btns[index + 2].classList.remove("hidden");
-  // translate -= 58;
-  buttonsParent.style.cssText = `transform:translateY(${translate}px)`;
+  if (index > 3 && index < btns.length - 1) {
+    buttonsParent.setAttribute(
+      "style",
+      `transform: ${translate}(-${58 * (index - 3)}px)`
+    );
+  }
 }
 function createElements(data, numberOfBtn, coutOfSlides) {
   let halfData = data.slice(
