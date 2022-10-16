@@ -77,20 +77,19 @@
   &__list {
     &-wrap {
       overflow: hidden;
-      width: 295px;
+      width: 305px;
       margin: 0 auto;
+      padding: 10px 7px;
     }
     display: flex;
     flex-wrap: nowrap;
-
     align-items: center;
-
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
     color: var(--blog-blue);
-    margin-top: 24px;
+    margin-top: 14px;
     transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: transform;
   }

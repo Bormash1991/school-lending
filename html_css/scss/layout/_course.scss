@@ -40,6 +40,12 @@
     }
   }
 }
+@media (min-width: 320px) {
+  .slick-list {
+    max-width: 270px;
+    margin: 0 auto !important;
+  }
+}
 @media (min-width: 375px) {
   .slick-list {
     max-width: 295px;

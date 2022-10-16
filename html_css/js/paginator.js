@@ -97,21 +97,28 @@ function clickHandler(data) {
 }
 function setTransformValue(trigger) {
   if (trigger) {
-    return "translateX";
+    return {
+      value: "translateX",
+      number: 62,
+    };
   } else {
-    return "translateY";
+    return {
+      value: "translateY",
+      number: 58,
+    };
   }
 }
 function autoScrollListOfButtons(index, data, btns) {
-  let translate = setTransformValue(horizontal);
+  let { value, number } = setTransformValue(horizontal);
+
   if (index <= 3) {
-    buttonsParent.setAttribute("style", `transform: ${translate}(-0px)`);
+    buttonsParent.setAttribute("style", `transform: ${value}(-0px)`);
   }
 
   if (index > 3 && index < btns.length - 1) {
     buttonsParent.setAttribute(
       "style",
-      `transform: ${translate}(-${58 * (index - 3)}px)`
+      `transform: ${value}(-${number * (index - 3)}px)`
     );
   }
 }
