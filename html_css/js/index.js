@@ -110,7 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
       title: "Learn Photoshop title",
       price: "260",
       oldPrice: "360",
-      countOfStars: 4,
+      countOfStars: 4.2,
     },
     {
       id: 2,
