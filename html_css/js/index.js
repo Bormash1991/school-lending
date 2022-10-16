@@ -1,6 +1,7 @@
 import { humburger } from "./mobile-menu.js";
 import { headerAppearsWithScroll } from "./header-scroll.js";
 import { paginator } from "./paginator.js";
+import { coursesSlider } from "./courses-slider.js";
 window.addEventListener("DOMContentLoaded", () => {
   const dataForPaginator = [
     {
@@ -100,42 +101,50 @@ window.addEventListener("DOMContentLoaded", () => {
       category: "Design",
     },
   ];
+  const dataForCoursesSlider = [
+    {
+      id: 1,
+      personImg: "img/course/persone/first.jpg",
+      backUrl: "img/course/itemBack/first.jpg",
+      category: "Design",
+      title: "Learn Photoshop title",
+      price: "260",
+      oldPrice: "360",
+      countOfStars: 4,
+    },
+    {
+      id: 2,
+      personImg: "img/course/persone/third.jpg",
+      backUrl: "img/course/itemBack/second.jpg",
+      category: "Marketing",
+      title: " Learn Photoshop title trun",
+      price: "260",
+      oldPrice: "360",
+      countOfStars: 4,
+    },
+    {
+      id: 3,
+      personImg: "img/course/persone/second.jpg",
+      backUrl: "img/course/itemBack/third.jpg",
+      category: "Web design",
+      title: "Learn Photoshop",
+      price: "260",
+      oldPrice: "360",
+      countOfStars: 5,
+    },
+    {
+      id: 4,
+      personImg: "img/course/persone/third.jpg",
+      backUrl: "img/course/itemBack/second.jpg",
+      category: "Test Slide",
+      title: "Learn Photoshop test",
+      price: "260",
+      oldPrice: "360",
+      countOfStars: 3,
+    },
+  ];
   humburger();
   headerAppearsWithScroll();
   paginator(dataForPaginator);
-  $(".course__slider-wrap").slick({
-    slidesToShow: 3,
-    speed: 500,
-    prevArrow: document.querySelector(".course__slider-btn_left"),
-    nextArrow: document.querySelector(".course__slider-btn_right"),
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1440,
-        settings: {
-          centerMode: true,
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 375,
-        settings: {
-          centerMode: true,
-          slidesToShow: 1,
-        },
-      },
-    ],
-  });
+  coursesSlider(dataForCoursesSlider);
 });

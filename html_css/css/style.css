@@ -812,28 +812,7 @@ select {
   width: 265px !important;
   margin: 0 auto;
 }
-.course__item_first {
-  background: url("../img/course/itemBack/first.jpg") center center/cover no-repeat;
-}
-.course__item_second {
-  background: url("../img/course/itemBack/second.jpg") center center/cover no-repeat;
-}
-.course__item_third {
-  background: url("../img/course/itemBack/third.jpg") center center/cover no-repeat;
-}
 
-@media (min-width: 320px) {
-  .slick-list {
-    max-width: 270px;
-    margin: 0 auto !important;
-  }
-}
-@media (min-width: 375px) {
-  .slick-list {
-    max-width: 295px;
-    margin: 0 auto !important;
-  }
-}
 @media (min-width: 768px) {
   .course {
     padding-top: 35px;
@@ -844,33 +823,12 @@ select {
   .course__item {
     width: 270px !important;
   }
-  .slick-list {
-    max-width: 590px;
-    margin: 0 auto !important;
-  }
 }
 @media (min-width: 1440px) {
   .course {
     padding-top: 70px;
   }
-  .slick-list {
-    max-width: 880px;
-    margin: 0 auto !important;
-  }
 }
-.slick-track {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.slick-slide {
-  margin: 0 10px;
-}
-
-.slick-list {
-  padding: 0 15px !important;
-}
-
 .star-wrap {
   display: flex;
   font-weight: 400;
@@ -2010,4 +1968,39 @@ p {
 :active,
 :focus {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slick-track {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.slick-slide {
+  margin: 0 10px;
+}
+
+.slick-list {
+  padding: 0 15px !important;
+  margin: 0 auto !important;
+}
+
+@media (min-width: 320px) {
+  .slick-list {
+    max-width: 270px;
+  }
+}
+@media (min-width: 375px) {
+  .slick-list {
+    max-width: 295px;
+  }
+}
+@media (min-width: 768px) {
+  .slick-list {
+    max-width: 590px;
+  }
+}
+@media (min-width: 1440px) {
+  .slick-list {
+    max-width: 880px;
+  }
 }/*# sourceMappingURL=style.css.map */
