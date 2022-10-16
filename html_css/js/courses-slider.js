@@ -4,36 +4,8 @@ export function coursesSlider(data) {
   initSlickSlider();
 }
 
-function starsCounter(stars) {
-  let starsString = "";
-  if (stars == 5) {
-    for (let i = 0; i < stars; i++) {
-      starsString += ` <img
-                      src="img/course/star.svg"
-                      alt="star"
-                      class="star-wrap__star"
-                      width="10"
-                    />`;
-    }
-  } else {
-    for (let i = 0; i < stars; i++) {
-      starsString += ` <img
-                      src="img/course/star.svg"
-                      alt="star"
-                      class="star-wrap__star"
-                      width="10"
-                    />`;
-    }
-    for (let i = 0; i < 5 - stars; i++) {
-      starsString += ` <img
-                     src="img/course/empty-star.svg"
-                      alt="star"
-                      class="star-wrap__star"
-                      width="10"
-                    />`;
-    }
-  }
-  return starsString;
+function checkStars(stars) {
+  return (100 * stars) / 5;
 }
 function addSlides(data) {
   data.forEach((elem, i) => {
@@ -41,7 +13,7 @@ function addSlides(data) {
   });
 }
 function slideTemplate(elem) {
-  let stars = starsCounter(elem.countOfStars);
+  let width = checkStars(elem.countOfStars);
   let {
     id,
     personImg,
@@ -72,9 +44,11 @@ function slideTemplate(elem) {
                     <div class="price-item__price">$${price}</div>
                     <div class="price-item__price-old">$${oldPrice}</div>
                   </div>
-                  <div class="price-item__star-wrap star-wrap">
-                  ${stars}
-                    <div class="star-wrap__text">(${countOfStars})</div>
+                  <div class="price-item__star-wrap rating">
+                   <div class="rating__body">
+                      <div class="rating__active" style='width:${width}%'></div>
+                      </div>
+                    <div class="rating__value">(${countOfStars})</div>
                   </div>
                 </div>
               </a></div>`;

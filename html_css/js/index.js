@@ -140,7 +140,7 @@ window.addEventListener("DOMContentLoaded", () => {
       title: "Learn Photoshop test",
       price: "260",
       oldPrice: "360",
-      countOfStars: 3,
+      countOfStars: 2.5,
     },
   ];
   humburger();
