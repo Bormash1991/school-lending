@@ -108,27 +108,25 @@ window.addEventListener("DOMContentLoaded", () => {
     speed: 500,
     prevArrow: document.querySelector(".course__slider-btn_left"),
     nextArrow: document.querySelector(".course__slider-btn_right"),
-
+    variableWidth: true,
     responsive: [
       {
-        breakpoint: 1441,
+        breakpoint: 1440,
         settings: {
+          centerMode: true,
           slidesToShow: 3,
-          variableWidth: true,
         },
       },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          variableWidth: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          variableWidth: true,
         },
       },
       {
@@ -136,7 +134,6 @@ window.addEventListener("DOMContentLoaded", () => {
         settings: {
           centerMode: true,
           slidesToShow: 1,
-          variableWidth: true,
         },
       },
     ],
