@@ -25,6 +25,17 @@ export class PreferSlider {
     });
     this.setData(1, this.data);
   }
+  checkWindowWidth() {
+    if (window.innerWidth >= 1440) {
+      return 4;
+    }
+    if (window.innerWidth < 1440 && window.innerWidth >= 768) {
+      return 2;
+    }
+    if (window.innerWidth < 768) {
+      return 1;
+    }
+  }
   labelTemplate(number) {
     return `<li id="${number}" class="prefer__list-item">Label ${number}</li>`;
   }
@@ -66,7 +77,7 @@ export class PreferSlider {
     box.style.cssText = `transform: translateX(${this.translate}px)`;
   }
   nextSlide() {
-    if (this.coutOfClick < this.numuberOfSlider - 4) {
+    if (this.coutOfClick < this.numuberOfSlider - this.checkWindowWidth()) {
       this.translate -= 217;
       this.coutOfClick += 1;
       this.assignTranslate();
