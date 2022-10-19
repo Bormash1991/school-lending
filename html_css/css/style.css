@@ -1232,10 +1232,10 @@ select {
   position: relative;
   margin-top: 20px;
 }
-.prefer__slider-btn-l {
+.prefer__slider-btn-left {
   left: -13px;
 }
-.prefer__slider-btn-r {
+.prefer__slider-btn-right {
   right: -13px;
 }
 .prefer__label {
@@ -1355,10 +1355,10 @@ select {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .prefer__slider-btn-l {
+  .prefer__slider-btn-left {
     left: 0;
   }
-  .prefer__slider-btn-r {
+  .prefer__slider-btn-right {
     right: 0;
   }
   .prefer__text {
@@ -1378,10 +1378,10 @@ select {
   .prefer {
     padding-bottom: 40px;
   }
-  .prefer__slider-btn-l {
+  .prefer__slider-btn-left {
     left: -35px;
   }
-  .prefer__slider-btn-r {
+  .prefer__slider-btn-right {
     right: -35px;
   }
   .prefer__text {
@@ -1452,7 +1452,6 @@ select {
   background: url("../img/blog/item/laptop.jpg") center center/cover no-repeat;
 }
 .blog__text {
-  width: 311px;
   padding-right: 40px;
   margin-top: -24px;
   font-weight: 600;
@@ -1544,6 +1543,9 @@ select {
   }
   .blog__wrap-item:nth-child(2) {
     display: none;
+  }
+  .blog__text {
+    width: 311px;
   }
   .blog__list {
     display: unset;

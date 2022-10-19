@@ -54,7 +54,6 @@
     }
   }
   &__text {
-    width: 311px;
     padding-right: 40px;
     margin-top: -24px;
     font-weight: 600;
@@ -148,6 +147,9 @@
           display: none;
         }
       }
+    }
+    &__text {
+      width: 311px;
     }
     &__list {
       &-wrap {
