@@ -1,0 +1,30 @@
+.rating {
+  display: flex;
+  align-items: flex-end;
+  &__body {
+    position: relative;
+    &:before {
+      content: "★★★★★";
+      display: block;
+      color: white;
+    }
+  }
+  &__active {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    &:before {
+      content: "★★★★★";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      color: #fdd22f;
+    }
+  }
+}

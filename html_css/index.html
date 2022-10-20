@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lutsenko Bohdan</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
   </head>
   <body>
     <header class="header">
@@ -74,7 +79,6 @@
     <main class="main">
       <section class="inform">
         <div class="container container_small">
-        
           <div class="inform__container flex_start">
             <div class="text-block inform__block">
               <h1 class="text-block__title inform__title">
@@ -223,7 +227,7 @@
             </div>
             <h2 class="text-top__title course__title">2000+ Online course</h2>
           </div>
-          <div class="course__wrapper flex">
+          <div class="course__wrapper">
             <button
               class="slider-btn slider-btn_left course__slider-btn course__slider-btn_left"
             >
@@ -231,158 +235,7 @@
                 <use href="img/sprite.svg#icon-left" width="10"></use>
               </svg>
             </button>
-            <a href="#" class="course__item course__item_first price-item">
-              <div class="price-item__overlay"></div>
-              <img
-                src="img/course/persone/first.jpg"
-                alt="person"
-                class="price-item__img"
-                width="48"
-              />
-              <h4 class="price-item__title">DESIGN</h4>
-              <div class="price-item__subtitle">Learn Photoshop title</div>
-              <div class="price-item__line"></div>
-              <div class="price-item__bottom-wrap">
-                <div class="price-item__price-wrap">
-                  <div class="price-item__price">$260</div>
-                  <div class="price-item__price-old">$360</div>
-                </div>
-                <div class="price-item__star-wrap star-wrap">
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/empty-star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-
-                  <div class="star-wrap__text">(4)</div>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="course__item course__item_second price-item">
-              <img
-                src="img/course/persone/second.jpg"
-                alt="person"
-                class="price-item__img"
-                width="48"
-              />
-              <h4 class="price-item__title">Marketing</h4>
-              <div class="price-item__subtitle">Learn Photoshop title trun</div>
-              <div class="price-item__line"></div>
-              <div class="price-item__bottom-wrap">
-                <div class="price-item__price-wrap">
-                  <div class="price-item__price">$260</div>
-                  <div class="price-item__price-old">$360</div>
-                </div>
-                <div class="price-item__star-wrap star-wrap">
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/empty-star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/empty-star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/empty-star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <div class="star-wrap__text">(4)</div>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="course__item course__item_third price-item">
-              <img
-                src="img/course/persone/third.jpg"
-                alt="person"
-                class="price-item__img"
-                width="48"
-              />
-              <h4 class="price-item__title">Web design</h4>
-              <div class="price-item__subtitle">Learn Photoshop</div>
-              <div class="price-item__line"></div>
-              <div class="price-item__bottom-wrap">
-                <div class="price-item__price-wrap">
-                  <div class="price-item__price">$260</div>
-                  <div class="price-item__price-old">$360</div>
-                </div>
-                <div class="price-item__star-wrap star-wrap">
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <img
-                    src="img/course/star.svg"
-                    alt="star"
-                    class="star-wrap__star"
-                    width="10"
-                  />
-                  <div class="star-wrap__text">(4)</div>
-                </div>
-              </div>
-            </a>
+            <div class="course__slider-wrap"></div>
             <button
               class="slider-btn slider-btn_right shoose__slider-btn course__slider-btn_right"
             >
@@ -804,70 +657,10 @@
             </div>
           </div>
           <div class="blog__wrap">
-            <div class="blog__wrap-item flex_justify-c">
-              <div class="blog__wrap-left">
-                <div class="blog__name">DESIGN</div>
-                <img
-                  src="img/blog/persone/first.jpg"
-                  alt="person"
-                  class="blog__person-img"
-                  width="48"
-                />
-              </div>
-              <div class="blog__wrap-right">
-                <!-- <img
-                  src="img/blog/item/laptop.jpg"
-                  alt="laptop"
-                  class="blog__img"
-                  width="328"
-                /> -->
-                <div class="blog__img"></div>
-                <div class="blog__text">
-                  International Conferenceon Bussiness
-                </div>
-                <a href="" class="blog__more">Read Now</a>
-              </div>
+            <div class="blog__wrap-elements"></div>
+            <div class="blog__list-wrap">
+              <ul class="blog__list item-list"></ul>
             </div>
-            <div class="blog__wrap-item flex_justify-c">
-              <div class="blog__wrap-left">
-                <div class="blog__name">DESIGN</div>
-                <img
-                  src="img/blog/persone/second.jpg"
-                  alt="person"
-                  class="blog__person-img"
-                  width="48"
-                />
-              </div>
-              <div class="blog__wrap-right">
-                <img
-                  src="img/blog/item/laptops.jpg"
-                  alt="laptops"
-                  class="blog__img"
-                  width="328"
-                />
-                <div class="blog__text">
-                  International Conferenceon Bussiness
-                </div>
-                <a href="#" class="blog__more">Read Now</a>
-              </div>
-            </div>
-            <ul class="blog__list item-list flex">
-              <li class="blog__elem">
-                <button class="blog__btn">1</button>
-              </li>
-              <li class="blog__elem">
-                <button class="blog__btn">2</button>
-              </li>
-              <li class="blog__elem">
-                <button class="blog__btn blog__btn_active">3</button>
-              </li>
-              <li class="blog__elem">
-                <button class="blog__btn">4</button>
-              </li>
-              <li class="blog__elem">
-                <button class="blog__btn">5</button>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
@@ -1014,7 +807,14 @@
         </div>
       </div>
     </footer>
-    <script src="js/mobile-menu.js"></script>
-    <script src="js/header-scroll.js"></script>
+    <script type="module" defer src="js/index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.js"
+    ></script>
   </body>
 </html>

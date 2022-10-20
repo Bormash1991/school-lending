@@ -1,0 +1,36 @@
+.slick-track {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.slick-slide {
+  margin: 0 10px;
+}
+.slick-list {
+  padding: 0 15px !important;
+  margin: 0 auto !important;
+}
+@media (min-width: 320px) {
+  .slick-list {
+    max-width: 270px;
+    
+  }
+}
+@media (min-width: 375px) {
+  .slick-list {
+    max-width: 295px;
+    
+  }
+}
+@media (min-width: 768px) {
+   .slick-list {
+    max-width: 590px;
+ 
+  }
+}
+@media (min-width: 1440px) {
+ .slick-list {
+    max-width: 880px;
+   
+  }
+}

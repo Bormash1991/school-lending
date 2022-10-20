@@ -2,7 +2,7 @@
   padding: 80px 0 40px 0;
 
   &__wrap {
-    margin-top: 72px;
+    margin-top: 117px;
     &-left {
       margin-right: 8px;
       display: flex;
@@ -11,13 +11,23 @@
     }
     &-item {
       padding: 18px 0 24px 12px;
+      margin-top: -48px;
       margin-bottom: 44px;
       max-width: 415px;
       background-color: #d6fae7;
       border-radius: 16px 16px 0px 16px;
+      animation: 1s cubic-bezier(0.4, 0, 0.2, 1) show;
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
   &__name {
@@ -49,6 +59,11 @@
     font-weight: 600;
     font-size: 16px;
     color: black;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   &__more {
     display: inline-block;
@@ -60,14 +75,26 @@
     color: black;
   }
   &__list {
+    &-wrap {
+      overflow: hidden;
+      width: 305px;
+      margin: 0 auto;
+      padding: 10px 7px;
+    }
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
     color: var(--blog-blue);
+    margin-top: 14px;
+    transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform;
   }
   &__elem {
-    margin-right: 38.5px;
+    margin-right: 22px;
     &:last-child {
       margin-right: 0;
     }
@@ -98,9 +125,16 @@
   .blog {
     &__wrap {
       display: flex;
-      justify-content: end;
-      align-items: end;
-      margin-top: 68px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 65px;
+      &-elements {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        margin-top: 68px;
+      }
+
       &-left {
         margin-right: 24px;
       }
@@ -115,9 +149,18 @@
       }
     }
     &__list {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      &-wrap {
+        display: flex;
+        justify-content: center;
+        padding: 5px 0;
+        margin: 0;
+        max-height: 282px;
+        width: unset;
+        overflow: hidden;
+      }
+      display: unset;
+      margin-top: 0;
+      width: 60px;
     }
     &__elem {
       margin-right: 0;
@@ -131,7 +174,12 @@
 @media (min-width: 1440px) {
   .blog {
     &__wrap {
-      margin-top: 48px;
+      justify-content: space-between;
+
+      &-elements {
+        margin-right: 107px;
+      }
+      margin-top: 55px;
       &-item {
         padding-left: 16px;
         &:first-child {
@@ -139,7 +187,6 @@
         }
         &:nth-child(2) {
           display: flex;
-          margin-right: 107px;
         }
       }
     }
