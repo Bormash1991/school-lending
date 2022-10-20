@@ -54,39 +54,41 @@ function slideTemplate(elem) {
               </a></div>`;
 }
 function initSlickSlider() {
-  $(".course__slider-wrap").slick({
-    slidesToShow: 3,
-    speed: 500,
-    prevArrow: document.querySelector(".course__slider-btn_left"),
-    nextArrow: document.querySelector(".course__slider-btn_right"),
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1440,
-        settings: {
-          centerMode: true,
-          slidesToShow: 3,
+  $(".course__slider-wrap")
+    .not(".slick-initialized")
+    .slick({
+      slidesToShow: 3,
+      speed: 500,
+      prevArrow: document.querySelector(".course__slider-btn_left"),
+      nextArrow: document.querySelector(".course__slider-btn_right"),
+      variableWidth: true,
+      responsive: [
+        {
+          breakpoint: 1440,
+          settings: {
+            centerMode: true,
+            slidesToShow: 3,
+          },
         },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+          },
         },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          },
         },
-      },
-      {
-        breakpoint: 375,
-        settings: {
-          centerMode: true,
-          slidesToShow: 1,
+        {
+          breakpoint: 375,
+          settings: {
+            centerMode: true,
+            slidesToShow: 1,
+          },
         },
-      },
-    ],
-  });
+      ],
+    });
 }
