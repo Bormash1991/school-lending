@@ -3,7 +3,7 @@ let humburgerElem = document.querySelector(".header__humburger"),
   cross = document.querySelector(".header__cross"),
   link = document.querySelector(".header__list"),
   activeClass = "header__nav_active";
-export function humburger() {
+export function hamburger() {
   clickHundlers();
 }
 
