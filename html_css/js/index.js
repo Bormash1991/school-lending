@@ -1,4 +1,4 @@
-import { humburger } from "./mobile-menu.js";
+import { hamburger } from "./mobile-menu.js";
 import { headerAppearsWithScroll } from "./header-scroll.js";
 import { paginator } from "./paginator.js";
 import { coursesSlider } from "./courses-slider.js";
@@ -9,7 +9,7 @@ import {
   dataForSlider,
 } from "./data-for-sliders.js";
 window.addEventListener("DOMContentLoaded", () => {
-  humburger();
+  hamburger();
   headerAppearsWithScroll();
   paginator(dataForPaginator);
   coursesSlider(dataForCoursesSlider);
