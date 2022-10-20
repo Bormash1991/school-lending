@@ -7,14 +7,14 @@ export function paginator(data) {
   createButtons(data);
   clickHandler(data);
 }
-function templateBlogElements({
+function templateBlogElements(
   id,
   title,
   url,
   userImage,
   redirectLink,
-  category,
-}) {
+  category
+) {
   return `
               <div id="${id}" class="blog__wrap-item flex_justify-c">
                 <div class="blog__wrap-left">
@@ -128,8 +128,15 @@ function createElements(data, numberOfBtn, coutOfSlides) {
     numberOfBtn * coutOfSlides
   );
   halfData.forEach((el, index) => {
-    el;
-    elementsWrapper.innerHTML += templateBlogElements(el);
+    let { id, title, url, userImage, redirectLink, category } = el;
+    elementsWrapper.innerHTML += templateBlogElements(
+      id,
+      title,
+      url,
+      userImage,
+      redirectLink,
+      category
+    );
   });
 }
 function createButtons(data) {

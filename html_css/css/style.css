@@ -1228,18 +1228,88 @@ select {
   position: relative;
   margin-top: 40px;
 }
-.prefer__slider-btn-l {
+.prefer__slider-wrap {
+  position: relative;
+  margin-top: 20px;
+}
+.prefer__slider-btn-left {
   left: -13px;
 }
-.prefer__slider-btn-r {
+.prefer__slider-btn-right {
   right: -13px;
 }
-.prefer__item {
-  display: block;
-  margin: 0 auto;
+.prefer__label {
   position: relative;
-  width: 207px;
+}
+.prefer__name {
+  text-align: center;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.prefer__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  padding: 14px 20px 14px 12px;
+  background-color: #f3f6fc;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--grey);
+  border: none;
+  border-radius: 22px;
+}
+.prefer__arrow-down {
+  border: solid black;
+  border-width: 0 2.2px 2.2px 0;
+  display: inline-block;
+  padding: 3.5px;
+  margin-bottom: 3px;
+  transform: rotate(45deg);
+}
+.prefer__list {
+  display: none;
+  position: absolute;
+  margin: 0 auto;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0px 1px;
+  list-style-type: none;
+  box-shadow: 0px 4px 11px rgba(29, 31, 34, 0.1);
+  border-radius: 22px;
+  background-color: white;
+  z-index: 2;
+}
+.prefer__list_show {
+  display: block;
+}
+.prefer__list-item {
+  padding: 8px 12px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #72757e;
+  line-height: 1.25;
+  cursor: pointer;
+}
+.prefer__list-item:hover {
+  background: #f3f6fc;
+  border-radius: 11px;
+  color: var(--blue);
+}
+.prefer__item {
+  position: relative;
+  padding: 8px;
+  width: 197px;
   height: 197px;
+  display: flex;
+  flex: 0 0 197px;
   z-index: 1;
   font-weight: 600;
   font-size: 16px;
@@ -1248,21 +1318,16 @@ select {
   color: white;
   box-shadow: 0px 7px 20px #e2edfb;
 }
+.prefer__item-wrap {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 197px;
+}
 .prefer__item-box {
   display: flex;
-  justify-content: center;
-}
-.prefer__item:nth-child(1) {
-  background: url("../img/prefer/itemBack/first.jpg") center center/cover no-repeat;
-}
-.prefer__item:nth-child(2) {
-  display: none;
-}
-.prefer__item:nth-child(3) {
-  display: none;
-}
-.prefer__item:nth-child(4) {
-  display: none;
+  justify-content: start;
+  gap: 20px;
+  transition: 350ms transform;
 }
 .prefer__overlay {
   position: absolute;
@@ -1290,10 +1355,10 @@ select {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .prefer__slider-btn-l {
+  .prefer__slider-btn-left {
     left: 0;
   }
-  .prefer__slider-btn-r {
+  .prefer__slider-btn-right {
     right: 0;
   }
   .prefer__text {
@@ -1302,25 +1367,21 @@ select {
     margin-top: 16px;
     text-align: center;
   }
-  .prefer__item {
-    margin: 0;
+  .prefer__item-wrap {
+    width: 414px;
   }
   .prefer__item-box {
     gap: 20px;
-  }
-  .prefer__item:nth-child(2) {
-    display: flex;
-    background: url("../img/prefer/itemBack/second.jpg") center center/cover no-repeat;
   }
 }
 @media (min-width: 1440px) {
   .prefer {
     padding-bottom: 40px;
   }
-  .prefer__slider-btn-l {
+  .prefer__slider-btn-left {
     left: -35px;
   }
-  .prefer__slider-btn-r {
+  .prefer__slider-btn-right {
     right: -35px;
   }
   .prefer__text {
@@ -1329,23 +1390,12 @@ select {
     margin-top: 16px;
     text-align: center;
   }
-  .prefer__item {
-    margin: 0;
+  .prefer__item-wrap {
+    width: 850px;
   }
   .prefer__item-box {
     gap: 20px;
-  }
-  .prefer__item:nth-child(2) {
-    display: flex;
-    background: url("../img/prefer/itemBack/second.jpg") center center/cover no-repeat;
-  }
-  .prefer__item:nth-child(3) {
-    display: flex;
-    background: url("../img/prefer/itemBack/third.jpg") center center/cover no-repeat;
-  }
-  .prefer__item:nth-child(4) {
-    display: flex;
-    background: url("../img/prefer/itemBack/fourth.jpg") center center/cover no-repeat;
+    width: 100%;
   }
 }
 .blog {
@@ -1493,6 +1543,9 @@ select {
   }
   .blog__wrap-item:nth-child(2) {
     display: none;
+  }
+  .blog__text {
+    width: 311px;
   }
   .blog__list {
     display: unset;
