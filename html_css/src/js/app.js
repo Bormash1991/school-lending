@@ -8,11 +8,17 @@ import {
   dataForCoursesSlider,
   dataForSlider,
 } from "./data-for-sliders.js";
-window.addEventListener("DOMContentLoaded", () => {
-  hamburger();
-  headerAppearsWithScroll();
-  paginator(dataForPaginator);
-  coursesSlider(dataForCoursesSlider);
-  let slider = new PreferSlider(dataForSlider);
-  slider.initSlider();
-});
+import { Storage } from "./storage.js";
+
+import { initForm } from "./form";
+export class App {
+  constructor() {}
+  init() {
+    hamburger();
+    headerAppearsWithScroll();
+    paginator(dataForPaginator);
+    coursesSlider(dataForCoursesSlider);
+    new PreferSlider(new Storage(dataForSlider).getSliderData()).initSlider();
+    initForm();
+  }
+}
