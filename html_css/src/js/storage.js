@@ -9,6 +9,10 @@ export class Storage {
     }
   }
   getSliderData() {
-    return JSON.parse(localStorage.getItem("dataForSlider"));
+    if (localStorage.getItem("dataForSlider") != null) {
+      return JSON.parse(localStorage.getItem("dataForSlider"));
+    } else {
+      return [];
+    }
   }
 }

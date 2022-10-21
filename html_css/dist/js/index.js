@@ -1088,7 +1088,11 @@ var Storage = /*#__PURE__*/function () {
   }, {
     key: "getSliderData",
     value: function getSliderData() {
-      return JSON.parse(localStorage.getItem("dataForSlider"));
+      if (localStorage.getItem("dataForSlider") != null) {
+        return JSON.parse(localStorage.getItem("dataForSlider"));
+      } else {
+        return [];
+      }
     }
   }]);
   return Storage;
