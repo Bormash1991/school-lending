@@ -1,14 +1,14 @@
-import {
-  dataForPaginator,
-  dataForCoursesSlider,
-  dataForSlider,
-} from "./data-for-sliders";
-function setData(data) {
-  if (!localStorage.getItem("dataForSlider")) {
-    localStorage.setItem("dataForSlider", JSON.stringify(data));
+export class Storage {
+  constructor(data) {
+    this.data = data;
+    this.setData();
   }
-}
-setData(dataForSlider);
-export function getSliderData(data) {
-  return JSON.parse(localStorage.getItem(data));
+  setData() {
+    if (!localStorage.getItem("dataForSlider")) {
+      localStorage.setItem("dataForSlider", JSON.stringify(this.data));
+    }
+  }
+  getSliderData() {
+    return JSON.parse(localStorage.getItem("dataForSlider"));
+  }
 }

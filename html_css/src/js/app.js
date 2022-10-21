@@ -3,8 +3,12 @@ import { headerAppearsWithScroll } from "./header-scroll.js";
 import { paginator } from "./paginator.js";
 import { coursesSlider } from "./courses-slider.js";
 import { PreferSlider } from "./slider.js";
-import { dataForPaginator, dataForCoursesSlider } from "./data-for-sliders.js";
-import { getSliderData } from "./storage.js";
+import {
+  dataForPaginator,
+  dataForCoursesSlider,
+  dataForSlider,
+} from "./data-for-sliders.js";
+import { Storage } from "./storage.js";
 
 import { initForm } from "./form";
 export class App {
@@ -14,7 +18,7 @@ export class App {
     headerAppearsWithScroll();
     paginator(dataForPaginator);
     coursesSlider(dataForCoursesSlider);
-    new PreferSlider(getSliderData("dataForSlider")).initSlider();
+    new PreferSlider(new Storage(dataForSlider).getSliderData()).initSlider();
     initForm();
   }
 }

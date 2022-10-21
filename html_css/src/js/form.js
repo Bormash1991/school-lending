@@ -38,7 +38,7 @@ function clearInput() {
 }
 function setData() {
   let data = JSON.parse(localStorage.getItem("formData"));
-  if (data) {
+  if (data && localStorage.getItem("formData") != null) {
     [...inputs].forEach((input) => {
       input.value = data[input.getAttribute("name")];
     });
