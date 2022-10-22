@@ -1,6 +1,6 @@
 let form = document.querySelector(".form"),
   inputs = form.querySelectorAll(".form__input");
-
+let obj = {};
 export function initForm() {
   setData();
   submitHendler();
@@ -17,14 +17,20 @@ function submitHendler() {
     }
     clearInput();
     localStorage.removeItem("formData");
+    obj = {};
     console.log(formObj);
   });
 }
 function changeHendler() {
-  let obj = {};
   form.addEventListener("keyup", (e) => {
     let target = e.target;
     if (target.classList.contains("form__input")) {
+      let d = JSON.parse(localStorage.getItem("formData"));
+      if (d) {
+        if (Object.keys(d).length >= 1) {
+          obj = JSON.parse(localStorage.getItem("formData"));
+        }
+      }
       obj[target.getAttribute("name")] = target.value;
       localStorage.setItem("formData", JSON.stringify(obj));
     }
@@ -39,8 +45,10 @@ function clearInput() {
 function setData() {
   let data = JSON.parse(localStorage.getItem("formData"));
   if (data && localStorage.getItem("formData") != null) {
-    [...inputs].forEach((input) => {
-      input.value = data[input.getAttribute("name")];
+    inputs.forEach((input) => {
+      if (data[input.getAttribute("name")]) {
+        input.value = data[input.getAttribute("name")];
+      }
     });
   }
 }
