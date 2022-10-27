@@ -1,11 +1,8 @@
 export class Storage {
-  constructor(data) {
-    this.data = data;
-    this.setData();
-  }
-  setData() {
+  constructor() {}
+  setData(data) {
     if (!localStorage.getItem("dataForSlider")) {
-      localStorage.setItem("dataForSlider", JSON.stringify(this.data));
+      localStorage.setItem("dataForSlider", JSON.stringify(data));
     }
   }
   getSliderData() {

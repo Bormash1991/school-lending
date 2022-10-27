@@ -8,11 +8,9 @@ export class PreferSlider {
     this.slider = document.querySelector("#slider");
     this.nextButton;
     this.prevButton;
-    this.label;
-    this.span;
-    this.list;
     this.box;
   }
+
   creatSliderСascade() {
     return `<div class="prefer__item-wrap">
              ${this.renderButtons("left")}
@@ -32,18 +30,7 @@ export class PreferSlider {
                   <use href="img/sprite.svg#icon-${side}" width="10"></use>
                 </svg>`;
   }
-  initLabel() {
-    let number = 0;
-    this.data.forEach((elem, i) => {
-      if (number == 0) {
-        this.list.innerHTML += this.labelTemplate(elem.albumId);
-      } else if (number != elem.albumId) {
-        this.list.innerHTML += this.labelTemplate(elem.albumId);
-      }
-      number = elem.albumId;
-    });
-    this.setData(1, this.data);
-  }
+
   checkWindowWidth() {
     if (window.innerWidth >= 1440) {
       return 4;
@@ -55,24 +42,7 @@ export class PreferSlider {
       return 1;
     }
   }
-  labelTemplate(number) {
-    return `<li id="${number}" class="prefer__list-item">Label ${number}</li>`;
-  }
-  labelClickHandler() {
-    this.label.addEventListener("click", () => {
-      this.list.classList.toggle("prefer__list_show");
-    });
-    this.list.addEventListener("click", (e) => {
-      let target = e.target;
-      if (target.classList.contains("prefer__list-item")) {
-        this.list.classList.toggle("prefer__list_show");
-        this.numberOflabel = target.getAttribute("id");
-        this.span.textContent = target.textContent;
-        this.setData(this.numberOflabel, this.data);
-        this.prevSlide();
-      }
-    });
-  }
+
   slideTemplate({ albumId, id, title, url, thumbnailUrl }) {
     return `  <a href="${thumbnailUrl}" id="${id}" class="prefer__item flex">
                 <div class="prefer__overlay prefer__overlay_blue"
@@ -92,6 +62,7 @@ export class PreferSlider {
         this.numuberOfSlider += 1;
       }
     });
+    this.prevSlide();
   }
   assignTranslate() {
     this.box.style.cssText = `transform: translateX(${this.translate}px)`;
@@ -134,15 +105,8 @@ export class PreferSlider {
     this.slider.innerHTML = this.creatSliderСascade();
     this.nextButton = document.querySelector(".prefer__slider-btn-right");
     this.prevButton = document.querySelector(".prefer__slider-btn-left");
-    this.label = document.querySelector(".prefer__button");
-    this.span = this.label.querySelector(".prefer__button_text");
-    this.list = document.querySelector(".prefer__list");
     this.box = document.querySelector(".prefer__item-box");
-    if (this.translate == 0) {
-      this.prevButton.style.opacity = "0.5";
-    }
+    this.prevSlide();
     this.clickHendler();
-    this.initLabel();
-    this.labelClickHandler();
   }
 }
