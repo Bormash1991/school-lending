@@ -101,6 +101,8 @@ export class Select {
         this.list.classList.toggle("prefer__list_show");
         this.numberOflabel = target.getAttribute("id");
         this.span.textContent = target.textContent;
+        this.label.classList.toggle("prefer__button_active");
+        this.arrow.classList.remove("prefer__arrow_active");
         this.onChange(this.numberOflabel);
       }
     });
