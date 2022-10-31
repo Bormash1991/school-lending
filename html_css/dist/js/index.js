@@ -107,7 +107,6 @@ var App = /*#__PURE__*/function () {
   function App() {
     _classCallCheck(this, App);
     this.slider;
-    this.bool = true;
   }
   _createClass(App, [{
     key: "getSliderData",
@@ -171,7 +170,7 @@ var App = /*#__PURE__*/function () {
     key: "init",
     value: function () {
       var _init = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-        var response, sel;
+        var response;
         return _regeneratorRuntime().wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
@@ -189,7 +188,7 @@ var App = /*#__PURE__*/function () {
               case 10:
                 response = _context3.sent;
                 this.slider.setData(response);
-                sel = new _select__WEBPACK_IMPORTED_MODULE_30__.Select(this.updateSlider.bind(this)).initList();
+                new _select__WEBPACK_IMPORTED_MODULE_30__.Select(this.updateSlider.bind(this)).initList();
               case 13:
               case "end":
                 return _context3.stop();

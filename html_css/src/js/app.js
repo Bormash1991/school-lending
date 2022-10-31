@@ -14,7 +14,7 @@ import { Select } from "./select";
 export class App {
   constructor() {
     this.slider;
-    this.bool = true;
+  
   }
   async getSliderData(num = 1) {
     let response = await fetch(
@@ -37,6 +37,6 @@ export class App {
     this.slider.initSlider();
     let response = await this.getSliderData();
     this.slider.setData(response);
-    let sel = new Select(this.updateSlider.bind(this)).initList();
+   new Select(this.updateSlider.bind(this)).initList();
   }
 }
