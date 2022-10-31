@@ -1264,14 +1264,28 @@ select {
   color: var(--grey);
   border: none;
   border-radius: 22px;
+  transition: 250ms outline;
 }
-.prefer__arrow-down {
+.prefer__button_active {
+  outline: 1px solid var(--blue);
+}
+.prefer__button_disabled {
+  opacity: 0.5;
+}
+.prefer__arrow {
   border: solid black;
   border-width: 0 2.2px 2.2px 0;
   display: inline-block;
   padding: 3.5px;
   margin-bottom: 3px;
   transform: rotate(45deg);
+  transition: 250ms;
+  transition-property: transform, border;
+}
+.prefer__arrow_active {
+  transform: rotate(135deg);
+  border: solid var(--blue);
+  border-width: 0 2.2px 2.2px 0;
 }
 .prefer__list {
   display: none;
@@ -1280,7 +1294,7 @@ select {
   width: 200px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 0px 1px;
+  padding: 7px 4px;
   list-style-type: none;
   box-shadow: 0px 4px 11px rgba(29, 31, 34, 0.1);
   border-radius: 22px;
@@ -1317,6 +1331,7 @@ select {
   text-decoration: none;
   color: white;
   box-shadow: 0px 7px 20px #e2edfb;
+  border-radius: 5px;
 }
 .prefer__item-wrap {
   margin: 0 auto;
@@ -1336,6 +1351,7 @@ select {
   width: 100%;
   height: 100%;
   z-index: -1;
+  border-radius: 5px;
 }
 .prefer__overlay_blue {
   background-color: rgba(101, 131, 255, 0.8);
