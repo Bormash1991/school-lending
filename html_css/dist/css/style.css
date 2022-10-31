@@ -1240,6 +1240,7 @@ select {
 }
 .prefer__label {
   position: relative;
+  margin-top: 10px;
 }
 .prefer__name {
   text-align: center;

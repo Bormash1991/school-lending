@@ -57,6 +57,7 @@ function checkWindowWidth() {
   }
 }
 checkWindowWidth();
+
 function checkActiveButton(count, data) {
   let btns = document.querySelectorAll(".blog__btn");
   if (count % 2 == 0 && btns.length < 5) {
