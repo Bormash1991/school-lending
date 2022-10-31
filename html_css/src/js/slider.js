@@ -50,17 +50,18 @@ export class PreferSlider {
                 <div class="prefer__name">${title}</div></div>
               </a>`;
   }
-  setData(number, data) {
+  setData(data) {
     this.box.innerHTML = "";
     this.translate = 0;
     this.assignTranslate();
     this.numuberOfSlider = 0;
     this.coutOfClick = 0;
-    this.data.forEach((elem, i) => {
-      if (elem.albumId == number) {
-        this.box.innerHTML += this.slideTemplate(elem);
-        this.numuberOfSlider += 1;
-      }
+    data = data.slice(0, 7);
+    data.forEach((elem, i) => {
+ 
+      this.box.innerHTML += this.slideTemplate(elem);
+      this.numuberOfSlider += 1;
+   
     });
     this.prevSlide();
   }

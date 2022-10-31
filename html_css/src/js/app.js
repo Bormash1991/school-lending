@@ -16,28 +16,27 @@ export class App {
     this.slider;
     this.bool = true;
   }
-  updateSlider(id, data) {
-    if (this.bool) {
-      this.slider = new PreferSlider(data);
-      this.slider.initSlider();
-      this.slider.setData(id);
-      this.bool = false;
-    } else {
-      this.slider.setData(id);
-    }
+  async getSliderData(num = 1) {
+    let response = await fetch(
+      `https://jsonplaceholder.typicode.com/albums/${num}/photos`
+    );
+
+    return await response.json();
   }
-  init() {
+  async updateSlider(id) {
+    this.slider.setData(await this.getSliderData(id));
+  }
+  async init() {
     hamburger();
     headerAppearsWithScroll();
     paginator(dataForPaginator);
     coursesSlider(dataForCoursesSlider);
     initForm();
     smoothScroll();
-    let sel = new Select(
-      "https://jsonplaceholder.typicode.com/photos/",
-      this.updateSlider.bind(this)
-    );
-    sel.makeRequest();
-    
+    this.slider = new PreferSlider();
+    this.slider.initSlider();
+    let response = await this.getSliderData();
+    this.slider.setData(response);
+    let sel = new Select(this.updateSlider.bind(this)).initList();
   }
 }

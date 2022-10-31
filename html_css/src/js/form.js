@@ -16,7 +16,7 @@ function submitHendler() {
       formObj[key] = value;
     }
     clearInput();
-    localStorage.removeItem("formData");
+    clearStorage();
     obj = {};
     console.log(formObj);
   });
@@ -41,6 +41,9 @@ function clearInput() {
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].value = "";
   }
+}
+function clearStorage() {
+  localStorage.removeItem("formData");
 }
 function setData() {
   let data = JSON.parse(localStorage.getItem("formData"));
