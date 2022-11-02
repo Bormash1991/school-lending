@@ -1,17 +1,19 @@
-let sliderWrap = document.querySelector(".course__slider-wrap");
-export function coursesSlider(data) {
-  addSlides(data);
-  initSlickSlider();
+export function coursesSlider(data, selector) {
+  let sliderWrap = document.querySelector(`.${selector}`);
+  addSlides(data, sliderWrap);
+  initSlickSlider(selector);
 }
 
 function checkStars(stars) {
   return (100 * stars) / 5;
 }
-function addSlides(data) {
+
+function addSlides(data, sliderWrap) {
   data.forEach((elem, i) => {
     sliderWrap.innerHTML += slideTemplate(elem);
   });
 }
+
 function slideTemplate(elem) {
   let width = checkStars(elem.countOfStars);
   let {
@@ -53,8 +55,9 @@ function slideTemplate(elem) {
                 </div>
               </a></div>`;
 }
-function initSlickSlider() {
-  $(".course__slider-wrap")
+
+function initSlickSlider(selector) {
+  $(`.${selector}`)
     .not(".slick-initialized")
     .slick({
       slidesToShow: 3,

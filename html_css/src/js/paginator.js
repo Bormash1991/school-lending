@@ -3,10 +3,12 @@ let buttonsParent = document.querySelector(".blog__list"),
   slides = 2,
   activeClass = "blog__btn_active",
   horizontal = false;
+
 export function paginator(data) {
   createButtons(data);
   clickHandler(data);
 }
+
 function templateBlogElements(
   id,
   title,
@@ -41,6 +43,7 @@ function templateBlogElements(
               </div>
         `;
 }
+
 function templateButtons(num, hidden = "") {
   return `
       <li class="blog__elem ">
@@ -48,6 +51,7 @@ function templateButtons(num, hidden = "") {
               </li>
     `;
 }
+
 function checkWindowWidth() {
   if (window.innerWidth < 1440) {
     slides = 1;
@@ -74,6 +78,7 @@ function checkActiveButton(count, data) {
 
   clickHandler(data);
 }
+
 function clickHandler(data) {
   let btns = document.querySelectorAll(".blog__btn"),
     arrs = [...btns];
@@ -96,6 +101,7 @@ function clickHandler(data) {
     });
   });
 }
+
 function setTransformValue(trigger) {
   if (trigger) {
     return {
@@ -109,6 +115,7 @@ function setTransformValue(trigger) {
     };
   }
 }
+
 function autoScrollListOfButtons(index, data, btns) {
   let { value, number } = setTransformValue(horizontal);
 
@@ -123,6 +130,7 @@ function autoScrollListOfButtons(index, data, btns) {
     );
   }
 }
+
 function createElements(data, numberOfBtn, coutOfSlides) {
   let halfData = data.slice(
     numberOfBtn * coutOfSlides - coutOfSlides,
@@ -140,6 +148,7 @@ function createElements(data, numberOfBtn, coutOfSlides) {
     );
   });
 }
+
 function createButtons(data) {
   let dataLength = data.length;
   let counter = 0;

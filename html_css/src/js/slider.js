@@ -1,30 +1,34 @@
 export class PreferSlider {
-  constructor(data) {
+  constructor(id, selector) {
     this.translate = 0;
     this.coutOfClick = 0;
-    this.data = data;
-    this.numuberOfSlider = 0;
+    this.numberOfSlider = 0;
     this.numberOflabel = 0;
-    this.slider = document.querySelector("#slider");
+    this.slider = document.querySelector(`#${id}`);
     this.nextButton;
     this.prevButton;
     this.box;
+    this.selector = selector;
   }
 
   creatSliderСascade() {
-    return `<div class="prefer__item-wrap">
+    return `<div class="slider__item-wrap ${this.selector}__item-wrap">
              ${this.renderButtons("left")}
-              <div class="prefer__item-box"></div>
+              <div class="slider__item-box ${this.selector}__item-box"></div>
             ${this.renderButtons("right")}
             </div> `;
   }
+
   renderButtons(side) {
     return ` <button
-                class="slider-btn slider-btn_${side} prefer__slider-btn prefer__slider-btn-${side}"
+                class="slider-btn slider-btn_${side} ${
+      this.selector
+    }__slider-btn ${this.selector}__slider-btn-${side}"
               >
               ${this.templateButtons(side)}
               </button>`;
   }
+
   templateButtons(side) {
     return ` <svg class="slider-btn__img slider-btn__img-${side}">
                   <use href="img/sprite.svg#icon-${side}" width="10"></use>
@@ -44,43 +48,45 @@ export class PreferSlider {
   }
 
   slideTemplate({ albumId, id, title, url, thumbnailUrl }) {
-    return `  <a href="${thumbnailUrl}" id="${id}" class="prefer__item flex">
-                <div class="prefer__overlay prefer__overlay_blue"
+    return `  <a href="${thumbnailUrl}" id="${id}" class="slider__item ${this.selector}__item flex">
+                <div class="${this.selector}__overlay ${this.selector}__overlay_blue"
                 style="background: url(${url}) center center/cover no-repeat;"></div>
-                <div class="prefer__name">${title}</div></div>
+                <div class="${this.selector}__name">${title}</div></div>
               </a>`;
   }
+
   setData(data) {
     this.box.innerHTML = "";
     this.translate = 0;
     this.assignTranslate();
-    this.numuberOfSlider = 0;
+    this.numberOfSlider = 0;
     this.coutOfClick = 0;
     data = data.slice(0, 7);
     data.forEach((elem, i) => {
- 
       this.box.innerHTML += this.slideTemplate(elem);
-      this.numuberOfSlider += 1;
-   
+      this.numberOfSlider += 1;
     });
     this.prevSlide();
   }
+
   assignTranslate() {
     this.box.style.cssText = `transform: translateX(${this.translate}px)`;
   }
+
   nextSlide() {
-    if (this.coutOfClick < this.numuberOfSlider - this.checkWindowWidth()) {
+    if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
       this.translate -= 217;
       this.coutOfClick += 1;
       this.assignTranslate();
     }
-    if (this.coutOfClick == this.numuberOfSlider - this.checkWindowWidth()) {
+    if (this.coutOfClick == this.numberOfSlider - this.checkWindowWidth()) {
       this.nextButton.style.opacity = "0.5";
     }
     if (this.translate != 0) {
       this.prevButton.style.opacity = "1";
     }
   }
+
   prevSlide() {
     if (this.translate != 0) {
       this.translate += 217;
@@ -90,10 +96,11 @@ export class PreferSlider {
     if (this.translate == 0) {
       this.prevButton.style.opacity = "0.5";
     }
-    if (this.coutOfClick < this.numuberOfSlider - this.checkWindowWidth()) {
+    if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
       this.nextButton.style.opacity = "1";
     }
   }
+
   clickHendler() {
     this.nextButton.addEventListener("click", () => {
       this.nextSlide();
@@ -102,11 +109,16 @@ export class PreferSlider {
       this.prevSlide();
     });
   }
+
   initSlider() {
     this.slider.innerHTML = this.creatSliderСascade();
-    this.nextButton = document.querySelector(".prefer__slider-btn-right");
-    this.prevButton = document.querySelector(".prefer__slider-btn-left");
-    this.box = document.querySelector(".prefer__item-box");
+    this.nextButton = document.querySelector(
+      `.${this.selector}__slider-btn-right`
+    );
+    this.prevButton = document.querySelector(
+      `.${this.selector}__slider-btn-left`
+    );
+    this.box = document.querySelector(`.${this.selector}__item-box`);
     this.prevSlide();
     this.clickHendler();
   }

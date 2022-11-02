@@ -1,6 +1,7 @@
 let header = document.querySelector(".header"),
   headerBack = document.querySelector(".header__back"),
   inform = document.querySelector(".inform");
+  
 export function headerAppearsWithScroll() {
   window.addEventListener("scroll", () => {
     if (window.scrollY >= inform.clientHeight) {
