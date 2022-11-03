@@ -1,4 +1,29 @@
 .slider {
+  &-wrap {
+    position: relative;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 7px 20px #e2edfb;
+    border-radius: 5px;
+    z-index: 1;
+    &-wrap {
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    &-box {
+      display: flex;
+      justify-content: start;
+      gap: 20px;
+      transition: 350ms transform;
+    }
+  }
   &-btn {
     position: absolute;
     top: 50%;
@@ -41,12 +66,6 @@
       margin: 0 auto;
       transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       transition-property: stroke;
-      // &:hover {
-      //   stroke: white;
-      //   .slider-btn {
-      //     background-color: var(--second-green);
-      //   }
-      // }
     }
   }
 }

@@ -178,17 +178,17 @@ var App = /*#__PURE__*/function () {
                 (0,_mobile_menu_js__WEBPACK_IMPORTED_MODULE_22__.hamburger)();
                 (0,_header_scroll_js__WEBPACK_IMPORTED_MODULE_23__.headerAppearsWithScroll)();
                 (0,_paginator_js__WEBPACK_IMPORTED_MODULE_24__.paginator)(_data_for_sliders_js__WEBPACK_IMPORTED_MODULE_27__.dataForPaginator);
-                (0,_courses_slider_js__WEBPACK_IMPORTED_MODULE_25__.coursesSlider)(_data_for_sliders_js__WEBPACK_IMPORTED_MODULE_27__.dataForCoursesSlider);
+                (0,_courses_slider_js__WEBPACK_IMPORTED_MODULE_25__.coursesSlider)(_data_for_sliders_js__WEBPACK_IMPORTED_MODULE_27__.dataForCoursesSlider, "course__slider-wrap");
                 (0,_form__WEBPACK_IMPORTED_MODULE_28__.initForm)();
                 (0,_scroll_js__WEBPACK_IMPORTED_MODULE_29__.smoothScroll)();
-                this.slider = new _slider_js__WEBPACK_IMPORTED_MODULE_26__.PreferSlider();
+                this.slider = new _slider_js__WEBPACK_IMPORTED_MODULE_26__.PreferSlider("slider", "prefer");
                 this.slider.initSlider();
                 _context3.next = 10;
                 return this.getSliderData();
               case 10:
                 response = _context3.sent;
                 this.slider.setData(response);
-                new _select__WEBPACK_IMPORTED_MODULE_30__.Select(this.updateSlider.bind(this)).initList();
+                new _select__WEBPACK_IMPORTED_MODULE_30__.Select(this.updateSlider.bind(this), "prefer").initList();
               case 13:
               case "end":
                 return _context3.stop();
@@ -230,15 +230,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var sliderWrap = document.querySelector(".course__slider-wrap");
-function coursesSlider(data) {
-  addSlides(data);
-  initSlickSlider();
+function coursesSlider(data, selector) {
+  var sliderWrap = document.querySelector(".".concat(selector));
+  addSlides(data, sliderWrap);
+  initSlickSlider(selector);
 }
 function checkStars(stars) {
   return 100 * stars / 5;
 }
-function addSlides(data) {
+function addSlides(data, sliderWrap) {
   data.forEach(function (elem, i) {
     sliderWrap.innerHTML += slideTemplate(elem);
   });
@@ -255,8 +255,8 @@ function slideTemplate(elem) {
     countOfStars = elem.countOfStars;
   return " <div>\n  <a id= ".concat(id, " href=\"#\" class=\"course__item  price-item\" \n   style=\"background: url('").concat(backUrl, "') center\n                      center / cover no-repeat;\n                  \">\n                <div class=\"price-item__overlay\"></div>\n                <img\n                  src=\"").concat(personImg, "\"\n                  alt=\"person\"\n                  class=\"price-item__img\"\n                  width=\"48\"\n                />\n                <h4 class=\"price-item__title\">").concat(category, "</h4>\n                <div class=\"price-item__subtitle\">").concat(title, "</div>\n                <div class=\"price-item__line\"></div>\n                <div class=\"price-item__bottom-wrap\">\n                  <div class=\"price-item__price-wrap\">\n                    <div class=\"price-item__price\">$").concat(price, "</div>\n                    <div class=\"price-item__price-old\">$").concat(oldPrice, "</div>\n                  </div>\n                  <div class=\"price-item__star-wrap rating\">\n                   <div class=\"rating__body\">\n                      <div class=\"rating__active\" style='width:").concat(width, "%'></div>\n                      </div>\n                    <div class=\"rating__value\">(").concat(countOfStars, ")</div>\n                  </div>\n                </div>\n              </a></div>");
 }
-function initSlickSlider() {
-  $(".course__slider-wrap").not(".slick-initialized").slick({
+function initSlickSlider(selector) {
+  $(".".concat(selector)).not(".slick-initialized").slick({
     slidesToShow: 3,
     speed: 500,
     prevArrow: document.querySelector(".course__slider-btn_left"),
@@ -1096,14 +1096,15 @@ function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!priva
 function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
 var _select = /*#__PURE__*/new WeakMap();
 var Select = /*#__PURE__*/function () {
-  function Select(changeCallback) {
+  function Select(changeCallback, selector) {
     _classCallCheck(this, Select);
     _classPrivateFieldInitSpec(this, _select, {
       writable: true,
       value: void 0
     });
     this.numberOflabel;
-    _classPrivateFieldSet(this, _select, ".prefer__label");
+    this.selector = selector;
+    _classPrivateFieldSet(this, _select, ".".concat(this.selector, "__label"));
     this.data;
     this.changeCallback = changeCallback;
     this.list;
@@ -1125,26 +1126,27 @@ var Select = /*#__PURE__*/function () {
   }, {
     key: "templateButtonAndList",
     value: function templateButtonAndList() {
-      return "\n    <button class=\"prefer__button\">\n        <span class=\"prefer__button_text\">Label</span>\n        <i class=\"prefer__arrow\"></i>\n    </button>\n    <ul class=\"prefer__list\"></ul>\n    ";
+      return "\n    <button class=\"label__button ".concat(this.selector, "__button\">\n        <span class=\"label__button_text ").concat(this.selector, "__button_text\">Label</span>\n        <i class=\"label__arrow ").concat(this.selector, "__arrow\"></i>\n    </button>\n    <ul class=\"label__list ").concat(this.selector, "__list\"></ul>\n    ");
     }
   }, {
     key: "initVariables",
     value: function initVariables() {
-      this.list = document.querySelector(".prefer__list");
-      this.label = document.querySelector(".prefer__button");
-      this.span = document.querySelector(".prefer__button_text");
-      this.arrow = document.querySelector(".prefer__arrow");
+      this.list = document.querySelector(".".concat(this.selector, "__list"));
+      this.label = document.querySelector(".".concat(this.selector, "__button"));
+      this.span = document.querySelector(".".concat(this.selector, "__button_text"));
+      this.arrow = document.querySelector(".".concat(this.selector, "__arrow"));
     }
   }, {
     key: "initList",
     value: function initList() {
       var item = document.querySelector(this.select);
+      item.classList.add("label");
       item.innerHTML = this.templateButtonAndList();
       this.initVariables();
       if (this.quantitiOfAlbumId != 2) {
         this.labelClickHandler();
       } else {
-        this.label.classList.add("prefer__button_disabled");
+        this.label.classList.add("label__button_disabled");
       }
       this.addListItem();
     }
@@ -1160,25 +1162,29 @@ var Select = /*#__PURE__*/function () {
   }, {
     key: "labelTemplate",
     value: function labelTemplate(number) {
-      return "<li id=\"".concat(number, "\" class=\"prefer__list-item\">Label ").concat(number, "</li>");
+      return "<li id=\"".concat(number, "\" class=\"label__list-item ").concat(this.selector, "__list-item\">Label ").concat(number, "</li>");
     }
   }, {
     key: "labelClickHandler",
     value: function labelClickHandler() {
       var _this = this;
       this.label.addEventListener("click", function () {
-        _this.label.classList.toggle("prefer__button_active");
-        _this.list.classList.toggle("prefer__list_show");
-        _this.arrow.classList.toggle("prefer__arrow_active");
+        _this.label.classList.toggle("".concat(_this.selector, "__button_active"));
+        _this.label.classList.toggle("label__button_active");
+        _this.list.classList.toggle("label__list_show");
+        _this.arrow.classList.toggle("".concat(_this.selector, "__arrow_active"));
+        _this.arrow.classList.toggle("label__arrow_active");
       });
       this.list.addEventListener("click", function (e) {
         var target = e.target;
-        if (target.classList.contains("prefer__list-item")) {
-          _this.list.classList.toggle("prefer__list_show");
+        if (target.classList.contains("".concat(_this.selector, "__list-item"))) {
+          _this.list.classList.toggle("".concat(_this.selector, "__list_show"));
+          _this.list.classList.toggle("label__list_show");
           _this.numberOflabel = target.getAttribute("id");
           _this.span.textContent = target.textContent;
-          _this.label.classList.toggle("prefer__button_active");
-          _this.arrow.classList.remove("prefer__arrow_active");
+          _this.label.classList.toggle("".concat(_this.selector, "__button_active"));
+          _this.arrow.classList.toggle("label__arrow_active");
+          _this.arrow.classList.toggle("".concat(_this.selector, "__arrow_active"));
           _this.onChange(_this.numberOflabel);
         }
       });
@@ -1222,27 +1228,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 var PreferSlider = /*#__PURE__*/function () {
-  function PreferSlider(data) {
+  function PreferSlider(id, selector) {
     _classCallCheck(this, PreferSlider);
     this.translate = 0;
     this.coutOfClick = 0;
-    this.data = data;
-    this.numuberOfSlider = 0;
+    this.numberOfSlider = 0;
     this.numberOflabel = 0;
-    this.slider = document.querySelector("#slider");
+    this.slider = document.querySelector("#".concat(id));
     this.nextButton;
     this.prevButton;
     this.box;
+    this.selector = selector;
   }
   _createClass(PreferSlider, [{
     key: "creatSlider\u0421ascade",
     value: function creatSliderСascade() {
-      return "<div class=\"prefer__item-wrap\">\n             ".concat(this.renderButtons("left"), "\n              <div class=\"prefer__item-box\"></div>\n            ").concat(this.renderButtons("right"), "\n            </div> ");
+      return "<div class=\"slider__item-wrap ".concat(this.selector, "__item-wrap\">\n             ").concat(this.renderButtons("left"), "\n              <div class=\"slider__item-box ").concat(this.selector, "__item-box\"></div>\n            ").concat(this.renderButtons("right"), "\n            </div> ");
     }
   }, {
     key: "renderButtons",
     value: function renderButtons(side) {
-      return " <button\n                class=\"slider-btn slider-btn_".concat(side, " prefer__slider-btn prefer__slider-btn-").concat(side, "\"\n              >\n              ").concat(this.templateButtons(side), "\n              </button>");
+      return " <button\n                class=\"slider-btn slider-btn_".concat(side, " ").concat(this.selector, "__slider-btn ").concat(this.selector, "__slider-btn-").concat(side, "\"\n              >\n              ").concat(this.templateButtons(side), "\n              </button>");
     }
   }, {
     key: "templateButtons",
@@ -1270,7 +1276,7 @@ var PreferSlider = /*#__PURE__*/function () {
         title = _ref.title,
         url = _ref.url,
         thumbnailUrl = _ref.thumbnailUrl;
-      return "  <a href=\"".concat(thumbnailUrl, "\" id=\"").concat(id, "\" class=\"prefer__item flex\">\n                <div class=\"prefer__overlay prefer__overlay_blue\"\n                style=\"background: url(").concat(url, ") center center/cover no-repeat;\"></div>\n                <div class=\"prefer__name\">").concat(title, "</div></div>\n              </a>");
+      return "  <a href=\"".concat(thumbnailUrl, "\" id=\"").concat(id, "\" class=\"slider__item ").concat(this.selector, "__item flex\">\n                <div class=\"").concat(this.selector, "__overlay ").concat(this.selector, "__overlay_blue\"\n                style=\"background: url(").concat(url, ") center center/cover no-repeat;\"></div>\n                <div class=\"").concat(this.selector, "__name\">").concat(title, "</div></div>\n              </a>");
     }
   }, {
     key: "setData",
@@ -1279,12 +1285,12 @@ var PreferSlider = /*#__PURE__*/function () {
       this.box.innerHTML = "";
       this.translate = 0;
       this.assignTranslate();
-      this.numuberOfSlider = 0;
+      this.numberOfSlider = 0;
       this.coutOfClick = 0;
       data = data.slice(0, 7);
       data.forEach(function (elem, i) {
         _this.box.innerHTML += _this.slideTemplate(elem);
-        _this.numuberOfSlider += 1;
+        _this.numberOfSlider += 1;
       });
       this.prevSlide();
     }
@@ -1296,12 +1302,12 @@ var PreferSlider = /*#__PURE__*/function () {
   }, {
     key: "nextSlide",
     value: function nextSlide() {
-      if (this.coutOfClick < this.numuberOfSlider - this.checkWindowWidth()) {
+      if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
         this.translate -= 217;
         this.coutOfClick += 1;
         this.assignTranslate();
       }
-      if (this.coutOfClick == this.numuberOfSlider - this.checkWindowWidth()) {
+      if (this.coutOfClick == this.numberOfSlider - this.checkWindowWidth()) {
         this.nextButton.style.opacity = "0.5";
       }
       if (this.translate != 0) {
@@ -1319,7 +1325,7 @@ var PreferSlider = /*#__PURE__*/function () {
       if (this.translate == 0) {
         this.prevButton.style.opacity = "0.5";
       }
-      if (this.coutOfClick < this.numuberOfSlider - this.checkWindowWidth()) {
+      if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
         this.nextButton.style.opacity = "1";
       }
     }
@@ -1338,9 +1344,9 @@ var PreferSlider = /*#__PURE__*/function () {
     key: "initSlider",
     value: function initSlider() {
       this.slider.innerHTML = this.creatSliderСascade();
-      this.nextButton = document.querySelector(".prefer__slider-btn-right");
-      this.prevButton = document.querySelector(".prefer__slider-btn-left");
-      this.box = document.querySelector(".prefer__item-box");
+      this.nextButton = document.querySelector(".".concat(this.selector, "__slider-btn-right"));
+      this.prevButton = document.querySelector(".".concat(this.selector, "__slider-btn-left"));
+      this.box = document.querySelector(".".concat(this.selector, "__item-box"));
       this.prevSlide();
       this.clickHendler();
     }

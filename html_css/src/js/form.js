@@ -1,6 +1,7 @@
 let form = document.querySelector(".form"),
   inputs = form.querySelectorAll(".form__input");
 let obj = {};
+
 export function initForm() {
   setData();
   submitHendler();
@@ -21,6 +22,7 @@ function submitHendler() {
     console.log(formObj);
   });
 }
+
 function changeHendler() {
   form.addEventListener("keyup", (e) => {
     let target = e.target;
@@ -42,9 +44,11 @@ function clearInput() {
     inputs[i].value = "";
   }
 }
+
 function clearStorage() {
   localStorage.removeItem("formData");
 }
+
 function setData() {
   let data = JSON.parse(localStorage.getItem("formData"));
   if (data && localStorage.getItem("formData") != null) {

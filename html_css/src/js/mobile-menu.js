@@ -3,6 +3,7 @@ let humburgerElem = document.querySelector(".header__humburger"),
   cross = document.querySelector(".header__cross"),
   link = document.querySelector(".header__list"),
   activeClass = "header__nav_active";
+
 export function hamburger() {
   clickHundlers();
 }
@@ -20,6 +21,7 @@ function clickHundlers() {
     }
   });
 }
+
 function closeMenu() {
   document.body.style.overflow = "";
   nav.classList.remove(activeClass);

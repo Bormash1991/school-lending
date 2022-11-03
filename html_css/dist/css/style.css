@@ -246,6 +246,31 @@ select {
     display: block;
   }
 }
+.slider-wrap {
+  position: relative;
+}
+.slider__item {
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0px 7px 20px #e2edfb;
+  border-radius: 5px;
+  z-index: 1;
+}
+.slider__item-wrap {
+  margin: 0 auto;
+  overflow: hidden;
+}
+.slider__item-box {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  transition: 350ms transform;
+}
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -1229,7 +1254,6 @@ select {
   margin-top: 40px;
 }
 .prefer__slider-wrap {
-  position: relative;
   margin-top: 20px;
 }
 .prefer__slider-btn-left {
@@ -1251,99 +1275,16 @@ select {
   overflow: hidden;
 }
 .prefer__button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 200px;
-  margin: 0 auto;
-  margin-bottom: 8px;
-  padding: 14px 20px 14px 12px;
-  background-color: #f3f6fc;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.25;
-  color: var(--grey);
-  border: none;
-  border-radius: 22px;
-  transition: 250ms outline;
-}
-.prefer__button_active {
-  outline: 1px solid var(--blue);
-}
-.prefer__button_disabled {
-  opacity: 0.5;
-}
-.prefer__arrow {
-  border: solid black;
-  border-width: 0 2.2px 2.2px 0;
-  display: inline-block;
-  padding: 3.5px;
-  margin-bottom: 3px;
-  transform: rotate(45deg);
-  transition: 250ms;
-  transition-property: transform, border;
-}
-.prefer__arrow_active {
-  transform: rotate(135deg);
-  border: solid var(--blue);
-  border-width: 0 2.2px 2.2px 0;
-}
-.prefer__list {
-  display: none;
-  position: absolute;
-  margin: 0 auto;
-  width: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 7px 4px;
-  list-style-type: none;
-  box-shadow: 0px 4px 11px rgba(29, 31, 34, 0.1);
-  border-radius: 22px;
-  background-color: white;
-  z-index: 2;
-}
-.prefer__list_show {
-  display: block;
-}
-.prefer__list-item {
-  padding: 8px 12px;
-  font-weight: 400;
-  font-size: 16px;
-  color: #72757e;
-  line-height: 1.25;
-  cursor: pointer;
-}
-.prefer__list-item:hover {
-  background: #f3f6fc;
-  border-radius: 11px;
-  color: var(--blue);
+  margin-bottom: 8px !important;
 }
 .prefer__item {
-  position: relative;
   padding: 8px;
   width: 197px;
   height: 197px;
-  display: flex;
   flex: 0 0 197px;
-  z-index: 1;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  text-decoration: none;
-  color: white;
-  box-shadow: 0px 7px 20px #e2edfb;
-  border-radius: 5px;
 }
 .prefer__item-wrap {
-  margin: 0 auto;
-  overflow: hidden;
   width: 197px;
-}
-.prefer__item-box {
-  display: flex;
-  justify-content: start;
-  gap: 20px;
-  transition: 350ms transform;
 }
 .prefer__overlay {
   position: absolute;
@@ -2093,4 +2034,74 @@ p {
   .slick-list {
     max-width: 880px;
   }
+}
+.label {
+  position: relative;
+}
+.label__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 14px 20px 14px 12px;
+  width: 200px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--grey);
+  border: none;
+  border-radius: 22px;
+  background-color: #f3f6fc;
+  transition: 250ms outline;
+}
+.label__button_active {
+  outline: 1px solid var(--blue);
+}
+.label__button_disabled {
+  opacity: 0.5;
+}
+.label__arrow {
+  display: inline-block;
+  padding: 3.5px;
+  margin-bottom: 3px;
+  border: solid black;
+  border-width: 0 2.2px 2.2px 0;
+  transform: rotate(45deg);
+  transition: 250ms;
+  transition-property: transform, border;
+}
+.label__arrow_active {
+  transform: rotate(135deg);
+  border: solid var(--blue);
+  border-width: 0 2.2px 2.2px 0;
+}
+.label__list {
+  display: none;
+  position: absolute;
+  margin: 0 auto;
+  padding: 7px 4px;
+  width: 200px;
+  left: 50%;
+  list-style-type: none;
+  transform: translateX(-50%);
+  border-radius: 22px;
+  background-color: white;
+  box-shadow: 0px 4px 11px rgba(29, 31, 34, 0.1);
+  z-index: 2;
+}
+.label__list-item {
+  padding: 8px 12px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #72757e;
+  line-height: 1.25;
+  cursor: pointer;
+}
+.label__list-item:hover {
+  background: #f3f6fc;
+  border-radius: 11px;
+  color: var(--blue);
+}
+.label__list_show {
+  display: block;
 }
