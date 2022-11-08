@@ -492,12 +492,14 @@
                 </div>
               </div>
               <div class="customer__text-wrap">
-                <img
-                  src="img/customer/icon.svg"
-                  alt="virgule"
-                  class="customer__icon"
-                  width="39"
-                />
+                <svg width="39" class="customer__icon">
+                  <use
+                    class="customer__icon_elem"
+                    href="img/sprite.svg#icon-customer"
+                    alt="virgule"
+                  ></use>
+                </svg>
+
                 <p class="customer__text">
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                   accusantium doloremque <br />
@@ -508,11 +510,11 @@
                 </p>
                 <div class="customer__name">Stephanie Magion</div>
                 <div class="customer__dots flex_start-j">
-                  <button class="customer__dot"></button>
+                  <!-- <button class="customer__dot"></button>
                   <button class="customer__dot"></button>
                   <button class="customer__dot customer__dot_active"></button>
                   <button class="customer__dot"></button>
-                  <button class="customer__dot"></button>
+                  <button class="customer__dot"></button> -->
                 </div>
               </div>
             </div>
@@ -633,17 +635,17 @@
       </section>
       <section id="contact" class="contact">
         <div class="container">
-          <form action="#" class="form flex">
-            <label for="fullname"></label>
+          <form action="#" class="form flex" novalidate>
             <input
               name="fullname"
               id="fullname"
               class="form__input"
               required
+              maxlength="30"
               type="text"
               placeholder="Name Surname"
             />
-            <label for="phone"></label>
+            <label class="form__label" for="fullname"></label>
             <input
               name="phone"
               id="phone"
@@ -652,7 +654,7 @@
               type="tel"
               placeholder="Phone"
             />
-            <label for="email"></label>
+            <label class="form__label" for="phone"></label>
             <input
               name="email"
               id="email"
@@ -661,6 +663,7 @@
               type="email"
               placeholder="Enter your email..."
             />
+            <label class="form__label" for="email"></label>
             <button class="btn btn_form" type="submit">Send</button>
           </form>
         </div>

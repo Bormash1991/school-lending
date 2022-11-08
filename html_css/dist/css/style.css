@@ -197,7 +197,7 @@ select {
 }
 .btn_form {
   padding: 14px 141.5px;
-  margin-top: 32px;
+  margin-top: 10px;
   color: white;
   background-color: var(--second-green);
   box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
@@ -1560,16 +1560,22 @@ select {
   height: 273.03px;
   border-radius: 24px;
 }
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .customer__img {
   transform: translate(53.97px, 46.03px);
-  background: url("../img/customer/people.jpg") center center/cover no-repeat;
   z-index: 1;
 }
 .customer__square {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #637af2;
   z-index: -1;
 }
 .customer__all-wrap {
@@ -1577,9 +1583,12 @@ select {
 }
 .customer__icon {
   margin-top: 48px;
+  width: 39px;
+  height: 31px;
 }
 .customer__text {
   margin-top: 32px;
+  height: 122px;
 }
 .customer__name {
   margin-top: 16px;
@@ -1630,7 +1639,7 @@ select {
     padding-bottom: 50px;
   }
   .customer__title {
-    max-width: 150px;
+    max-width: 282px;
   }
   .customer__icon {
     margin-top: 28px;
@@ -1791,10 +1800,19 @@ select {
 .form {
   padding: 40px 0 40px 0;
   flex-direction: column;
+  margin: 0 auto;
+}
+.form__label {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  height: 16px;
+  color: #f15b5b;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
 }
 .form__input {
   display: block;
-  margin-top: 16px;
   padding: 14px 12px;
   width: 100%;
   background: #f3f6fc;
@@ -1810,6 +1828,9 @@ select {
 }
 .form__input:focus {
   outline: 2px solid #1b63f0;
+}
+.form__input_invalid {
+  outline: 2px solid #f15b5b !important;
 }
 
 @media (min-width: 768px) {

@@ -6,11 +6,12 @@ import { PreferSlider } from "./slider.js";
 import {
   dataForPaginator,
   dataForCoursesSlider,
-  dataForSlider,
+  dataForCustomersSlider,
 } from "./data-for-sliders.js";
 import { initForm } from "./form";
 import { smoothScroll } from "./scroll.js";
 import { Select } from "./select";
+import { customersPaginator } from "./customers-paginator.js";
 export class App {
   constructor() {
     this.slider;
@@ -39,5 +40,6 @@ export class App {
     let response = await this.getSliderData();
     this.slider.setData(response);
     new Select(this.updateSlider.bind(this), "prefer").initList();
+    customersPaginator(dataForCustomersSlider);
   }
 }
