@@ -1,25 +1,29 @@
-let form = document.querySelector(".form"),
-  inputs = form.querySelectorAll(".form__input");
-let obj = {};
-let valid = false;
+let form: HTMLFormElement = document.querySelector(".form"),
+  inputs = form.querySelectorAll(
+    ".form__input"
+  ) as unknown as HTMLInputElement[],
+  obj: object = {},
+  valid: boolean = false;
 
-export function initForm() {
+export function initForm(): void {
   setData();
   submitHendler();
   changeHendler();
 }
 
-function submitHendler() {
-  form.addEventListener("submit", (e) => {
+function submitHendler(): void {
+  form.addEventListener("submit", (e: Event) => {
     e.preventDefault();
     inputs.forEach((input, i) => {
       if (input.value == "") {
-        document.querySelector(
-          `label[for="${input.getAttribute("id")}"]`
+        (
+          document.querySelector(
+            `label[for="${input.getAttribute("id")}"]`
+          ) as HTMLLabelElement
         ).innerText = "You must fill in the field";
       } else if (i == inputs.length - 1) {
-        const formData = new FormData(form);
-        let formObj = {};
+        const formData: any = new FormData(form);
+        let formObj: object = {};
         for (let [key, value] of formData.entries()) {
           formObj[key] = value;
         }
@@ -31,10 +35,10 @@ function submitHendler() {
     });
   });
 }
-function formValidate(input) {
-  let id = input.getAttribute("id");
+function formValidate(input: HTMLInputElement): string {
+  let id: string = input.getAttribute("id");
   if (id == "fullname") {
-    let reg = new RegExp(/^[a-zA-Z, \s]+$/);
+    let reg: RegExp = new RegExp(/^[a-zA-Z, \s]+$/);
     if (input.value == "") {
       return "";
     } else if (!reg.test(input.value)) {
@@ -45,7 +49,7 @@ function formValidate(input) {
       return "";
     }
   } else if (id == "phone") {
-    let reg = new RegExp(/^[\d\+][\d\(\)\ -]{4,14}\d$/);
+    let reg: RegExp = new RegExp(/^[\d\+][\d\(\)\ -]{4,14}\d$/);
     if (input.value == "") {
       return "";
     } else if (!reg.test(input.value)) {
@@ -54,7 +58,7 @@ function formValidate(input) {
       return "";
     }
   } else if (id == "email") {
-    let reg = new RegExp(
+    let reg: RegExp = new RegExp(
       /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/
     );
     if (input.value == "") {
@@ -66,7 +70,7 @@ function formValidate(input) {
     }
   }
 }
-function illuminationForInput(text, input) {
+function illuminationForInput(text: string, input: HTMLInputElement): void {
   if (text) {
     input.classList.add("form__input_invalid");
   } else {
@@ -74,13 +78,14 @@ function illuminationForInput(text, input) {
   }
 }
 function changeHendler() {
-  form.addEventListener("keyup", (e) => {
-    let target = e.target;
+  form.addEventListener("keyup", (e: Event) => {
+    let target = e.target as HTMLInputElement;
     if (target.classList.contains("form__input")) {
       let text = formValidate(target);
-      document.querySelector(
+      let label: HTMLLabelElement = document.querySelector(
         `label[for="${target.getAttribute("id")}"]`
-      ).innerText = text;
+      );
+      label.innerText = text;
       illuminationForInput(text, target);
       let d = JSON.parse(localStorage.getItem("formData"));
       if (d) {
@@ -105,14 +110,16 @@ function clearStorage() {
 }
 
 function setData() {
-  let data = JSON.parse(localStorage.getItem("formData"));
+  let data: string = JSON.parse(localStorage.getItem("formData"));
   if (data && localStorage.getItem("formData") != null) {
     inputs.forEach((input) => {
       if (data[input.getAttribute("name")]) {
         input.value = data[input.getAttribute("name")];
         let text = formValidate(input);
-        document.querySelector(
-          `label[for="${input.getAttribute("id")}"]`
+        (
+          document.querySelector(
+            `label[for="${input.getAttribute("id")}"]`
+          ) as HTMLLabelElement
         ).innerText = text;
         illuminationForInput(text, input);
       }

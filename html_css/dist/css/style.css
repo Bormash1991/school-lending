@@ -430,7 +430,7 @@ select {
     width: 100vw;
     background-color: white;
     z-index: 4;
-    top: -24px;
+    top: -13px;
     left: 0;
     transform: translateX(-100%);
   }
@@ -1589,6 +1589,10 @@ select {
 .customer__text {
   margin-top: 32px;
   height: 122px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .customer__name {
   margin-top: 16px;

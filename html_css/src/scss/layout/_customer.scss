@@ -44,6 +44,10 @@
   &__text {
     margin-top: 32px;
     height: 122px;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   &__name {
     margin-top: 16px;

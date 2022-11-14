@@ -1,20 +1,21 @@
-export function coursesSlider(data, selector) {
-  let sliderWrap = document.querySelector(`.${selector}`);
+import { cardTypeForSlickSlider } from "./modules/types";
+export function coursesSlider(data: [], selector: string) {
+  let sliderWrap: HTMLDivElement = document.querySelector(`.${selector}`);
   addSlides(data, sliderWrap);
   initSlickSlider(selector);
 }
 
-function checkStars(stars) {
+function checkStars(stars: number) {
   return (100 * stars) / 5;
 }
 
-function addSlides(data, sliderWrap) {
+function addSlides(data: [], sliderWrap: HTMLDivElement) {
   data.forEach((elem, i) => {
     sliderWrap.innerHTML += slideTemplate(elem);
   });
 }
 
-function slideTemplate(elem) {
+function slideTemplate(elem: cardTypeForSlickSlider): string {
   let width = checkStars(elem.countOfStars);
   let {
     id,
@@ -56,7 +57,7 @@ function slideTemplate(elem) {
               </a></div>`;
 }
 
-function initSlickSlider(selector) {
+function initSlickSlider(selector: string) {
   $(`.${selector}`)
     .not(".slick-initialized")
     .slick({

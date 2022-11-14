@@ -1,6 +1,6 @@
 export class Storage {
   constructor() {}
-  setData(data) {
+  setData(data: []) {
     if (!localStorage.getItem("dataForSlider")) {
       localStorage.setItem("dataForSlider", JSON.stringify(data));
     }

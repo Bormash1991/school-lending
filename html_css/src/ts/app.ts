@@ -1,38 +1,42 @@
-import { hamburger } from "./mobile-menu.js";
-import { headerAppearsWithScroll } from "./header-scroll.js";
-import { paginator } from "./paginator.js";
-import { coursesSlider } from "./courses-slider.js";
-import { PreferSlider } from "./slider.js";
+import { hamburger } from "./mobile-menu";
+import { headerAppearsWithScroll } from "./header-scroll";
+import { paginator } from "./paginator";
+import { coursesSlider } from "./courses-slider";
+import { PreferSlider } from "./slider";
 import {
   dataForPaginator,
   dataForCoursesSlider,
   dataForCustomersSlider,
-} from "./data-for-sliders.js";
+} from "./data-for-sliders";
 import { initForm } from "./form";
-import { smoothScroll } from "./scroll.js";
+import { smoothScroll } from "./scroll";
 import { Select } from "./select";
-import { customersPaginator } from "./customers-paginator.js";
+import { customersPaginator } from "./customers-paginator";
+
 export class App {
+  slider: PreferSlider;
+  baseUrl: string;
   constructor() {
     this.slider;
+    this.baseUrl;
   }
 
-  async getSliderData(num = 1) {
+  async getSliderData(num: number = 1) {
     let response = await fetch(
       `https://jsonplaceholder.typicode.com/albums/${num}/photos`
     );
     return await response.json();
   }
 
-  async updateSlider(id) {
+  async updateSlider(id: number) {
     this.slider.setData(await this.getSliderData(id));
   }
 
   async init() {
     hamburger();
     headerAppearsWithScroll();
-    paginator(dataForPaginator);
-    coursesSlider(dataForCoursesSlider, "course__slider-wrap");
+    paginator(dataForPaginator as []);
+    coursesSlider(dataForCoursesSlider as [], "course__slider-wrap");
     initForm();
     smoothScroll();
     this.slider = new PreferSlider("slider", "prefer");
@@ -40,6 +44,6 @@ export class App {
     let response = await this.getSliderData();
     this.slider.setData(response);
     new Select(this.updateSlider.bind(this), "prefer").initList();
-    customersPaginator(dataForCustomersSlider);
+    customersPaginator(dataForCustomersSlider as []);
   }
 }
