@@ -12,7 +12,7 @@ import { initForm } from "./form";
 import { smoothScroll } from "./scroll";
 import { Select } from "./select";
 import { customersPaginator } from "./customers-paginator";
-
+import { cardTypeForNativeSlider } from "./models/types.model";
 export class App {
   slider: PreferSlider;
   baseUrl: string;
@@ -21,7 +21,7 @@ export class App {
     this.baseUrl;
   }
 
-  async getSliderData(num: number = 1) {
+  async getSliderData(num: number = 1): Promise<cardTypeForNativeSlider[]> {
     let response = await fetch(
       `https://jsonplaceholder.typicode.com/albums/${num}/photos`
     );

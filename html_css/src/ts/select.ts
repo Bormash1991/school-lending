@@ -1,16 +1,17 @@
-import { albumId } from "./modules/enum";
+import { AlbumOptions } from "./models/enum.model";
+import { callback } from "./models/callback.model";
 export class Select {
   #select: string;
   numberOflabel: number;
   selector: string;
   data: [];
-  changeCallback: Function;
+  changeCallback: callback;
   list: HTMLDivElement;
   label: HTMLDivElement;
   span: HTMLSpanElement;
   arrow: HTMLElement;
   quantitiOfAlbumId: number;
-  constructor(changeCallback: Function, selector: string) {
+  constructor(changeCallback: callback, selector: string) {
     this.numberOflabel;
     this.selector = selector;
     this.#select = `.${this.selector}__label`;
@@ -63,7 +64,9 @@ export class Select {
 
   addListItem(): void {
     for (let i = 0; i < this.quantitiOfAlbumId; i++) {
-      this.list.innerHTML += this.labelTemplate(+Object.values(albumId)[i]);
+      this.list.innerHTML += this.labelTemplate(
+        +Object.values(AlbumOptions)[i]
+      );
     }
     this.onChange(1);
   }
@@ -88,9 +91,10 @@ export class Select {
         this.numberOflabel = +target.getAttribute("id");
         this.span.textContent = target.textContent;
         this.label.classList.toggle(`${this.selector}__button_active`);
+        this.label.classList.toggle("label__button_active");
         this.arrow.classList.toggle("label__arrow_active");
         this.arrow.classList.toggle(`${this.selector}__arrow_active`);
-        this.onChange(+Object.values(albumId)[this.numberOflabel - 1]);
+        this.onChange(+Object.values(AlbumOptions)[this.numberOflabel - 1]);
       }
     });
   }

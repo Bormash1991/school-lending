@@ -1,4 +1,4 @@
-import { cardTypeForCustomerPaginator } from "./modules/types";
+import { cardTypeForCustomerPaginator } from "./models/types.model";
 let dotsWrapper: HTMLDivElement = document.querySelector(".customer__dots");
 let active: string = "customer__dot_active";
 let img: HTMLImageElement = document.querySelector(".customer__img");

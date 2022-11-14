@@ -1,4 +1,4 @@
-import { cardTypeForSlickSlider } from "./modules/types";
+import { cardTypeForSlickSlider } from "./models/types.model";
 export function coursesSlider(data: [], selector: string) {
   let sliderWrap: HTMLDivElement = document.querySelector(`.${selector}`);
   addSlides(data, sliderWrap);

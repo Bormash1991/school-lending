@@ -1070,23 +1070,23 @@ function closeMenu() {
 
 /***/ }),
 
-/***/ "./src/ts/modules/enum.ts":
-/*!********************************!*\
-  !*** ./src/ts/modules/enum.ts ***!
-  \********************************/
+/***/ "./src/ts/models/enum.model.ts":
+/*!*************************************!*\
+  !*** ./src/ts/models/enum.model.ts ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "albumId": () => (/* binding */ albumId)
+/* harmony export */   "AlbumOptions": () => (/* binding */ AlbumOptions)
 /* harmony export */ });
-var albumId;
-(function (albumId) {
-    albumId["Label 1"] = "1";
-    albumId["Label 2"] = "2";
-    albumId["Label 3"] = "3";
-})(albumId || (albumId = {}));
+var AlbumOptions;
+(function (AlbumOptions) {
+    AlbumOptions["LabelOne"] = "1";
+    AlbumOptions["LabelTwo"] = "2";
+    AlbumOptions["LabelThree"] = "3";
+})(AlbumOptions || (AlbumOptions = {}));
 
 
 /***/ }),
@@ -1307,7 +1307,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Select": () => (/* binding */ Select)
 /* harmony export */ });
-/* harmony import */ var _modules_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/enum */ "./src/ts/modules/enum.ts");
+/* harmony import */ var _models_enum_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./models/enum.model */ "./src/ts/models/enum.model.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -1371,7 +1371,7 @@ class Select {
     }
     addListItem() {
         for (let i = 0; i < this.quantitiOfAlbumId; i++) {
-            this.list.innerHTML += this.labelTemplate(+Object.values(_modules_enum__WEBPACK_IMPORTED_MODULE_0__.albumId)[i]);
+            this.list.innerHTML += this.labelTemplate(+Object.values(_models_enum_model__WEBPACK_IMPORTED_MODULE_0__.AlbumOptions)[i]);
         }
         this.onChange(1);
     }
@@ -1394,9 +1394,10 @@ class Select {
                 this.numberOflabel = +target.getAttribute("id");
                 this.span.textContent = target.textContent;
                 this.label.classList.toggle(`${this.selector}__button_active`);
+                this.label.classList.toggle("label__button_active");
                 this.arrow.classList.toggle("label__arrow_active");
                 this.arrow.classList.toggle(`${this.selector}__arrow_active`);
-                this.onChange(+Object.values(_modules_enum__WEBPACK_IMPORTED_MODULE_0__.albumId)[this.numberOflabel - 1]);
+                this.onChange(+Object.values(_models_enum_model__WEBPACK_IMPORTED_MODULE_0__.AlbumOptions)[this.numberOflabel - 1]);
             }
         });
     }

@@ -1,4 +1,4 @@
-import { cardTypeForPaginator } from "./modules/types";
+import { cardTypeForPaginator } from "./models/types.model";
 import throttle from "lodash.throttle";
 let buttonsParent: HTMLDivElement = document.querySelector(".blog__list"),
   elementsWrapper: HTMLDivElement = document.querySelector(

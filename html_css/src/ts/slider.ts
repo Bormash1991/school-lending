@@ -1,4 +1,4 @@
-import { cardTypeForNativeSlider } from "./modules/types";
+import { cardTypeForNativeSlider } from "./models/types.model";
 export class PreferSlider {
   translate: number;
   coutOfClick: number;
