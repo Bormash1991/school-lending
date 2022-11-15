@@ -1,6 +1,17 @@
+import { AlbumOptions } from "./models/enum.model";
+import { callback } from "./models/callback.model";
 export class Select {
-  #select;
-  constructor(changeCallback, selector) {
+  #select: string;
+  numberOflabel: number;
+  selector: string;
+  data: [];
+  changeCallback: callback;
+  list: HTMLDivElement;
+  label: HTMLDivElement;
+  span: HTMLSpanElement;
+  arrow: HTMLElement;
+  quantitiOfAlbumId: number;
+  constructor(changeCallback: callback, selector: string) {
     this.numberOflabel;
     this.selector = selector;
     this.#select = `.${this.selector}__label`;
@@ -13,7 +24,7 @@ export class Select {
     this.quantitiOfAlbumId = 3;
   }
 
-  onChange(value) {
+  onChange(value: number): void {
     this.changeCallback(value);
   }
 
@@ -21,7 +32,7 @@ export class Select {
     return this.#select;
   }
 
-  templateButtonAndList() {
+  templateButtonAndList(): string {
     return `
     <button class="label__button ${this.selector}__button">
         <span class="label__button_text ${this.selector}__button_text">Label</span>
@@ -31,15 +42,15 @@ export class Select {
     `;
   }
 
-  initVariables() {
+  initVariables(): void {
     this.list = document.querySelector(`.${this.selector}__list`);
     this.label = document.querySelector(`.${this.selector}__button`);
     this.span = document.querySelector(`.${this.selector}__button_text`);
     this.arrow = document.querySelector(`.${this.selector}__arrow`);
   }
 
-  initList() {
-    let item = document.querySelector(this.select);
+  initList(): void {
+    let item = document.querySelector(this.select) as HTMLDivElement;
     item.classList.add("label");
     item.innerHTML = this.templateButtonAndList();
     this.initVariables();
@@ -51,19 +62,20 @@ export class Select {
     this.addListItem();
   }
 
-  addListItem() {
-    let number = 0;
+  addListItem(): void {
     for (let i = 0; i < this.quantitiOfAlbumId; i++) {
-      this.list.innerHTML += this.labelTemplate(i + 1);
+      this.list.innerHTML += this.labelTemplate(
+        +Object.values(AlbumOptions)[i]
+      );
     }
     this.onChange(1);
   }
 
-  labelTemplate(number) {
+  labelTemplate(number: number): string {
     return `<li id="${number}" class="label__list-item ${this.selector}__list-item">Label ${number}</li>`;
   }
-  
-  labelClickHandler() {
+
+  labelClickHandler(): void {
     this.label.addEventListener("click", () => {
       this.label.classList.toggle(`${this.selector}__button_active`);
       this.label.classList.toggle("label__button_active");
@@ -71,17 +83,18 @@ export class Select {
       this.arrow.classList.toggle(`${this.selector}__arrow_active`);
       this.arrow.classList.toggle("label__arrow_active");
     });
-    this.list.addEventListener("click", (e) => {
-      let target = e.target;
+    this.list.addEventListener("click", (e: Event) => {
+      let target = e.target as HTMLDivElement;
       if (target.classList.contains(`${this.selector}__list-item`)) {
         this.list.classList.toggle(`${this.selector}__list_show`);
         this.list.classList.toggle("label__list_show");
-        this.numberOflabel = target.getAttribute("id");
+        this.numberOflabel = +target.getAttribute("id");
         this.span.textContent = target.textContent;
         this.label.classList.toggle(`${this.selector}__button_active`);
+        this.label.classList.toggle("label__button_active");
         this.arrow.classList.toggle("label__arrow_active");
         this.arrow.classList.toggle(`${this.selector}__arrow_active`);
-        this.onChange(this.numberOflabel);
+        this.onChange(+Object.values(AlbumOptions)[this.numberOflabel - 1]);
       }
     });
   }

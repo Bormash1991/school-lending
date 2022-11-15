@@ -1,22 +1,30 @@
-let buttonsParent = document.querySelector(".blog__list"),
-  elementsWrapper = document.querySelector(".blog__wrap-elements"),
-  slides = 2,
-  activeClass = "blog__btn_active",
-  horizontal = false;
+import { cardTypeForPaginator } from "./models/types.model";
+import throttle from "lodash.throttle";
+let buttonsParent: HTMLDivElement = document.querySelector(".blog__list"),
+  elementsWrapper: HTMLDivElement = document.querySelector(
+    ".blog__wrap-elements"
+  ),
+  slides: number = 2,
+  activeClass: string = "blog__btn_active",
+  horizontal: boolean = false;
 
-export function paginator(data) {
+export function paginator(data: cardTypeForPaginator[]): void {
+  window.addEventListener(
+    "resize",
+    throttle(resizeCallback.bind(this, data), 700)
+  );
   createButtons(data);
   clickHandler(data);
 }
 
 function templateBlogElements(
-  id,
-  title,
-  url,
-  userImage,
-  redirectLink,
-  category
-) {
+  id: cardTypeForPaginator["id"],
+  title: cardTypeForPaginator["title"],
+  url: cardTypeForPaginator["url"],
+  userImage: cardTypeForPaginator["userImage"],
+  redirectLink: cardTypeForPaginator["redirectLink"],
+  category: cardTypeForPaginator["category"]
+): string {
   return `
               <div id="${id}" class="blog__wrap-item flex_justify-c">
                 <div class="blog__wrap-left">
@@ -44,26 +52,40 @@ function templateBlogElements(
         `;
 }
 
-function templateButtons(num, hidden = "") {
+function templateButtons(num: number): string {
   return `
       <li class="blog__elem ">
-                <button class="blog__btn ${hidden}">${num}</button>
+                <button class="blog__btn">${num}</button>
               </li>
     `;
 }
 
-function checkWindowWidth() {
+function checkWindowWidth(): void {
   if (window.innerWidth < 1440) {
     slides = 1;
+  }
+  if (window.innerWidth >= 1440) {
+    horizontal = false;
+    slides = 2;
   }
   if (window.innerWidth < 768) {
     horizontal = true;
   }
 }
+function resizeCallback(data: cardTypeForPaginator[]) {
+  checkWindowWidth();
+  elementsWrapper.innerHTML = "";
+  buttonsParent.innerHTML = "";
+  buttonsParent.setAttribute("style", `transform:transform(0px,0px )`);
+  createButtons(data);
+  clickHandler(data);
+}
 checkWindowWidth();
 
-function checkActiveButton(count, data) {
-  let btns = document.querySelectorAll(".blog__btn");
+function checkActiveButton(count: number, data: cardTypeForPaginator[]): void {
+  let btns = document.querySelectorAll(
+    ".blog__btn"
+  ) as unknown as HTMLButtonElement[];
   if (count % 2 == 0 && btns.length < 5) {
     btns[0].classList.add(activeClass);
     createElements(data, 1, slides);
@@ -75,15 +97,16 @@ function checkActiveButton(count, data) {
     btns[2].classList.add(activeClass);
     createElements(data, 3, slides);
   }
-
   clickHandler(data);
 }
 
-function clickHandler(data) {
-  let btns = document.querySelectorAll(".blog__btn"),
+function clickHandler(data: cardTypeForPaginator[]): void {
+  let btns = document.querySelectorAll(
+      ".blog__btn"
+    ) as unknown as HTMLButtonElement[],
     arrs = [...btns];
-  buttonsParent.addEventListener("click", (e) => {
-    let target = e.target;
+  buttonsParent.addEventListener("click", (e: Event) => {
+    let target = e.target as HTMLButtonElement;
     arrs.forEach((elem, i) => {
       if (target == elem && !target.classList.contains(activeClass)) {
         arrs.forEach((e, index) => {
@@ -95,14 +118,17 @@ function clickHandler(data) {
         elementsWrapper.innerHTML = "";
         createElements(data, i + 1, slides);
         if (btns.length > 5) {
-          autoScrollListOfButtons(i, data, btns);
+          autoScrollListOfButtons(i, btns);
         }
       }
     });
   });
 }
 
-function setTransformValue(trigger) {
+function setTransformValue(trigger: boolean): {
+  value: string;
+  number: number;
+} {
   if (trigger) {
     return {
       value: "translateX",
@@ -116,7 +142,10 @@ function setTransformValue(trigger) {
   }
 }
 
-function autoScrollListOfButtons(index, data, btns) {
+function autoScrollListOfButtons(
+  index: number,
+  btns: HTMLButtonElement[]
+): void {
   let { value, number } = setTransformValue(horizontal);
 
   if (index <= 3) {
@@ -131,7 +160,11 @@ function autoScrollListOfButtons(index, data, btns) {
   }
 }
 
-function createElements(data, numberOfBtn, coutOfSlides) {
+function createElements(
+  data: cardTypeForPaginator[],
+  numberOfBtn: number,
+  coutOfSlides: number
+): void {
   let halfData = data.slice(
     numberOfBtn * coutOfSlides - coutOfSlides,
     numberOfBtn * coutOfSlides
@@ -149,14 +182,14 @@ function createElements(data, numberOfBtn, coutOfSlides) {
   });
 }
 
-function createButtons(data) {
-  let dataLength = data.length;
-  let counter = 0;
+function createButtons(data: cardTypeForPaginator[]): void {
+  let dataLength: number = data.length;
+  let counter: number = 0;
   if (dataLength % slides == 0) {
     for (let i = 0; i < dataLength / slides; i++) {
       counter += 1;
       if (counter > 5) {
-        buttonsParent.innerHTML += templateButtons(i + 1, "hidden");
+        buttonsParent.innerHTML += templateButtons(i + 1);
       } else {
         buttonsParent.innerHTML += templateButtons(i + 1);
       }
@@ -165,7 +198,7 @@ function createButtons(data) {
     for (let i = 0; i < Math.ceil(dataLength / slides); i++) {
       counter += 1;
       if (counter > 5) {
-        buttonsParent.innerHTML += templateButtons(i + 1, "hidden");
+        buttonsParent.innerHTML += templateButtons(i + 1);
       } else {
         buttonsParent.innerHTML += templateButtons(i + 1);
       }

@@ -15,9 +15,49 @@ gulp.task("copy-html", () => {
     .pipe(browsersync.stream());
 });
 
+// gulp.task("build-js", () => {
+//   return gulp
+//     .src("./src/js/index.js")
+//     .pipe(
+//       webpack({
+//         mode: "development",
+//         output: {
+//           filename: "index.js",
+//         },
+//         watch: false,
+//         devtool: "source-map",
+//         module: {
+//           rules: [
+//             {
+//               test: /\.m?js$/,
+//               exclude: /(node_modules|bower_components)/,
+//               use: {
+//                 loader: "babel-loader",
+//                 options: {
+//                   presets: [
+//                     [
+//                       "@babel/preset-env",
+//                       {
+//                         debug: true,
+//                         corejs: 3,
+//                         useBuiltIns: "usage",
+//                       },
+//                     ],
+//                   ],
+//                   plugins: ["@babel/plugin-proposal-class-properties"],
+//                 },
+//               },
+//             },
+//           ],
+//         },
+//       })
+//     )
+//     .pipe(gulp.dest(dist + "/js"))
+//     .pipe(browsersync.stream());
+// });
 gulp.task("build-js", () => {
   return gulp
-    .src("./src/js/index.js")
+    .src("./src/ts/index.ts")
     .pipe(
       webpack({
         mode: "development",
@@ -26,27 +66,14 @@ gulp.task("build-js", () => {
         },
         watch: false,
         devtool: "source-map",
+        resolve: {
+          extensions: [".ts", ".tsx", ".js"],
+        },
         module: {
           rules: [
             {
-              test: /\.m?js$/,
-              exclude: /(node_modules|bower_components)/,
-              use: {
-                loader: "babel-loader",
-                options: {
-                  presets: [
-                    [
-                      "@babel/preset-env",
-                      {
-                        debug: true,
-                        corejs: 3,
-                        useBuiltIns: "usage",
-                      },
-                    ],
-                  ],
-                  plugins: ["@babel/plugin-proposal-class-properties"],
-                },
-              },
+              test: /\.tsx?$/,
+              loader: "ts-loader",
             },
           ],
         },
@@ -55,7 +82,6 @@ gulp.task("build-js", () => {
     .pipe(gulp.dest(dist + "/js"))
     .pipe(browsersync.stream());
 });
-
 gulp.task("build-sass", () => {
   return gulp
     .src("./src/scss/**/*.scss")
@@ -84,7 +110,7 @@ gulp.task("watch", () => {
   gulp.watch("./src/assets/**/**.*", gulp.parallel("copy-assets"));
   gulp.watch("./src/img/**/*.*", gulp.parallel("copy-assets"));
   gulp.watch("./src/scss/**/*.scss", gulp.parallel("build-sass"));
-  gulp.watch("./src/js/**/*.js", gulp.parallel("build-js"));
+  gulp.watch("./src/ts/**/*.ts", gulp.parallel("build-js"));
 });
 
 gulp.task(

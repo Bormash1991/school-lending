@@ -1,8 +1,8 @@
-let header = document.querySelector(".header"),
-  headerBack = document.querySelector(".header__back"),
-  inform = document.querySelector(".inform");
-  
-export function headerAppearsWithScroll() {
+let header: HTMLDivElement = document.querySelector(".header"),
+  headerBack: HTMLDivElement = document.querySelector(".header__back"),
+  inform: HTMLElement = document.querySelector(".inform");
+
+export function headerAppearsWithScroll(): void {
   window.addEventListener("scroll", () => {
     if (window.scrollY >= inform.clientHeight) {
       header.style.position = "sticky";

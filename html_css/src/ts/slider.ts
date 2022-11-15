@@ -1,5 +1,15 @@
+import { cardTypeForNativeSlider } from "./models/types.model";
 export class PreferSlider {
-  constructor(id, selector) {
+  translate: number;
+  coutOfClick: number;
+  numberOfSlider: number;
+  numberOflabel: number;
+  slider: HTMLDivElement;
+  nextButton: HTMLDivElement;
+  prevButton: HTMLDivElement;
+  box: HTMLDivElement;
+  selector: string;
+  constructor(id: string, selector: string) {
     this.translate = 0;
     this.coutOfClick = 0;
     this.numberOfSlider = 0;
@@ -11,7 +21,7 @@ export class PreferSlider {
     this.selector = selector;
   }
 
-  creatSliderСascade() {
+  creatSliderСascade(): string {
     return `<div class="slider__item-wrap ${this.selector}__item-wrap">
              ${this.renderButtons("left")}
               <div class="slider__item-box ${this.selector}__item-box"></div>
@@ -19,7 +29,7 @@ export class PreferSlider {
             </div> `;
   }
 
-  renderButtons(side) {
+  renderButtons(side: string): string {
     return ` <button
                 class="slider-btn slider-btn_${side} ${
       this.selector
@@ -29,13 +39,13 @@ export class PreferSlider {
               </button>`;
   }
 
-  templateButtons(side) {
+  templateButtons(side: string) {
     return ` <svg class="slider-btn__img slider-btn__img-${side}">
                   <use href="img/sprite.svg#icon-${side}" width="10"></use>
                 </svg>`;
   }
 
-  checkWindowWidth() {
+  checkWindowWidth(): number {
     if (window.innerWidth >= 1440) {
       return 4;
     }
@@ -47,7 +57,13 @@ export class PreferSlider {
     }
   }
 
-  slideTemplate({ albumId, id, title, url, thumbnailUrl }) {
+  slideTemplate({
+    albumId,
+    id,
+    title,
+    url,
+    thumbnailUrl,
+  }: cardTypeForNativeSlider) {
     return `  <a href="${thumbnailUrl}" id="${id}" class="slider__item ${this.selector}__item flex">
                 <div class="${this.selector}__overlay ${this.selector}__overlay_blue"
                 style="background: url(${url}) center center/cover no-repeat;"></div>
@@ -55,7 +71,7 @@ export class PreferSlider {
               </a>`;
   }
 
-  setData(data) {
+  setData(data: cardTypeForNativeSlider[]): void {
     this.box.innerHTML = "";
     this.translate = 0;
     this.assignTranslate();
@@ -69,11 +85,11 @@ export class PreferSlider {
     this.prevSlide();
   }
 
-  assignTranslate() {
+  assignTranslate(): void {
     this.box.style.cssText = `transform: translateX(${this.translate}px)`;
   }
 
-  nextSlide() {
+  nextSlide(): void {
     if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
       this.translate -= 217;
       this.coutOfClick += 1;
@@ -87,7 +103,7 @@ export class PreferSlider {
     }
   }
 
-  prevSlide() {
+  prevSlide(): void {
     if (this.translate != 0) {
       this.translate += 217;
       this.coutOfClick -= 1;
@@ -101,7 +117,7 @@ export class PreferSlider {
     }
   }
 
-  clickHendler() {
+  clickHendler(): void {
     this.nextButton.addEventListener("click", () => {
       this.nextSlide();
     });
@@ -110,7 +126,7 @@ export class PreferSlider {
     });
   }
 
-  initSlider() {
+  initSlider(): void {
     this.slider.innerHTML = this.creatSliderСascade();
     this.nextButton = document.querySelector(
       `.${this.selector}__slider-btn-right`
