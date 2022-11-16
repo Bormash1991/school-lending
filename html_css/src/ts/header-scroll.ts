@@ -4,7 +4,7 @@ let header: HTMLDivElement = document.querySelector(".header"),
 
 export function headerAppearsWithScroll(): void {
   window.addEventListener("scroll", () => {
-    if (window.scrollY >= inform.clientHeight) {
+    if (window.scrollY > inform.clientHeight) {
       header.style.position = "sticky";
       headerBack.style.display = "none";
       header.classList.add("header__fix");

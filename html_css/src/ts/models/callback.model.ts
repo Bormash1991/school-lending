@@ -1,3 +1,3 @@
-export interface callback {
+export interface Сallback {
   (id: number): void;
 }

@@ -1,14 +1,14 @@
 import { cardTypeForNativeSlider } from "./models/types.model";
 export class PreferSlider {
-  translate: number;
-  coutOfClick: number;
-  numberOfSlider: number;
-  numberOflabel: number;
-  slider: HTMLDivElement;
-  nextButton: HTMLDivElement;
-  prevButton: HTMLDivElement;
-  box: HTMLDivElement;
-  selector: string;
+  private translate: number;
+  private coutOfClick: number;
+  private numberOfSlider: number;
+  private numberOflabel: number;
+  private readonly slider: HTMLDivElement;
+  private nextButton: HTMLDivElement;
+  private prevButton: HTMLDivElement;
+  private box: HTMLDivElement;
+  private readonly selector: string;
   constructor(id: string, selector: string) {
     this.translate = 0;
     this.coutOfClick = 0;
@@ -21,7 +21,7 @@ export class PreferSlider {
     this.selector = selector;
   }
 
-  creatSliderСascade(): string {
+  private creatSliderСascade(): string {
     return `<div class="slider__item-wrap ${this.selector}__item-wrap">
              ${this.renderButtons("left")}
               <div class="slider__item-box ${this.selector}__item-box"></div>
@@ -29,7 +29,7 @@ export class PreferSlider {
             </div> `;
   }
 
-  renderButtons(side: string): string {
+  private renderButtons(side: string): string {
     return ` <button
                 class="slider-btn slider-btn_${side} ${
       this.selector
@@ -39,13 +39,13 @@ export class PreferSlider {
               </button>`;
   }
 
-  templateButtons(side: string) {
+  private templateButtons(side: string) {
     return ` <svg class="slider-btn__img slider-btn__img-${side}">
                   <use href="img/sprite.svg#icon-${side}" width="10"></use>
                 </svg>`;
   }
 
-  checkWindowWidth(): number {
+  private checkWindowWidth(): number {
     if (window.innerWidth >= 1440) {
       return 4;
     }
@@ -57,7 +57,7 @@ export class PreferSlider {
     }
   }
 
-  slideTemplate({
+  private slideTemplate({
     albumId,
     id,
     title,
@@ -71,7 +71,7 @@ export class PreferSlider {
               </a>`;
   }
 
-  setData(data: cardTypeForNativeSlider[]): void {
+  public setData(data: cardTypeForNativeSlider[]): void {
     this.box.innerHTML = "";
     this.translate = 0;
     this.assignTranslate();
@@ -85,11 +85,11 @@ export class PreferSlider {
     this.prevSlide();
   }
 
-  assignTranslate(): void {
+  private assignTranslate(): void {
     this.box.style.cssText = `transform: translateX(${this.translate}px)`;
   }
 
-  nextSlide(): void {
+  private nextSlide(): void {
     if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
       this.translate -= 217;
       this.coutOfClick += 1;
@@ -103,7 +103,7 @@ export class PreferSlider {
     }
   }
 
-  prevSlide(): void {
+  private prevSlide(): void {
     if (this.translate != 0) {
       this.translate += 217;
       this.coutOfClick -= 1;
@@ -117,7 +117,7 @@ export class PreferSlider {
     }
   }
 
-  clickHendler(): void {
+  private clickHendler(): void {
     this.nextButton.addEventListener("click", () => {
       this.nextSlide();
     });
@@ -126,7 +126,7 @@ export class PreferSlider {
     });
   }
 
-  initSlider(): void {
+  public initSlider(): void {
     this.slider.innerHTML = this.creatSliderСascade();
     this.nextButton = document.querySelector(
       `.${this.selector}__slider-btn-right`
