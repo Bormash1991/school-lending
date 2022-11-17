@@ -29,6 +29,7 @@ type cardTypeForNativeSlider = {
   url: string;
   thumbnailUrl: string;
 };
+
 export {
   cardTypeForSlickSlider,
   cardTypeForCustomerPaginator,

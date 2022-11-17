@@ -1,21 +1,22 @@
 import { AlbumOptions } from "./models/enum.model";
-import { callback } from "./models/callback.model";
-export class Select {
-  #select: string;
-  numberOflabel: number;
-  selector: string;
-  data: [];
-  changeCallback: callback;
-  list: HTMLDivElement;
-  label: HTMLDivElement;
-  span: HTMLSpanElement;
-  arrow: HTMLElement;
-  quantitiOfAlbumId: number;
-  constructor(changeCallback: callback, selector: string) {
+import { Сallback } from "./models/callback.model";
+interface ISelect<T> {
+  initList(): void;
+}
+export class Select implements ISelect<Сallback> {
+  private readonly select: string;
+  private numberOflabel: number;
+  private readonly selector: string;
+  private changeCallback: Сallback;
+  private list: HTMLDivElement;
+  private label: HTMLDivElement;
+  private span: HTMLSpanElement;
+  private arrow: HTMLElement;
+  private quantitiOfAlbumId: number;
+  constructor(changeCallback: Сallback, selector: string) {
     this.numberOflabel;
     this.selector = selector;
-    this.#select = `.${this.selector}__label`;
-    this.data;
+    this.select = `.${this.selector}__label`;
     this.changeCallback = changeCallback;
     this.list;
     this.label;
@@ -24,15 +25,15 @@ export class Select {
     this.quantitiOfAlbumId = 3;
   }
 
-  onChange(value: number): void {
+  private onChange(value: number): void {
     this.changeCallback(value);
   }
 
-  get select() {
-    return this.#select;
+  private get getSelect() {
+    return this.select;
   }
 
-  templateButtonAndList(): string {
+  private templateButtonAndList(): string {
     return `
     <button class="label__button ${this.selector}__button">
         <span class="label__button_text ${this.selector}__button_text">Label</span>
@@ -42,15 +43,15 @@ export class Select {
     `;
   }
 
-  initVariables(): void {
+  private initVariables(): void {
     this.list = document.querySelector(`.${this.selector}__list`);
     this.label = document.querySelector(`.${this.selector}__button`);
     this.span = document.querySelector(`.${this.selector}__button_text`);
     this.arrow = document.querySelector(`.${this.selector}__arrow`);
   }
 
-  initList(): void {
-    let item = document.querySelector(this.select) as HTMLDivElement;
+  public initList(): void {
+    let item = document.querySelector(this.getSelect) as HTMLDivElement;
     item.classList.add("label");
     item.innerHTML = this.templateButtonAndList();
     this.initVariables();
@@ -62,20 +63,21 @@ export class Select {
     this.addListItem();
   }
 
-  addListItem(): void {
+  private addListItem(): void {
     for (let i = 0; i < this.quantitiOfAlbumId; i++) {
       this.list.innerHTML += this.labelTemplate(
         +Object.values(AlbumOptions)[i]
       );
     }
+    this.span.textContent = "Label 1";
     this.onChange(1);
   }
 
-  labelTemplate(number: number): string {
+  private labelTemplate(number: number): string {
     return `<li id="${number}" class="label__list-item ${this.selector}__list-item">Label ${number}</li>`;
   }
 
-  labelClickHandler(): void {
+  private labelClickHandler(): void {
     this.label.addEventListener("click", () => {
       this.label.classList.toggle(`${this.selector}__button_active`);
       this.label.classList.toggle("label__button_active");

@@ -490,14 +490,20 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
-class App {
+class IApp {
     constructor() {
+        this.BASE_URL = "https://jsonplaceholder.typicode.com/albums/";
+    }
+    getSliderData(num) { }
+}
+class App extends IApp {
+    constructor() {
+        super();
         this.slider;
-        this.baseUrl;
     }
     getSliderData(num = 1) {
         return __awaiter(this, void 0, void 0, function* () {
-            let response = yield fetch(`https://jsonplaceholder.typicode.com/albums/${num}/photos`);
+            let response = yield fetch(`${this.BASE_URL}${num}/photos`);
             return yield response.json();
         });
     }
@@ -1018,7 +1024,7 @@ __webpack_require__.r(__webpack_exports__);
 let header = document.querySelector(".header"), headerBack = document.querySelector(".header__back"), inform = document.querySelector(".inform");
 function headerAppearsWithScroll() {
     window.addEventListener("scroll", () => {
-        if (window.scrollY >= inform.clientHeight) {
+        if (window.scrollY > inform.clientHeight) {
             header.style.position = "sticky";
             headerBack.style.display = "none";
             header.classList.add("header__fix");
@@ -1308,26 +1314,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Select": () => (/* binding */ Select)
 /* harmony export */ });
 /* harmony import */ var _models_enum_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./models/enum.model */ "./src/ts/models/enum.model.ts");
-var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-};
-var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _Select_select;
 
 class Select {
     constructor(changeCallback, selector) {
-        _Select_select.set(this, void 0);
         this.numberOflabel;
         this.selector = selector;
-        __classPrivateFieldSet(this, _Select_select, `.${this.selector}__label`, "f");
-        this.data;
+        this.select = `.${this.selector}__label`;
         this.changeCallback = changeCallback;
         this.list;
         this.label;
@@ -1338,8 +1330,8 @@ class Select {
     onChange(value) {
         this.changeCallback(value);
     }
-    get select() {
-        return __classPrivateFieldGet(this, _Select_select, "f");
+    get getSelect() {
+        return this.select;
     }
     templateButtonAndList() {
         return `
@@ -1357,7 +1349,7 @@ class Select {
         this.arrow = document.querySelector(`.${this.selector}__arrow`);
     }
     initList() {
-        let item = document.querySelector(this.select);
+        let item = document.querySelector(this.getSelect);
         item.classList.add("label");
         item.innerHTML = this.templateButtonAndList();
         this.initVariables();
@@ -1373,6 +1365,7 @@ class Select {
         for (let i = 0; i < this.quantitiOfAlbumId; i++) {
             this.list.innerHTML += this.labelTemplate(+Object.values(_models_enum_model__WEBPACK_IMPORTED_MODULE_0__.AlbumOptions)[i]);
         }
+        this.span.textContent = "Label 1";
         this.onChange(1);
     }
     labelTemplate(number) {
@@ -1402,7 +1395,6 @@ class Select {
         });
     }
 }
-_Select_select = new WeakMap();
 
 
 /***/ }),
