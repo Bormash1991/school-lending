@@ -41,8 +41,8 @@ export class App extends IApp {
   public async init() {
     hamburger();
     headerAppearsWithScroll();
-    paginator(dataForPaginator as []);
-    coursesSlider(dataForCoursesSlider as [], "course__slider-wrap");
+    paginator(dataForPaginator as any);
+    coursesSlider(dataForCoursesSlider as any, "course__slider-wrap");
     initForm();
     smoothScroll();
     this.slider = new PreferSlider("slider", "prefer");
@@ -50,6 +50,6 @@ export class App extends IApp {
     let response = await this.getSliderData();
     this.slider.setData(response);
     new Select(this.updateSlider.bind(this), "prefer").initList();
-    customersPaginator(dataForCustomersSlider as []);
+    customersPaginator(dataForCustomersSlider as any);
   }
 }
