@@ -11,8 +11,10 @@ import {
 import { initForm } from "./form";
 import { smoothScroll } from "./scroll";
 import { Select } from "./select";
+import { Storage } from "./storage";
 import { customersPaginator } from "./customers-paginator";
 import { cardTypeForNativeSlider } from "./models/types.model";
+import { ReadOnly } from "./decorators/readOnly.decorator";
 abstract class IApp {
   protected readonly BASE_URL: string;
   constructor() {
@@ -37,12 +39,14 @@ export class App extends IApp {
   private async updateSlider(id: number) {
     this.slider.setData(await this.getSliderData(id));
   }
-
+  @ReadOnly
   public async init() {
     hamburger();
     headerAppearsWithScroll();
     paginator(dataForPaginator as any);
-    coursesSlider(dataForCoursesSlider as any, "course__slider-wrap");
+    const storage = new Storage();
+    storage.setData(dataForCoursesSlider);
+    coursesSlider(storage.getSliderData(), "course__slider-wrap");
     initForm();
     smoothScroll();
     this.slider = new PreferSlider("slider", "prefer");
