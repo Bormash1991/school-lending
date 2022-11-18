@@ -1605,9 +1605,6 @@ function LocalStorage(keyData, data) {
     };
 }
 class Storage {
-    constructor() {
-        this.localData = "";
-    }
     setData(data) {
         this.localData = data;
     }
@@ -1617,7 +1614,7 @@ class Storage {
 }
 __decorate([
     LocalStorage("dataForSlider", _data_for_sliders__WEBPACK_IMPORTED_MODULE_0__.dataForCoursesSlider),
-    __metadata("design:type", Object)
+    __metadata("design:type", Array)
 ], Storage.prototype, "localData", void 0);
 
 

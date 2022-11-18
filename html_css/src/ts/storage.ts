@@ -1,11 +1,12 @@
 import { cardTypeForSlickSlider } from "./models/types.model";
 import { dataForCoursesSlider } from "./data-for-sliders";
 interface IStorage<T> {
+  localData: T[];
   setData(data: Array<T>): void;
   getSliderData(): Array<T>;
 }
-function LocalStorage(keyData: string, data: any) {
-  return function (target: any, key: any) {
+function LocalStorage(keyData: string, data: cardTypeForSlickSlider[]) {
+  return function (target: Object, key: string) {
     const getter = () => {
       if (localStorage.getItem(keyData) != null) {
         return JSON.parse(localStorage.getItem(keyData));
@@ -26,15 +27,12 @@ function LocalStorage(keyData: string, data: any) {
 }
 export class Storage implements IStorage<cardTypeForSlickSlider> {
   @LocalStorage("dataForSlider", dataForCoursesSlider)
-  localData: any = "";
+  localData: cardTypeForSlickSlider[];
 
-  public setData<T>(data: T[]): void {
+  public setData(data: cardTypeForSlickSlider[]): void {
     this.localData = data;
   }
-  public getSliderData<T>(): T[] {
+  public getSliderData(): cardTypeForSlickSlider[] {
     return this.localData;
   }
 }
-
-
-
