@@ -1572,7 +1572,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Storage": () => (/* binding */ Storage)
 /* harmony export */ });
-/* harmony import */ var _data_for_sliders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data-for-sliders */ "./src/ts/data-for-sliders.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1582,8 +1581,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-function LocalStorage(keyData, data) {
+function LocalStorage(keyData) {
     return function (target, key) {
         const getter = () => {
             if (localStorage.getItem(keyData) != null) {
@@ -1593,9 +1591,9 @@ function LocalStorage(keyData, data) {
                 return [];
             }
         };
-        const setter = () => {
-            if (!localStorage.getItem(keyData)) {
-                localStorage.setItem(keyData, JSON.stringify(data));
+        const setter = ({ data, key }) => {
+            if (!localStorage.getItem(key)) {
+                localStorage.setItem(key, JSON.stringify(data));
             }
         };
         Object.defineProperty(target, key, {
@@ -1613,8 +1611,8 @@ class Storage {
     }
 }
 __decorate([
-    LocalStorage("dataForSlider", _data_for_sliders__WEBPACK_IMPORTED_MODULE_0__.dataForCoursesSlider),
-    __metadata("design:type", Array)
+    LocalStorage("dataForSlider"),
+    __metadata("design:type", Object)
 ], Storage.prototype, "localData", void 0);
 
 

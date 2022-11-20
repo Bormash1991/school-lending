@@ -5,7 +5,7 @@ interface IStorage<T> {
   setData(data: Array<T>): void;
   getSliderData(): Array<T>;
 }
-function LocalStorage(keyData: string, data: cardTypeForSlickSlider[]) {
+function LocalStorage(keyData: string) {
   return function (target: Object, key: string) {
     const getter = () => {
       if (localStorage.getItem(keyData) != null) {
@@ -14,7 +14,7 @@ function LocalStorage(keyData: string, data: cardTypeForSlickSlider[]) {
         return [];
       }
     };
-    const setter = () => {
+    const setter = (data: cardTypeForSlickSlider[]) => {
       if (!localStorage.getItem(keyData)) {
         localStorage.setItem(keyData, JSON.stringify(data));
       }
@@ -26,7 +26,7 @@ function LocalStorage(keyData: string, data: cardTypeForSlickSlider[]) {
   };
 }
 export class Storage implements IStorage<cardTypeForSlickSlider> {
-  @LocalStorage("dataForSlider", dataForCoursesSlider)
+  @LocalStorage("dataForSlider")
   localData: cardTypeForSlickSlider[];
 
   public setData(data: cardTypeForSlickSlider[]): void {
