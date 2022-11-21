@@ -1,4 +1,4 @@
-type cardTypeForSlickSlider = {
+type CardTypeForSlickSlider = {
   id?: number;
   personImg: string;
   backUrl: string;
@@ -8,13 +8,13 @@ type cardTypeForSlickSlider = {
   oldPrice: string;
   countOfStars: number;
 };
-type cardTypeForCustomerPaginator = {
+type CardTypeForCustomerPaginator = {
   imgUrl: string;
   color: string;
   text: string;
   author: string;
 };
-type cardTypeForPaginator = {
+type CardTypeForPaginator = {
   id?: string;
   title: string;
   url: string;
@@ -22,7 +22,7 @@ type cardTypeForPaginator = {
   redirectLink: string;
   category: string;
 };
-type cardTypeForNativeSlider = {
+type CardTypeForNativeSlider = {
   albumId?: string;
   id?: string;
   title: string;
@@ -31,8 +31,8 @@ type cardTypeForNativeSlider = {
 };
 
 export {
-  cardTypeForSlickSlider,
-  cardTypeForCustomerPaginator,
-  cardTypeForPaginator,
-  cardTypeForNativeSlider,
+  CardTypeForSlickSlider,
+  CardTypeForCustomerPaginator,
+  CardTypeForPaginator,
+  CardTypeForNativeSlider,
 };

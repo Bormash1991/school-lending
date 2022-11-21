@@ -1,4 +1,4 @@
-import { cardTypeForCustomerPaginator } from "./models/types.model";
+import { CardTypeForCustomerPaginator } from "./models/types.model";
 let dotsWrapper: HTMLDivElement = document.querySelector(".customer__dots");
 let active: string = "customer__dot_active";
 let img: HTMLImageElement = document.querySelector(".customer__img");
@@ -12,7 +12,7 @@ function setActiveClass(dot: HTMLDivElement): void {
 function setData(data: [], number: number): void {
   let textField = document.querySelector(".customer__text"),
     nameField = document.querySelector(".customer__name");
-  let { imgUrl, color, text, author }: cardTypeForCustomerPaginator =
+  let { imgUrl, color, text, author }: CardTypeForCustomerPaginator =
     data[number];
   textField.innerHTML = text;
   nameField.innerHTML = author;

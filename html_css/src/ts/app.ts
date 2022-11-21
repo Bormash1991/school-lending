@@ -13,7 +13,7 @@ import { smoothScroll } from "./scroll";
 import { Select } from "./select";
 import { Storage } from "./storage";
 import { customersPaginator } from "./customers-paginator";
-import { cardTypeForNativeSlider } from "./models/types.model";
+import { CardTypeForNativeSlider } from "./models/types.model";
 import { ReadOnly } from "./decorators/readOnly.decorator";
 abstract class IApp {
   protected readonly BASE_URL: string;
@@ -31,7 +31,7 @@ export class App extends IApp {
 
   protected async getSliderData(
     num: number = 1
-  ): Promise<cardTypeForNativeSlider[]> {
+  ): Promise<CardTypeForNativeSlider[]> {
     let response = await fetch(`${this.BASE_URL}${num}/photos`);
     return await response.json();
   }

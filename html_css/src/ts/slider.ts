@@ -1,4 +1,4 @@
-import { cardTypeForNativeSlider } from "./models/types.model";
+import { CardTypeForNativeSlider } from "./models/types.model";
 export class PreferSlider {
   private translate: number;
   private coutOfClick: number;
@@ -63,7 +63,7 @@ export class PreferSlider {
     title,
     url,
     thumbnailUrl,
-  }: cardTypeForNativeSlider) {
+  }: CardTypeForNativeSlider) {
     return `  <a href="${thumbnailUrl}" id="${id}" class="slider__item ${this.selector}__item flex">
                 <div class="${this.selector}__overlay ${this.selector}__overlay_blue"
                 style="background: url(${url}) center center/cover no-repeat;"></div>
@@ -71,7 +71,7 @@ export class PreferSlider {
               </a>`;
   }
 
-  public setData(data: cardTypeForNativeSlider[]): void {
+  public setData(data: CardTypeForNativeSlider[]): void {
     this.box.innerHTML = "";
     this.translate = 0;
     this.assignTranslate();
