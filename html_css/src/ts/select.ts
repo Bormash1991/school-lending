@@ -3,6 +3,7 @@ import { Сallback } from "./models/callback.model";
 interface ISelect<T> {
   initList(): void;
 }
+type SelectSelector = "prefer";
 export class Select implements ISelect<Сallback> {
   private readonly select: string;
   private numberOflabel: number;
@@ -13,7 +14,7 @@ export class Select implements ISelect<Сallback> {
   private span: HTMLSpanElement;
   private arrow: HTMLElement;
   private quantitiOfAlbumId: number;
-  constructor(changeCallback: Сallback, selector: string) {
+  constructor(changeCallback: Сallback, selector: SelectSelector) {
     this.numberOflabel;
     this.selector = selector;
     this.select = `.${this.selector}__label`;

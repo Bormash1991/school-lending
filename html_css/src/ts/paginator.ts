@@ -7,7 +7,6 @@ let buttonsParent: HTMLDivElement = document.querySelector(".blog__list"),
   slides: number = 2,
   activeClass: string = "blog__btn_active",
   horizontal: boolean = false;
-
 export function paginator(data: CardTypeForPaginator[]): void {
   window.addEventListener(
     "resize",

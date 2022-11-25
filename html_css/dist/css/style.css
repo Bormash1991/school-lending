@@ -2130,3 +2130,10 @@ p {
 .label__list_show {
   display: block;
 }
+
+.error {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: red;
+}

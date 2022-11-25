@@ -899,6 +899,42 @@ const dataForCustomersSlider = [
 
 /***/ }),
 
+/***/ "./src/ts/decorators/localStorage.decorator.ts":
+/*!*****************************************************!*\
+  !*** ./src/ts/decorators/localStorage.decorator.ts ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LocalStorage": () => (/* binding */ LocalStorage)
+/* harmony export */ });
+function LocalStorage(keyData) {
+    return function (target, key) {
+        const getter = () => {
+            if (localStorage.getItem(keyData) != null) {
+                return JSON.parse(localStorage.getItem(keyData));
+            }
+            else {
+                return 0;
+            }
+        };
+        const setter = (data) => {
+            if (!localStorage.getItem(keyData)) {
+                localStorage.setItem(keyData, JSON.stringify(data));
+            }
+        };
+        Object.defineProperty(target, key, {
+            get: getter,
+            set: setter,
+        });
+    };
+}
+
+
+/***/ }),
+
 /***/ "./src/ts/decorators/readOnly.decorator.ts":
 /*!*************************************************!*\
   !*** ./src/ts/decorators/readOnly.decorator.ts ***!
@@ -912,6 +948,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function ReadOnly(target, key, descriptors) {
     descriptors.writable = false;
+}
+
+
+/***/ }),
+
+/***/ "./src/ts/decorators/sessionStorage.decorator.ts":
+/*!*******************************************************!*\
+  !*** ./src/ts/decorators/sessionStorage.decorator.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SessionStorageDec": () => (/* binding */ SessionStorageDec)
+/* harmony export */ });
+function SessionStorageDec(keyData) {
+    return function (target, key) {
+        const getter = () => {
+            if (sessionStorage.getItem(keyData) != null) {
+                return JSON.parse(sessionStorage.getItem(keyData));
+            }
+            else {
+                return [0, 0];
+            }
+        };
+        const setter = (data) => {
+            sessionStorage.setItem(keyData, JSON.stringify(data));
+        };
+        Object.defineProperty(target, key, {
+            get: getter,
+            set: setter,
+        });
+    };
 }
 
 
@@ -1438,6 +1508,44 @@ class Select {
 
 /***/ }),
 
+/***/ "./src/ts/sessionStorage.ts":
+/*!**********************************!*\
+  !*** ./src/ts/sessionStorage.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SessionStorage": () => (/* binding */ SessionStorage)
+/* harmony export */ });
+/* harmony import */ var _decorators_sessionStorage_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./decorators/sessionStorage.decorator */ "./src/ts/decorators/sessionStorage.decorator.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+class SessionStorage {
+    setData(position) {
+        this.data = position;
+    }
+    getData() {
+        return this.data;
+    }
+}
+__decorate([
+    (0,_decorators_sessionStorage_decorator__WEBPACK_IMPORTED_MODULE_0__.SessionStorageDec)("position"),
+    __metadata("design:type", Array)
+], SessionStorage.prototype, "data", void 0);
+
+
+/***/ }),
+
 /***/ "./src/ts/slider.ts":
 /*!**************************!*\
   !*** ./src/ts/slider.ts ***!
@@ -1449,10 +1557,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PreferSlider": () => (/* binding */ PreferSlider)
 /* harmony export */ });
+/* harmony import */ var _sessionStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sessionStorage */ "./src/ts/sessionStorage.ts");
+
 class PreferSlider {
     constructor(id, selector) {
-        this.translate = 0;
-        this.coutOfClick = 0;
+        this.translate;
+        this.coutOfClick;
         this.numberOfSlider = 0;
         this.numberOflabel = 0;
         this.slider = document.querySelector(`#${id}`);
@@ -1460,6 +1570,7 @@ class PreferSlider {
         this.prevButton;
         this.box;
         this.selector = selector;
+        this.storage = new _sessionStorage__WEBPACK_IMPORTED_MODULE_0__.SessionStorage();
     }
     creatSliderСascade() {
         return `<div class="slider__item-wrap ${this.selector}__item-wrap">
@@ -1500,16 +1611,25 @@ class PreferSlider {
     }
     setData(data) {
         this.box.innerHTML = "";
-        this.translate = 0;
+        let dataStorage = this.storage.getData();
+        this.translate = dataStorage[0];
+        this.coutOfClick = dataStorage[1];
         this.assignTranslate();
         this.numberOfSlider = 0;
-        this.coutOfClick = 0;
         data = data.slice(0, 7);
+        if (data.length == 0) {
+            let err = document.createElement("div");
+            err.innerText = "data fetch error";
+            err.classList.add("error");
+            this.slider.innerHTML = "";
+            this.slider.appendChild(err);
+        }
         data.forEach((elem, i) => {
             this.box.innerHTML += this.slideTemplate(elem);
             this.numberOfSlider += 1;
         });
-        this.prevSlide();
+        this.checkActiveRightButton();
+        this.checkActiveLeftButton();
     }
     assignTranslate() {
         this.box.style.cssText = `transform: translateX(${this.translate}px)`;
@@ -1518,8 +1638,12 @@ class PreferSlider {
         if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
             this.translate -= 217;
             this.coutOfClick += 1;
+            this.storage.setData([this.translate, this.coutOfClick]);
             this.assignTranslate();
         }
+        this.checkActiveLeftButton();
+    }
+    checkActiveLeftButton() {
         if (this.coutOfClick == this.numberOfSlider - this.checkWindowWidth()) {
             this.nextButton.style.opacity = "0.5";
         }
@@ -1527,18 +1651,22 @@ class PreferSlider {
             this.prevButton.style.opacity = "1";
         }
     }
-    prevSlide() {
-        if (this.translate != 0) {
-            this.translate += 217;
-            this.coutOfClick -= 1;
-            this.assignTranslate();
-        }
+    checkActiveRightButton() {
         if (this.translate == 0) {
             this.prevButton.style.opacity = "0.5";
         }
         if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
             this.nextButton.style.opacity = "1";
         }
+    }
+    prevSlide() {
+        if (this.translate != 0) {
+            this.translate += 217;
+            this.coutOfClick -= 1;
+            this.storage.setData([this.translate, this.coutOfClick]);
+            this.assignTranslate();
+        }
+        this.checkActiveRightButton();
     }
     clickHendler() {
         this.nextButton.addEventListener("click", () => {
@@ -1550,10 +1678,14 @@ class PreferSlider {
     }
     initSlider() {
         this.slider.innerHTML = this.creatSliderСascade();
+        // let data = this.storage.getData();
+        // this.translate = this.data[0];
+        // this.coutOfClick = this.data[1];
         this.nextButton = document.querySelector(`.${this.selector}__slider-btn-right`);
         this.prevButton = document.querySelector(`.${this.selector}__slider-btn-left`);
         this.box = document.querySelector(`.${this.selector}__item-box`);
-        this.prevSlide();
+        this.checkActiveRightButton();
+        this.checkActiveLeftButton();
         this.clickHendler();
     }
 }
@@ -1572,6 +1704,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Storage": () => (/* binding */ Storage)
 /* harmony export */ });
+/* harmony import */ var _decorators_localStorage_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./decorators/localStorage.decorator */ "./src/ts/decorators/localStorage.decorator.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1581,27 +1714,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-function LocalStorage(keyData) {
-    return function (target, key) {
-        const getter = () => {
-            if (localStorage.getItem(keyData) != null) {
-                return JSON.parse(localStorage.getItem(keyData));
-            }
-            else {
-                return [];
-            }
-        };
-        const setter = ({ data, key }) => {
-            if (!localStorage.getItem(key)) {
-                localStorage.setItem(key, JSON.stringify(data));
-            }
-        };
-        Object.defineProperty(target, key, {
-            get: getter,
-            set: setter,
-        });
-    };
-}
+
 class Storage {
     setData(data) {
         this.localData = data;
@@ -1611,8 +1724,8 @@ class Storage {
     }
 }
 __decorate([
-    LocalStorage("dataForSlider"),
-    __metadata("design:type", Object)
+    (0,_decorators_localStorage_decorator__WEBPACK_IMPORTED_MODULE_0__.LocalStorage)("dataForSlider"),
+    __metadata("design:type", Array)
 ], Storage.prototype, "localData", void 0);
 
 

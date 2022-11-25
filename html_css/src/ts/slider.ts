@@ -1,4 +1,7 @@
 import { CardTypeForNativeSlider } from "./models/types.model";
+import { SessionStorage } from "./sessionStorage";
+type NativeId = "slider";
+type NativeSelector = "prefer";
 export class PreferSlider {
   private translate: number;
   private coutOfClick: number;
@@ -9,9 +12,10 @@ export class PreferSlider {
   private prevButton: HTMLDivElement;
   private box: HTMLDivElement;
   private readonly selector: string;
-  constructor(id: string, selector: string) {
-    this.translate = 0;
-    this.coutOfClick = 0;
+  private storage: SessionStorage;
+  constructor(id: NativeId, selector: NativeSelector) {
+    this.translate;
+    this.coutOfClick;
     this.numberOfSlider = 0;
     this.numberOflabel = 0;
     this.slider = document.querySelector(`#${id}`);
@@ -19,6 +23,7 @@ export class PreferSlider {
     this.prevButton;
     this.box;
     this.selector = selector;
+    this.storage = new SessionStorage();
   }
 
   private creatSliderСascade(): string {
@@ -71,18 +76,27 @@ export class PreferSlider {
               </a>`;
   }
 
-  public setData(data: CardTypeForNativeSlider[]): void {
+  public setData(data: CardTypeForNativeSlider[] | []): void {
     this.box.innerHTML = "";
-    this.translate = 0;
+    let dataStorage = this.storage.getData();
+    this.translate = dataStorage[0];
+    this.coutOfClick = dataStorage[1];
     this.assignTranslate();
     this.numberOfSlider = 0;
-    this.coutOfClick = 0;
     data = data.slice(0, 7);
+    if (data.length == 0) {
+      let err: HTMLDivElement = document.createElement("div");
+      err.innerText = "data fetch error";
+      err.classList.add("error");
+      this.slider.innerHTML = "";
+      this.slider.appendChild(err);
+    }
     data.forEach((elem, i) => {
       this.box.innerHTML += this.slideTemplate(elem);
       this.numberOfSlider += 1;
     });
-    this.prevSlide();
+    this.checkActiveRightButton();
+    this.checkActiveLeftButton();
   }
 
   private assignTranslate(): void {
@@ -93,8 +107,12 @@ export class PreferSlider {
     if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
       this.translate -= 217;
       this.coutOfClick += 1;
+      this.storage.setData([this.translate, this.coutOfClick]);
       this.assignTranslate();
     }
+    this.checkActiveLeftButton();
+  }
+  checkActiveLeftButton() {
     if (this.coutOfClick == this.numberOfSlider - this.checkWindowWidth()) {
       this.nextButton.style.opacity = "0.5";
     }
@@ -102,19 +120,22 @@ export class PreferSlider {
       this.prevButton.style.opacity = "1";
     }
   }
-
-  private prevSlide(): void {
-    if (this.translate != 0) {
-      this.translate += 217;
-      this.coutOfClick -= 1;
-      this.assignTranslate();
-    }
+  checkActiveRightButton() {
     if (this.translate == 0) {
       this.prevButton.style.opacity = "0.5";
     }
     if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
       this.nextButton.style.opacity = "1";
     }
+  }
+  private prevSlide(): void {
+    if (this.translate != 0) {
+      this.translate += 217;
+      this.coutOfClick -= 1;
+      this.storage.setData([this.translate, this.coutOfClick]);
+      this.assignTranslate();
+    }
+    this.checkActiveRightButton();
   }
 
   private clickHendler(): void {
@@ -128,6 +149,9 @@ export class PreferSlider {
 
   public initSlider(): void {
     this.slider.innerHTML = this.creatSliderСascade();
+    // let data = this.storage.getData();
+    // this.translate = this.data[0];
+    // this.coutOfClick = this.data[1];
     this.nextButton = document.querySelector(
       `.${this.selector}__slider-btn-right`
     );
@@ -135,7 +159,8 @@ export class PreferSlider {
       `.${this.selector}__slider-btn-left`
     );
     this.box = document.querySelector(`.${this.selector}__item-box`);
-    this.prevSlide();
+    this.checkActiveRightButton();
+    this.checkActiveLeftButton();
     this.clickHendler();
   }
 }
