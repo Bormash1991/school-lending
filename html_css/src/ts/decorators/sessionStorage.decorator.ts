@@ -9,6 +9,7 @@ export function SessionStorageDec(keyData: string) {
     };
     const setter = (data: number) => {
       sessionStorage.setItem(keyData, JSON.stringify(data));
+      localStorage.setItem(keyData, JSON.stringify(data));
     };
     Object.defineProperty(target, key, {
       get: getter,

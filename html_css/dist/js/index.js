@@ -976,6 +976,7 @@ function SessionStorageDec(keyData) {
         };
         const setter = (data) => {
             sessionStorage.setItem(keyData, JSON.stringify(data));
+            дщсфдStorage.setItem(keyData, JSON.stringify(data));
         };
         Object.defineProperty(target, key, {
             get: getter,
