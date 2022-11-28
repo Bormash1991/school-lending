@@ -1,19 +1,22 @@
-export function SessionStorageDec(keyData: string) {
-  return function (target: Object, key: string) {
-    const getter = () => {
-      if (sessionStorage.getItem(keyData) != null) {
-        return JSON.parse(sessionStorage.getItem(keyData));
+import { CardTypeForSlickSlider } from "../models/types.model";
+function storageType() {
+  this.param ? localStorage : sessionStorage;
+}
+export function SessionStorageDec(target: Object, key: string) {
+  Object.defineProperty(target, key, {
+    get: function (): CardTypeForSlickSlider[] | [0, 0] {
+      const dataType: Storage =
+        this.typeOfStorage === "loc" ? localStorage : sessionStorage;
+      if (dataType.getItem(this.key) != null) {
+        return JSON.parse(dataType.getItem(this.key));
       } else {
         return [0, 0];
       }
-    };
-    const setter = (data: number) => {
-      sessionStorage.setItem(keyData, JSON.stringify(data));
-      localStorage.setItem(keyData, JSON.stringify(data));
-    };
-    Object.defineProperty(target, key, {
-      get: getter,
-      set: setter,
-    });
-  };
+    },
+    set: function (data: CardTypeForSlickSlider[] | number[]): void {
+      if (!storageType.bind(this).getItem(this.key)) {
+        storageType.bind(this).setItem(this.key, JSON.stringify(data));
+      }
+    },
+  });
 }

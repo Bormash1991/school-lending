@@ -13,8 +13,14 @@ import { smoothScroll } from "./scroll";
 import { Select } from "./select";
 import { Storage } from "./storage";
 import { customersPaginator } from "./customers-paginator";
-import { CardTypeForNativeSlider } from "./models/types.model";
+import {
+  CardTypeForSlickSlider,
+  CardTypeForCustomerPaginator,
+  CardTypeForPaginator,
+  CardTypeForNativeSlider,
+} from "./models/types.model";
 import { ReadOnly } from "./decorators/readOnly.decorator";
+
 abstract class IApp {
   protected readonly BASE_URL: string;
   constructor() {
@@ -44,9 +50,12 @@ export class App extends IApp {
     hamburger();
     headerAppearsWithScroll();
     paginator(dataForPaginator as any);
-    const storage = new Storage();
+    const storage = new Storage("dataForSlider", "loc");
     storage.setData(dataForCoursesSlider);
-    coursesSlider(storage.getSliderData(), "course__slider-wrap");
+    coursesSlider(
+      storage.getData() as CardTypeForSlickSlider[],
+      "course__slider-wrap"
+    );
     initForm();
     smoothScroll();
     this.slider = new PreferSlider("slider", "prefer");

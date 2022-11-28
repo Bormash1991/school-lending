@@ -1,5 +1,5 @@
 import { CardTypeForNativeSlider } from "./models/types.model";
-import { SessionStorage } from "./sessionStorage";
+import { Storage } from "./storage";
 type NativeId = "slider";
 type NativeSelector = "prefer";
 export class PreferSlider {
@@ -12,7 +12,7 @@ export class PreferSlider {
   private prevButton: HTMLDivElement;
   private box: HTMLDivElement;
   private readonly selector: string;
-  private storage: SessionStorage;
+  private storage: Storage;
   constructor(id: NativeId, selector: NativeSelector) {
     this.translate;
     this.coutOfClick;
@@ -23,7 +23,7 @@ export class PreferSlider {
     this.prevButton;
     this.box;
     this.selector = selector;
-    this.storage = new SessionStorage();
+    this.storage = new Storage("position", "ses");
   }
 
   private creatSliderСascade(): string {
@@ -78,9 +78,10 @@ export class PreferSlider {
 
   public setData(data: CardTypeForNativeSlider[] | []): void {
     this.box.innerHTML = "";
-    let dataStorage = this.storage.getData();
+    let dataStorage = this.storage.getData() as number[];
     this.translate = dataStorage[0];
     this.coutOfClick = dataStorage[1];
+    this.storage.setData(dataStorage);
     this.assignTranslate();
     this.numberOfSlider = 0;
     data = data.slice(0, 7);
@@ -149,9 +150,6 @@ export class PreferSlider {
 
   public initSlider(): void {
     this.slider.innerHTML = this.creatSliderСascade();
-    // let data = this.storage.getData();
-    // this.translate = this.data[0];
-    // this.coutOfClick = this.data[1];
     this.nextButton = document.querySelector(
       `.${this.selector}__slider-btn-right`
     );

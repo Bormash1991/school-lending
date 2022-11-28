@@ -1,21 +1,19 @@
 import { CardTypeForSlickSlider } from "../models/types.model";
-export function LocalStorage(keyData: string) {
-  return function (target: Object, key: string) {
-    const getter = () => {
-      if (localStorage.getItem(keyData) != null) {
-        return JSON.parse(localStorage.getItem(keyData));
-      } else {
-        return 0;
+
+export function LocalStorage(target: Object, key: string): void {
+  Object.defineProperty(target, key, {
+    get: function (): CardTypeForSlickSlider[] | 0 | number[] {
+      const dataType: Storage =
+        this.typeOfStorage === "loc" ? localStorage : sessionStorage;
+      if (dataType.getItem(this.key) != null) {
+        return JSON.parse(dataType.getItem(this.key));
       }
-    };
-    const setter = (data: CardTypeForSlickSlider[]) => {
-      if (!localStorage.getItem(keyData)) {
-        localStorage.setItem(keyData, JSON.stringify(data));
-      }
-    };
-    Object.defineProperty(target, key, {
-      get: getter,
-      set: setter,
-    });
-  };
+      return this.typeOfStorage === "loc" ? 0 : [0, 0];
+    },
+    set: function (data: CardTypeForSlickSlider[] | number[]): void {
+      const dataType: Storage =
+        this.typeOfStorage === "loc" ? localStorage : sessionStorage;
+      dataType.setItem(this.key, JSON.stringify(data));
+    },
+  });
 }

@@ -530,9 +530,9 @@ class App extends IApp {
             (0,_mobile_menu__WEBPACK_IMPORTED_MODULE_0__.hamburger)();
             (0,_header_scroll__WEBPACK_IMPORTED_MODULE_1__.headerAppearsWithScroll)();
             (0,_paginator__WEBPACK_IMPORTED_MODULE_2__.paginator)(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForPaginator);
-            const storage = new _storage__WEBPACK_IMPORTED_MODULE_9__.Storage();
+            const storage = new _storage__WEBPACK_IMPORTED_MODULE_9__.Storage("dataForSlider", "loc");
             storage.setData(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForCoursesSlider);
-            (0,_courses_slider__WEBPACK_IMPORTED_MODULE_3__.coursesSlider)(storage.getSliderData(), "course__slider-wrap");
+            (0,_courses_slider__WEBPACK_IMPORTED_MODULE_3__.coursesSlider)(storage.getData(), "course__slider-wrap");
             (0,_form__WEBPACK_IMPORTED_MODULE_6__.initForm)();
             (0,_scroll__WEBPACK_IMPORTED_MODULE_7__.smoothScroll)();
             this.slider = new _slider__WEBPACK_IMPORTED_MODULE_4__.PreferSlider("slider", "prefer");
@@ -910,26 +910,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LocalStorage": () => (/* binding */ LocalStorage)
 /* harmony export */ });
-function LocalStorage(keyData) {
-    return function (target, key) {
-        const getter = () => {
-            if (localStorage.getItem(keyData) != null) {
-                return JSON.parse(localStorage.getItem(keyData));
+function LocalStorage(target, key) {
+    Object.defineProperty(target, key, {
+        get: function () {
+            const dataType = this.typeOfStorage === "loc" ? localStorage : sessionStorage;
+            if (dataType.getItem(this.key) != null) {
+                return JSON.parse(dataType.getItem(this.key));
             }
-            else {
-                return 0;
-            }
-        };
-        const setter = (data) => {
-            if (!localStorage.getItem(keyData)) {
-                localStorage.setItem(keyData, JSON.stringify(data));
-            }
-        };
-        Object.defineProperty(target, key, {
-            get: getter,
-            set: setter,
-        });
-    };
+            return this.typeOfStorage === "loc" ? 0 : [0, 0];
+        },
+        set: function (data) {
+            const dataType = this.typeOfStorage === "loc" ? localStorage : sessionStorage;
+            dataType.setItem(this.key, JSON.stringify(data));
+        },
+    });
 }
 
 
@@ -948,41 +942,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function ReadOnly(target, key, descriptors) {
     descriptors.writable = false;
-}
-
-
-/***/ }),
-
-/***/ "./src/ts/decorators/sessionStorage.decorator.ts":
-/*!*******************************************************!*\
-  !*** ./src/ts/decorators/sessionStorage.decorator.ts ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "SessionStorageDec": () => (/* binding */ SessionStorageDec)
-/* harmony export */ });
-function SessionStorageDec(keyData) {
-    return function (target, key) {
-        const getter = () => {
-            if (sessionStorage.getItem(keyData) != null) {
-                return JSON.parse(sessionStorage.getItem(keyData));
-            }
-            else {
-                return [0, 0];
-            }
-        };
-        const setter = (data) => {
-            sessionStorage.setItem(keyData, JSON.stringify(data));
-            дщсфдStorage.setItem(keyData, JSON.stringify(data));
-        };
-        Object.defineProperty(target, key, {
-            get: getter,
-            set: setter,
-        });
-    };
 }
 
 
@@ -1509,44 +1468,6 @@ class Select {
 
 /***/ }),
 
-/***/ "./src/ts/sessionStorage.ts":
-/*!**********************************!*\
-  !*** ./src/ts/sessionStorage.ts ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "SessionStorage": () => (/* binding */ SessionStorage)
-/* harmony export */ });
-/* harmony import */ var _decorators_sessionStorage_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./decorators/sessionStorage.decorator */ "./src/ts/decorators/sessionStorage.decorator.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-class SessionStorage {
-    setData(position) {
-        this.data = position;
-    }
-    getData() {
-        return this.data;
-    }
-}
-__decorate([
-    (0,_decorators_sessionStorage_decorator__WEBPACK_IMPORTED_MODULE_0__.SessionStorageDec)("position"),
-    __metadata("design:type", Array)
-], SessionStorage.prototype, "data", void 0);
-
-
-/***/ }),
-
 /***/ "./src/ts/slider.ts":
 /*!**************************!*\
   !*** ./src/ts/slider.ts ***!
@@ -1558,7 +1479,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PreferSlider": () => (/* binding */ PreferSlider)
 /* harmony export */ });
-/* harmony import */ var _sessionStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sessionStorage */ "./src/ts/sessionStorage.ts");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./storage */ "./src/ts/storage.ts");
 
 class PreferSlider {
     constructor(id, selector) {
@@ -1571,7 +1492,7 @@ class PreferSlider {
         this.prevButton;
         this.box;
         this.selector = selector;
-        this.storage = new _sessionStorage__WEBPACK_IMPORTED_MODULE_0__.SessionStorage();
+        this.storage = new _storage__WEBPACK_IMPORTED_MODULE_0__.Storage("position", "ses");
     }
     creatSliderСascade() {
         return `<div class="slider__item-wrap ${this.selector}__item-wrap">
@@ -1615,6 +1536,7 @@ class PreferSlider {
         let dataStorage = this.storage.getData();
         this.translate = dataStorage[0];
         this.coutOfClick = dataStorage[1];
+        this.storage.setData(dataStorage);
         this.assignTranslate();
         this.numberOfSlider = 0;
         data = data.slice(0, 7);
@@ -1679,9 +1601,6 @@ class PreferSlider {
     }
     initSlider() {
         this.slider.innerHTML = this.creatSliderСascade();
-        // let data = this.storage.getData();
-        // this.translate = this.data[0];
-        // this.coutOfClick = this.data[1];
         this.nextButton = document.querySelector(`.${this.selector}__slider-btn-right`);
         this.prevButton = document.querySelector(`.${this.selector}__slider-btn-left`);
         this.box = document.querySelector(`.${this.selector}__item-box`);
@@ -1717,16 +1636,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 class Storage {
+    constructor(key, typeOfStorage) {
+        this.key = key;
+        this.typeOfStorage = typeOfStorage;
+    }
     setData(data) {
         this.localData = data;
     }
-    getSliderData() {
+    getData() {
         return this.localData;
     }
 }
 __decorate([
-    (0,_decorators_localStorage_decorator__WEBPACK_IMPORTED_MODULE_0__.LocalStorage)("dataForSlider"),
-    __metadata("design:type", Array)
+    _decorators_localStorage_decorator__WEBPACK_IMPORTED_MODULE_0__.LocalStorage,
+    __metadata("design:type", Object)
 ], Storage.prototype, "localData", void 0);
 
 
