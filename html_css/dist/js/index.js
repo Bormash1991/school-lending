@@ -470,7 +470,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./form */ "./src/ts/form.ts");
 /* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./scroll */ "./src/ts/scroll.ts");
 /* harmony import */ var _select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./select */ "./src/ts/select.ts");
-/* harmony import */ var _customers_paginator__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./customers-paginator */ "./src/ts/customers-paginator.ts");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./storage */ "./src/ts/storage.ts");
+/* harmony import */ var _customers_paginator__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./customers-paginator */ "./src/ts/customers-paginator.ts");
+/* harmony import */ var _decorators_readOnly_decorator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./decorators/readOnly.decorator */ "./src/ts/decorators/readOnly.decorator.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -480,6 +491,8 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
+
 
 
 
@@ -517,7 +530,9 @@ class App extends IApp {
             (0,_mobile_menu__WEBPACK_IMPORTED_MODULE_0__.hamburger)();
             (0,_header_scroll__WEBPACK_IMPORTED_MODULE_1__.headerAppearsWithScroll)();
             (0,_paginator__WEBPACK_IMPORTED_MODULE_2__.paginator)(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForPaginator);
-            (0,_courses_slider__WEBPACK_IMPORTED_MODULE_3__.coursesSlider)(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForCoursesSlider, "course__slider-wrap");
+            const storage = new _storage__WEBPACK_IMPORTED_MODULE_9__.Storage("dataForSlider", "loc");
+            storage.setData(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForCoursesSlider);
+            (0,_courses_slider__WEBPACK_IMPORTED_MODULE_3__.coursesSlider)(storage.getData(), "course__slider-wrap");
             (0,_form__WEBPACK_IMPORTED_MODULE_6__.initForm)();
             (0,_scroll__WEBPACK_IMPORTED_MODULE_7__.smoothScroll)();
             this.slider = new _slider__WEBPACK_IMPORTED_MODULE_4__.PreferSlider("slider", "prefer");
@@ -525,10 +540,16 @@ class App extends IApp {
             let response = yield this.getSliderData();
             this.slider.setData(response);
             new _select__WEBPACK_IMPORTED_MODULE_8__.Select(this.updateSlider.bind(this), "prefer").initList();
-            (0,_customers_paginator__WEBPACK_IMPORTED_MODULE_9__.customersPaginator)(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForCustomersSlider);
+            (0,_customers_paginator__WEBPACK_IMPORTED_MODULE_10__.customersPaginator)(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForCustomersSlider);
         });
     }
 }
+__decorate([
+    _decorators_readOnly_decorator__WEBPACK_IMPORTED_MODULE_11__.ReadOnly,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], App.prototype, "init", null);
 
 
 /***/ }),
@@ -874,6 +895,54 @@ const dataForCustomersSlider = [
     },
 ];
 
+
+
+/***/ }),
+
+/***/ "./src/ts/decorators/localStorage.decorator.ts":
+/*!*****************************************************!*\
+  !*** ./src/ts/decorators/localStorage.decorator.ts ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LocalStorage": () => (/* binding */ LocalStorage)
+/* harmony export */ });
+function LocalStorage(target, key) {
+    Object.defineProperty(target, key, {
+        get: function () {
+            const dataType = this.typeOfStorage === "loc" ? localStorage : sessionStorage;
+            if (dataType.getItem(this.key) != null) {
+                return JSON.parse(dataType.getItem(this.key));
+            }
+            return this.typeOfStorage === "loc" ? 0 : [0, 0];
+        },
+        set: function (data) {
+            const dataType = this.typeOfStorage === "loc" ? localStorage : sessionStorage;
+            dataType.setItem(this.key, JSON.stringify(data));
+        },
+    });
+}
+
+
+/***/ }),
+
+/***/ "./src/ts/decorators/readOnly.decorator.ts":
+/*!*************************************************!*\
+  !*** ./src/ts/decorators/readOnly.decorator.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ReadOnly": () => (/* binding */ ReadOnly)
+/* harmony export */ });
+function ReadOnly(target, key, descriptors) {
+    descriptors.writable = false;
+}
 
 
 /***/ }),
@@ -1410,10 +1479,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PreferSlider": () => (/* binding */ PreferSlider)
 /* harmony export */ });
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./storage */ "./src/ts/storage.ts");
+
 class PreferSlider {
     constructor(id, selector) {
-        this.translate = 0;
-        this.coutOfClick = 0;
+        this.translate;
+        this.coutOfClick;
         this.numberOfSlider = 0;
         this.numberOflabel = 0;
         this.slider = document.querySelector(`#${id}`);
@@ -1421,6 +1492,7 @@ class PreferSlider {
         this.prevButton;
         this.box;
         this.selector = selector;
+        this.storage = new _storage__WEBPACK_IMPORTED_MODULE_0__.Storage("position", "ses");
     }
     creatSliderСascade() {
         return `<div class="slider__item-wrap ${this.selector}__item-wrap">
@@ -1461,16 +1533,26 @@ class PreferSlider {
     }
     setData(data) {
         this.box.innerHTML = "";
-        this.translate = 0;
+        let dataStorage = this.storage.getData();
+        this.translate = dataStorage[0];
+        this.coutOfClick = dataStorage[1];
+        this.storage.setData(dataStorage);
         this.assignTranslate();
         this.numberOfSlider = 0;
-        this.coutOfClick = 0;
         data = data.slice(0, 7);
+        if (data.length == 0) {
+            let err = document.createElement("div");
+            err.innerText = "data fetch error";
+            err.classList.add("error");
+            this.slider.innerHTML = "";
+            this.slider.appendChild(err);
+        }
         data.forEach((elem, i) => {
             this.box.innerHTML += this.slideTemplate(elem);
             this.numberOfSlider += 1;
         });
-        this.prevSlide();
+        this.checkActiveRightButton();
+        this.checkActiveLeftButton();
     }
     assignTranslate() {
         this.box.style.cssText = `transform: translateX(${this.translate}px)`;
@@ -1479,8 +1561,12 @@ class PreferSlider {
         if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
             this.translate -= 217;
             this.coutOfClick += 1;
+            this.storage.setData([this.translate, this.coutOfClick]);
             this.assignTranslate();
         }
+        this.checkActiveLeftButton();
+    }
+    checkActiveLeftButton() {
         if (this.coutOfClick == this.numberOfSlider - this.checkWindowWidth()) {
             this.nextButton.style.opacity = "0.5";
         }
@@ -1488,18 +1574,22 @@ class PreferSlider {
             this.prevButton.style.opacity = "1";
         }
     }
-    prevSlide() {
-        if (this.translate != 0) {
-            this.translate += 217;
-            this.coutOfClick -= 1;
-            this.assignTranslate();
-        }
+    checkActiveRightButton() {
         if (this.translate == 0) {
             this.prevButton.style.opacity = "0.5";
         }
         if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
             this.nextButton.style.opacity = "1";
         }
+    }
+    prevSlide() {
+        if (this.translate != 0) {
+            this.translate += 217;
+            this.coutOfClick -= 1;
+            this.storage.setData([this.translate, this.coutOfClick]);
+            this.assignTranslate();
+        }
+        this.checkActiveRightButton();
     }
     clickHendler() {
         this.nextButton.addEventListener("click", () => {
@@ -1514,10 +1604,53 @@ class PreferSlider {
         this.nextButton = document.querySelector(`.${this.selector}__slider-btn-right`);
         this.prevButton = document.querySelector(`.${this.selector}__slider-btn-left`);
         this.box = document.querySelector(`.${this.selector}__item-box`);
-        this.prevSlide();
+        this.checkActiveRightButton();
+        this.checkActiveLeftButton();
         this.clickHendler();
     }
 }
+
+
+/***/ }),
+
+/***/ "./src/ts/storage.ts":
+/*!***************************!*\
+  !*** ./src/ts/storage.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Storage": () => (/* binding */ Storage)
+/* harmony export */ });
+/* harmony import */ var _decorators_localStorage_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./decorators/localStorage.decorator */ "./src/ts/decorators/localStorage.decorator.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+class Storage {
+    constructor(key, typeOfStorage) {
+        this.key = key;
+        this.typeOfStorage = typeOfStorage;
+    }
+    setData(data) {
+        this.localData = data;
+    }
+    getData() {
+        return this.localData;
+    }
+}
+__decorate([
+    _decorators_localStorage_decorator__WEBPACK_IMPORTED_MODULE_0__.LocalStorage,
+    __metadata("design:type", Object)
+], Storage.prototype, "localData", void 0);
 
 
 /***/ })

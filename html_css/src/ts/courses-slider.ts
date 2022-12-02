@@ -1,5 +1,9 @@
-import { cardTypeForSlickSlider } from "./models/types.model";
-export function coursesSlider(data: [], selector: string) {
+import { CardTypeForSlickSlider } from "./models/types.model";
+type CoursesSliderSelector = "course__slider-wrap";
+export function coursesSlider(
+  data: CardTypeForSlickSlider[],
+  selector: CoursesSliderSelector
+) {
   let sliderWrap: HTMLDivElement = document.querySelector(`.${selector}`);
   addSlides(data, sliderWrap);
   initSlickSlider(selector);
@@ -9,13 +13,13 @@ function checkStars(stars: number) {
   return (100 * stars) / 5;
 }
 
-function addSlides(data: [], sliderWrap: HTMLDivElement) {
+function addSlides(data: CardTypeForSlickSlider[], sliderWrap: HTMLDivElement) {
   data.forEach((elem, i) => {
     sliderWrap.innerHTML += slideTemplate(elem);
   });
 }
 
-function slideTemplate(elem: cardTypeForSlickSlider): string {
+function slideTemplate(elem: CardTypeForSlickSlider): string {
   let width = checkStars(elem.countOfStars);
   let {
     id,

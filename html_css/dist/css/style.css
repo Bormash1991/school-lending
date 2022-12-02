@@ -430,7 +430,7 @@ select {
     width: 100vw;
     background-color: white;
     z-index: 4;
-    top: -13px;
+    top: -24px;
     left: 0;
     transform: translateX(-100%);
   }
@@ -2129,4 +2129,11 @@ p {
 }
 .label__list_show {
   display: block;
+}
+
+.error {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: red;
 }

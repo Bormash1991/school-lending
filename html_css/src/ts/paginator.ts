@@ -1,4 +1,4 @@
-import { cardTypeForPaginator } from "./models/types.model";
+import { CardTypeForPaginator } from "./models/types.model";
 import throttle from "lodash.throttle";
 let buttonsParent: HTMLDivElement = document.querySelector(".blog__list"),
   elementsWrapper: HTMLDivElement = document.querySelector(
@@ -7,8 +7,7 @@ let buttonsParent: HTMLDivElement = document.querySelector(".blog__list"),
   slides: number = 2,
   activeClass: string = "blog__btn_active",
   horizontal: boolean = false;
-
-export function paginator(data: cardTypeForPaginator[]): void {
+export function paginator(data: CardTypeForPaginator[]): void {
   window.addEventListener(
     "resize",
     throttle(resizeCallback.bind(this, data), 700)
@@ -18,12 +17,12 @@ export function paginator(data: cardTypeForPaginator[]): void {
 }
 
 function templateBlogElements(
-  id: cardTypeForPaginator["id"],
-  title: cardTypeForPaginator["title"],
-  url: cardTypeForPaginator["url"],
-  userImage: cardTypeForPaginator["userImage"],
-  redirectLink: cardTypeForPaginator["redirectLink"],
-  category: cardTypeForPaginator["category"]
+  id: CardTypeForPaginator["id"],
+  title: CardTypeForPaginator["title"],
+  url: CardTypeForPaginator["url"],
+  userImage: CardTypeForPaginator["userImage"],
+  redirectLink: CardTypeForPaginator["redirectLink"],
+  category: CardTypeForPaginator["category"]
 ): string {
   return `
               <div id="${id}" class="blog__wrap-item flex_justify-c">
@@ -72,7 +71,7 @@ function checkWindowWidth(): void {
     horizontal = true;
   }
 }
-function resizeCallback(data: cardTypeForPaginator[]) {
+function resizeCallback(data: CardTypeForPaginator[]) {
   checkWindowWidth();
   elementsWrapper.innerHTML = "";
   buttonsParent.innerHTML = "";
@@ -82,7 +81,7 @@ function resizeCallback(data: cardTypeForPaginator[]) {
 }
 checkWindowWidth();
 
-function checkActiveButton(count: number, data: cardTypeForPaginator[]): void {
+function checkActiveButton(count: number, data: CardTypeForPaginator[]): void {
   let btns = document.querySelectorAll(
     ".blog__btn"
   ) as unknown as HTMLButtonElement[];
@@ -100,7 +99,7 @@ function checkActiveButton(count: number, data: cardTypeForPaginator[]): void {
   clickHandler(data);
 }
 
-function clickHandler(data: cardTypeForPaginator[]): void {
+function clickHandler(data: CardTypeForPaginator[]): void {
   let btns = document.querySelectorAll(
       ".blog__btn"
     ) as unknown as HTMLButtonElement[],
@@ -161,7 +160,7 @@ function autoScrollListOfButtons(
 }
 
 function createElements(
-  data: cardTypeForPaginator[],
+  data: CardTypeForPaginator[],
   numberOfBtn: number,
   coutOfSlides: number
 ): void {
@@ -182,7 +181,7 @@ function createElements(
   });
 }
 
-function createButtons(data: cardTypeForPaginator[]): void {
+function createButtons(data: CardTypeForPaginator[]): void {
   let dataLength: number = data.length;
   let counter: number = 0;
   if (dataLength % slides == 0) {
