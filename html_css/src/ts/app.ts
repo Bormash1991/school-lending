@@ -50,10 +50,10 @@ export class App extends IApp {
     hamburger();
     headerAppearsWithScroll();
     paginator(dataForPaginator as any);
-    const storage = new Storage("dataForSlider", "loc");
-    storage.setData(dataForCoursesSlider);
+    const storage = new Storage<CardTypeForSlickSlider>("dataForSlider");
+    storage.setData<CardTypeForSlickSlider>(dataForCoursesSlider);
     coursesSlider(
-      storage.getData() as CardTypeForSlickSlider[],
+      storage.getData<CardTypeForSlickSlider>() as CardTypeForSlickSlider[],
       "course__slider-wrap"
     );
     initForm();
