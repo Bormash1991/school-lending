@@ -1,27 +1,26 @@
-import { CardTypeForSlickSlider } from "./models/types.model";
 import { LocalStorage } from "./decorators/localStorage.decorator";
-import { typeOfStorage } from "./models/typeOfStrorage.model";
-interface IStorage<T> {
+import { SessionStorageDec } from "./decorators/sessionStorage.decorator";
+interface IStorage {
   localData: any;
-  setData(data: Array<T>): void;
-  getData(): Array<T> | number[] | [];
+  setData<T>(data: Array<T> | [] | 0): void;
+  getData<T>(): Array<T> | [] | 0;
 }
 
-export class Storage implements IStorage<CardTypeForSlickSlider> {
+export class Storage<T> implements IStorage {
   key: string;
-  typeOfStorage: typeOfStorage;
-  constructor(key: string, typeOfStorage: typeOfStorage) {
+
+  constructor(key: string) {
     this.key = key;
-    this.typeOfStorage = typeOfStorage;
   }
 
   @LocalStorage
+  @SessionStorageDec
   localData: any;
 
-  public setData(data: CardTypeForSlickSlider[] | number[] | []): void {
+  public setData<T>(data: Array<T> | [] | 0): void {
     this.localData = data;
   }
-  public getData(): CardTypeForSlickSlider[] | number[] | [] {
+  public getData<T>(): Array<T> | [] | 0 {
     return this.localData;
   }
 }

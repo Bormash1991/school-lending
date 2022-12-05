@@ -530,7 +530,7 @@ class App extends IApp {
             (0,_mobile_menu__WEBPACK_IMPORTED_MODULE_0__.hamburger)();
             (0,_header_scroll__WEBPACK_IMPORTED_MODULE_1__.headerAppearsWithScroll)();
             (0,_paginator__WEBPACK_IMPORTED_MODULE_2__.paginator)(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForPaginator);
-            const storage = new _storage__WEBPACK_IMPORTED_MODULE_9__.Storage("dataForSlider", "loc");
+            const storage = new _storage__WEBPACK_IMPORTED_MODULE_9__.Storage("dataForSlider");
             storage.setData(_data_for_sliders__WEBPACK_IMPORTED_MODULE_5__.dataForCoursesSlider);
             (0,_courses_slider__WEBPACK_IMPORTED_MODULE_3__.coursesSlider)(storage.getData(), "course__slider-wrap");
             (0,_form__WEBPACK_IMPORTED_MODULE_6__.initForm)();
@@ -911,18 +911,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "LocalStorage": () => (/* binding */ LocalStorage)
 /* harmony export */ });
 function LocalStorage(target, key) {
+    const saveLocalStorage = (data, keyData) => {
+        localStorage.setItem(keyData, JSON.stringify(data));
+    };
+    target["arrMethods"].push(saveLocalStorage);
     Object.defineProperty(target, key, {
         get: function () {
             const dataType = this.typeOfStorage === "loc" ? localStorage : sessionStorage;
             if (dataType.getItem(this.key) != null) {
                 return JSON.parse(dataType.getItem(this.key));
             }
-            return this.typeOfStorage === "loc" ? 0 : [0, 0];
+            return this.key === "dataForSlider" ? 0 : [0, 0];
         },
         set: function (data) {
-            const dataType = this.typeOfStorage === "loc" ? localStorage : sessionStorage;
-            dataType.setItem(this.key, JSON.stringify(data));
+            const keyOfData = this.key;
+            target["arrMethods"].forEach((el) => {
+                el.call(this, data, keyOfData);
+            });
         },
+        configurable: true,
     });
 }
 
@@ -942,6 +949,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function ReadOnly(target, key, descriptors) {
     descriptors.writable = false;
+}
+
+
+/***/ }),
+
+/***/ "./src/ts/decorators/sessionStorage.decorator.ts":
+/*!*******************************************************!*\
+  !*** ./src/ts/decorators/sessionStorage.decorator.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SessionStorageDec": () => (/* binding */ SessionStorageDec)
+/* harmony export */ });
+function SessionStorageDec(target, key) {
+    target["arrMethods"] = [];
+    const saveSessionStorage = (data, keyData) => {
+        sessionStorage.setItem(keyData, JSON.stringify(data));
+    };
+    target["arrMethods"].push(saveSessionStorage);
+    Object.defineProperty(target, key, {
+        get: function () {
+            const dataType = this.typeOfStorage === "loc" ? localStorage : sessionStorage;
+            if (dataType.getItem(this.key) != null) {
+                return JSON.parse(dataType.getItem(this.key));
+            }
+            return this.key === "dataForSlider" ? 0 : [0, 0];
+        },
+        configurable: true,
+    });
 }
 
 
@@ -1492,7 +1531,7 @@ class PreferSlider {
         this.prevButton;
         this.box;
         this.selector = selector;
-        this.storage = new _storage__WEBPACK_IMPORTED_MODULE_0__.Storage("position", "ses");
+        this.storage = new _storage__WEBPACK_IMPORTED_MODULE_0__.Storage("position");
     }
     creatSliderСascade() {
         return `<div class="slider__item-wrap ${this.selector}__item-wrap">
@@ -1625,6 +1664,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Storage": () => (/* binding */ Storage)
 /* harmony export */ });
 /* harmony import */ var _decorators_localStorage_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./decorators/localStorage.decorator */ "./src/ts/decorators/localStorage.decorator.ts");
+/* harmony import */ var _decorators_sessionStorage_decorator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./decorators/sessionStorage.decorator */ "./src/ts/decorators/sessionStorage.decorator.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1635,10 +1675,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 class Storage {
-    constructor(key, typeOfStorage) {
+    constructor(key) {
         this.key = key;
-        this.typeOfStorage = typeOfStorage;
     }
     setData(data) {
         this.localData = data;
@@ -1649,6 +1689,7 @@ class Storage {
 }
 __decorate([
     _decorators_localStorage_decorator__WEBPACK_IMPORTED_MODULE_0__.LocalStorage,
+    _decorators_sessionStorage_decorator__WEBPACK_IMPORTED_MODULE_1__.SessionStorageDec,
     __metadata("design:type", Object)
 ], Storage.prototype, "localData", void 0);
 

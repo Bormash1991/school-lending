@@ -12,7 +12,7 @@ export class PreferSlider {
   private prevButton: HTMLDivElement;
   private box: HTMLDivElement;
   private readonly selector: string;
-  private storage: Storage;
+  private storage: Storage<number>;
   constructor(id: NativeId, selector: NativeSelector) {
     this.translate;
     this.coutOfClick;
@@ -23,7 +23,7 @@ export class PreferSlider {
     this.prevButton;
     this.box;
     this.selector = selector;
-    this.storage = new Storage("position", "ses");
+    this.storage = new Storage<number>("position");
   }
 
   private creatSliderСascade(): string {
@@ -78,7 +78,7 @@ export class PreferSlider {
 
   public setData(data: CardTypeForNativeSlider[] | []): void {
     this.box.innerHTML = "";
-    let dataStorage = this.storage.getData() as number[];
+    let dataStorage = this.storage.getData<number>();
     this.translate = dataStorage[0];
     this.coutOfClick = dataStorage[1];
     this.storage.setData(dataStorage);
@@ -108,7 +108,7 @@ export class PreferSlider {
     if (this.coutOfClick < this.numberOfSlider - this.checkWindowWidth()) {
       this.translate -= 217;
       this.coutOfClick += 1;
-      this.storage.setData([this.translate, this.coutOfClick]);
+      this.storage.setData<number>([this.translate, this.coutOfClick]);
       this.assignTranslate();
     }
     this.checkActiveLeftButton();
@@ -133,7 +133,7 @@ export class PreferSlider {
     if (this.translate != 0) {
       this.translate += 217;
       this.coutOfClick -= 1;
-      this.storage.setData([this.translate, this.coutOfClick]);
+      this.storage.setData<number>([this.translate, this.coutOfClick]);
       this.assignTranslate();
     }
     this.checkActiveRightButton();
